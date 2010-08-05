@@ -13,7 +13,7 @@
     <feature name="josso" version="${version}">
         <feature version="${atricore.idbus.version}">atricore</feature>
         <feature version="${atricore.idbus.version}">atricore-management</feature>
-        <feature version="${atricore.console.version}">josso-console</feature>
+        <feature version="${version}">josso-console</feature>
     </feature>
 
 </features>
