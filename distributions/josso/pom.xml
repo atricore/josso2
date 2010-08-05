@@ -47,14 +47,7 @@
             <type>zip</type>
         </dependency>
 
-
         <!-- JOSSO 2 Dependencies -->
-        <dependency>
-            <groupId>org.atricore.josso.tooling</groupId>
-            <artifactId>org.atricore.josso.tooling.install</artifactId>
-            <version>${version}</version>
-        </dependency>
-        
 
         <!-- Atricore Console -->
         <dependency>
