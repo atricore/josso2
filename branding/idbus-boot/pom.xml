@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.atricore.josso</groupId>
+        <artifactId>josso-all</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
+    <packaging>bundle</packaging>
+    <version>2.0.0-SNAPSHOT</version>
+    <name>Atricore JOSSO ${version} :: IDBus Boot branding</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.atricore.idbus.kernel.common</groupId>
+            <artifactId>org.atricore.idbus.kernel.common.boot</artifactId>
+            <version>${atricore.idbus.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${pom.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.1</version>
+
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+
+                        <configuration>
+                            <includeArtifactIds>org.atricore.idbus.kernel.common.boot</includeArtifactIds>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.plugin.version}</version>
+                <configuration>
+
+                    <instructions>
+                        
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>*</Import-Package>
+                        <Private-Package>!*</Private-Package>
+                        <Export-Package>
+                            org.apache.felix.karaf.branding;-split-package:=merge-first,
+                            org.atricore.*
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

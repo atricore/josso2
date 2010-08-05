@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features  name="atricore-josso-${version}">
+
+    <feature name="josso-console" version="${version}">
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war</bundle>
+    </feature>
+
+    <feature name="josso" version="${version}">
+        <feature version="${atricore.idbus.version}">atricore</feature>
+        <feature version="${atricore.idbus.version}">atricore-management</feature>
+        <feature version="${atricore.console.version}">josso-console</feature>
+    </feature>
+
+</features>

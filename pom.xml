@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  ~ Atricore IDBus
+  ~
+  ~ Copyright 2009, Atricore Inc.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.atricore.josso</groupId>
+    <artifactId>josso-all</artifactId>
+    <packaging>pom</packaging>
+
+    <version>2.0.0-SNAPSHOT</version>
+    <name>Atricore JOSSO ${version} :: All POM</name>
+    <inceptionYear>2009</inceptionYear>
+
+    <prerequisites>
+        <maven>2.0.9</maven>
+    </prerequisites>
+
+    <properties>
+        <felix.karaf.version>1.6.0</felix.karaf.version>
+        <felix.plugin.version>2.1.0</felix.plugin.version>
+        <felix.osgi.version>1.4.0</felix.osgi.version>
+
+        <atricore.idbus.version>1.0.0-m2</atricore.idbus.version>
+        <atricore.console.version>1.0.0-SNAPSHOT</atricore.console.version>
+        <josso1.version>1.8.2</josso1.version>
+
+        <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
+        <compiler.fork>true</compiler.fork>
+    </properties>
+
+    <modules>
+        <module>branding/idbus-boot</module>
+        <module>distributions</module>
+    </modules>
+
+    <!-- TODO !
+    <scm>
+        <connection>scm:svn:https://atricore.svn.sourceforge.net/svnroot/atricore/idbus/</connection>
+        <developerConnection>scm:svn:https://atricore.svn.sourceforge.net/svnroot/atricore/idbus/</developerConnection>
+        <url>http://atricore.svn.sourceforge.net/viewvc/atricore/</url>
+    </scm>
+    -->
+
+    <distributionManagement>
+
+        <repository>
+            <id>josso-m2-repo</id>
+            <name>JOSSO Release Distribution Repository</name>
+            <url>scp://repository.atricore.org/var/www/repository.josso.org/m2-release-repository</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>josso-m2-snapshot-repo</id>
+            <name>JOSSO Development Snapshot Repository</name>
+            <url>scp://repository.josso.org/var/www/repository.josso.org/m2-snapshot-repository</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+    <repositories>
+        <!-- JOSSO Releases Repository -->
+        <repository>
+
+            <id>josso-m2-repo</id>
+            <name>JOSSO Maven2 Repository</name>
+            <url>http://repository.josso.org/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- JOSSO Snapshot Repository -->
+        <repository>
+
+            <id>josso-m2-snapshot-repo</id>
+            <name>JOSSO Maven2 Snapshots Repository</name>
+            <url>http://repository.josso.org/m2-snapshot-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-m2-repo</id>
+            <name>Atricore Maven2 Repository</name>
+            <url>http://repository.atricore.org/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-m2-snapshot-repo</id>
+            <name>Atricore Maven2 SanpshotsRepository</name>
+            <url>http://repository.atricore.org/m2-snapshot-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- Apache -->
+        <repository>
+            <id>apache</id>
+            <name>Apache Releases Repository</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>apache.incubating</id>
+            <name>Apache Incubating Repository</name>
+            <url>http://people.apache.org/repo/m2-incubating-repository</url>
+        </repository>
+
+        <!-- Apache ServiceMix  -->
+
+        <!-- ServiceMix repo -->
+        <repository>
+            <id>apach-servicemix</id>
+            <name>Apache ServiceMix</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- Spring Milestones -->
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://maven.springframework.org/milestone</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>spring</id>
+            <name>Spring Repository</name>
+            <url>http://www.springsource.com/repository/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <repository>
+            <id>springsource-bundles-milestone</id>
+            <url>http://repository.springsource.com/maven/bundles/milestone</url>
+        </repository>
+
+        <repository>
+            <id>springsource-bundles-release</id>
+            <url>http://repository.springsource.com/maven/bundles/release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <repository>
+            <id>springsource-bundles-snapshot</id>
+            <url>http://repository.springsource.com/maven/bundles/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>spring-bundles-external</id>
+            <name>Sring Bundles External</name>
+            <url>http://repository.springsource.com/maven/bundles/external</url>
+        </repository>
+
+        <!-- Codehaus -->
+        <repository>
+            <id>codehaus</id>
+            <name>Codehaus repository</name>
+            <url>http://repository.codehaus.org</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- Java.net -->
+        <repository>
+            <id>java.net</id>
+            <url>http://download.java.net/maven/1</url>
+            <layout>legacy</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- JBoss -->
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.com/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- OPS4J -->
+        <repository>
+            <id>ops4j</id>
+            <name>Open Participation Software for Java</name>
+            <url>http://repository.ops4j.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- OpenId4Java -->
+        <repository>
+            <id>openid4java</id>
+            <name>OpenID4Java</name>
+            <url>http://openid4java.googlecode.com/svn/maven-repo</url>
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>forge</id>
+            <url>http://repository.sonatype.org/content/groups/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>java.net M2</id>
+            <url>http://download.java.net/maven/2</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>datanucleus</id>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>java.net M2</id>
+            <url>http://download.java.net/maven/2</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>java.net M1</id>
+            <url>http://download.java.net/maven/1</url>
+            <layout>legacy</layout>
+        </pluginRepository>
+
+        <pluginRepository>
+            <!-- JOSSO -->
+            <id>josso-m2-repo</id>
+            <name>JOSSO Maven2 Repository</name>
+            <url>http://repository.josso.org</url>
+
+        </pluginRepository>
+
+        <!-- Apache releases -->
+        <pluginRepository>
+            <id>apache-releases</id>
+            <name>Apache Releases repository</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>apache-snapshots</id>
+            <name>Apache Releases repository</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <!-- ServiceMix releases -->
+        <pluginRepository>
+            <id>apach-servicemix</id>
+            <name>Apache ServiceMix</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>forge</id>
+            <url>http://repository.sonatype.org/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${felix.plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.0.2</version>
+                    <configuration>
+                        <source>1.5</source>
+                        <target>1.5</target>
+                        <maxmem>256M</maxmem>
+                        <fork>${compiler.fork}</fork>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins/>
+    </build>
+
+
+</project>

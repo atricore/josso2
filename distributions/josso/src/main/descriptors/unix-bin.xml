@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<assembly>
+    <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+
+
+    <fileSets>
+
+        <fileSet>
+            <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist</directory>
+            <outputDirectory>/josso/dist</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}/bin</directory>
+            <outputDirectory>/bin</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+
+        <!-- Copy license and other files from root -->
+        <fileSet>
+            <directory>..</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README</include>
+                <include>RELEASE*</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+
+        <!-- Copy over everything that needs to get unix line endings -->
+        <fileSet>
+            <directory>src/main/distribution/text</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/main/distribution/unix-text</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        
+        <fileSet>
+            <directory>target/classes/bin</directory>
+            <outputDirectory>/bin/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>admin</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+
+        <!-- Copy over the examples -->
+        <fileSet>
+            <directory>../demos</directory>
+            <outputDirectory>/demos/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <excludes>
+                <exclude>**/target/**</exclude>
+            </excludes>
+        </fileSet>
+
+        <!-- Copy over files that should not get the line endings converted -->
+        <fileSet>
+            <directory>src/main/distribution/binary</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+        <!-- Copy over the files that should not get the line endings converted but need to be chmod to 755 -->
+        <fileSet>
+            <directory>src/main/distribution/unix-binary</directory>
+            <outputDirectory>/</outputDirectory>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- Copy over the files that need unix line endings and also chmod to 755 -->
+        <fileSet>
+            <directory>src/main/distribution/unix-shell</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- Copy over jar files -->
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+
+    <files>
+        <!--
+        <file>
+            <source>${basedir}/../LICENSE</source>
+            <outputDirectory>/</outputDirectory>
+            <destName>LICENSE</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/NOTICE</source>
+            <outputDirectory>/</outputDirectory>
+            <destName>NOTICE</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        -->
+        <file>
+            <source>${basedir}/target/classes/josso-features.xml</source>
+            <outputDirectory>/features/org/atricore/josso/atricore-josso/${version}</outputDirectory>
+            <destName>atricore-josso-${version}-features.xml</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+    </files>
+
+
+</assembly>

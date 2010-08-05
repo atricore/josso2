@@ -1,0 +1,239 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.atricore.josso</groupId>
+        <artifactId>distributions</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>josso</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0.0-SNAPSHOT</version>
+    <name>Atricore JOSSO ${version} :: Distribution : JOSSO ${version} Standalone </name>
+
+    <dependencies>
+
+        <!-- IDBus distribution -->
+        <dependency>
+            <groupId>org.atricore.idbus</groupId>
+            <artifactId>atricore-idbus</artifactId>
+            <version>${atricore.idbus.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus</groupId>
+            <artifactId>atricore-idbus</artifactId>
+            <version>${atricore.idbus.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- JOSSO 1 distribution -->
+
+        <dependency>
+            <groupId>org.josso</groupId>
+            <artifactId>josso</artifactId>
+            <version>${josso1.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.josso</groupId>
+            <artifactId>josso</artifactId>
+            <version>${josso1.version}</version>
+            <type>zip</type>
+        </dependency>
+
+
+        <!-- JOSSO 2 Dependencies -->
+        <dependency>
+            <groupId>org.atricore.josso.tooling</groupId>
+            <artifactId>org.atricore.josso.tooling.install</artifactId>
+            <version>${version}</version>
+        </dependency>
+        
+
+        <!-- Atricore Console -->
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.support.springmetadata</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console</groupId>
+            <artifactId>com.atricore.idbus.console.web</artifactId>
+            <version>${atricore.console.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
+            <version>${version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <resources>
+            <resource>
+                <directory>${pom.basedir}/src/main/filtered-resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+        
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>filter</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.1</version>
+
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+
+                        <configuration>
+                            <includeArtifactIds>atricore-idbus,josso</includeArtifactIds>
+                            <useSubDirectoryPerType>true</useSubDirectoryPerType>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>copy-deps</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+
+                        <configuration>
+                            <copyPom>true</copyPom>
+                            <useRepositoryLayout>true</useRepositoryLayout>
+                            <outputDirectory>target/dependencies/system</outputDirectory>
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludeArtifactIds>apache-felix-karaf,atricore-idbus,josso</excludeArtifactIds>
+                        </configuration>
+
+                    </execution>
+
+                    <execution>
+                        <id>copy</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
+                                    <version>${version}</version>
+                                    <outputDirectory>target/dependencies/lib</outputDirectory>
+                                    <destFileName>idbus.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    
+                    
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>unix-bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
+                            </descriptors>
+                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>windows-bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/windows-bin.xml</descriptor>
+                            </descriptors>
+                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <assemblyId/>
+                        </configuration>
+                    </execution>
+                    
+                </executions>
+            </plugin>            
+            
+        </plugins>
+    </build>
+
+</project>
