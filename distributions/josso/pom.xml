@@ -12,7 +12,7 @@
     <artifactId>josso</artifactId>
     <packaging>pom</packaging>
     <version>2.0.0-SNAPSHOT</version>
-    <name>Atricore JOSSO ${version} :: Distribution : JOSSO ${version} Standalone </name>
+    <name>Atricore JOSSO ${version} :: Distribution : JOSSO Standalone </name>
 
     <dependencies>
 
