@@ -3,12 +3,22 @@
 <features  name="atricore-josso-${version}">
 
     <feature name="josso-console" version="${version}">
+        <feature version="${version}">josso-console-svcs</feature>
+        <feature version="${version}">josso-console-web</feature>
+    </feature>
+
+
+    <feature name="josso-console-svcs" version="${version}">
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
+    </feature>
+
+    <feature name="josso-console-web" version="${version}">
         <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war</bundle>
     </feature>
+
 
     <feature name="josso" version="${version}">
         <feature version="${atricore.idbus.version}">atricore</feature>
