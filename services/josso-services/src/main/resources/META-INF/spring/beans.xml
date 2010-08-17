@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:osgi="http://www.springframework.org/schema/osgi"
+xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+xmlns:ctx="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/osgi
+                    http://www.springframework.org/schema/osgi/spring-osgi.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/osgi-compendium
+                    http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+                    ">
+    <!-- ===================================================================== -->
+    <!-- Define a DB Server for IDBus Server application                       -->
+    <bean id="idbusServerWebDbServerDescriptor"
+          class="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor" >
+        <property name="port" value="${db.port}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+    <!-- Contribute the DB Server Descriptor using Spring DM -->
+    <osgi:service id="osgiIdbusServerWebDbServerDescriptor"
+                  ref="idbusServerWebDbServerDescriptor"
+            interface="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor"/>
+
+    <!-- =================================================================== -->
+    <!-- Configuration Admin entry                                           -->
+    <!-- =================================================================== -->
+    <osgix:cm-properties id="jossoSvcsProps" persistent-id="org.atricore.josso.services">
+        <!-- AQM Properties -->
+        <prop key="db.host">localhost</prop>
+        <prop key="db.port">1527</prop>
+        <prop key="db.username">admin</prop>
+        <prop key="db.password">admin</prop>
+
+        <!-- EHCache properties
+        <prop key="ehcache.config">file:${karaf.base}/etc/ehcache.xml</prop>
+        -->
+    </osgix:cm-properties>
+
+    <ctx:property-placeholder properties-ref="jossoSvcsProps" />
+
+</beans>
