@@ -16,15 +16,15 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
                     ">
     <!-- ===================================================================== -->
     <!-- Define a DB Server for IDBus Server application                       -->
-    <bean id="idbusServerWebDbServerDescriptor"
+    <bean id="JOSSODbServerDescriptor"
           class="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor" >
         <property name="port" value="${db.port}"/>
         <property name="username" value="${db.username}"/>
         <property name="password" value="${db.password}"/>
     </bean>
     <!-- Contribute the DB Server Descriptor using Spring DM -->
-    <osgi:service id="osgiIdbusServerWebDbServerDescriptor"
-                  ref="idbusServerWebDbServerDescriptor"
+    <osgi:service id="osgiJOSSODbServerDescriptor"
+                  ref="JOSSODbServerDescriptor"
             interface="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor"/>
 
     <!-- =================================================================== -->
@@ -34,7 +34,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         <!-- AQM Properties -->
         <prop key="db.host">localhost</prop>
         <prop key="db.port">1527</prop>
-        <prop key="db.username">admin</prop>
+        <prop key="db.username">atricore</prop>
         <prop key="db.password">admin</prop>
 
         <!-- EHCache properties
