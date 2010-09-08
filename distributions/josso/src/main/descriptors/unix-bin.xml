@@ -31,8 +31,13 @@
         </fileSet>
 
         <fileSet>
-            <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist</directory>
-            <outputDirectory>/josso/dist</outputDirectory>
+            <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/agents</directory>
+            <outputDirectory>/josso/dist/agents</outputDirectory>
+        </fileSet>
+        
+        <fileSet>
+            <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/samples</directory>
+            <outputDirectory>/josso/dist/samples</outputDirectory>
         </fileSet>
 
         <fileSet>
