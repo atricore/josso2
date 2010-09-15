@@ -33,7 +33,7 @@
 
     <artifactId>org.atricore.josso.services</artifactId>
     <packaging>bundle</packaging>
-    <name>Atricore JOSSO ${version} :: Services</name>
+    <name>Atricore JOSSO 2 :: Services</name>
 
     <dependencies>
 

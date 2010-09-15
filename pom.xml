@@ -30,7 +30,7 @@
     <packaging>pom</packaging>
 
     <version>2.0.0-SNAPSHOT</version>
-    <name>Atricore JOSSO ${version} :: All POM</name>
+    <name>Atricore JOSSO 2 :: All POM</name>
     <inceptionYear>2009</inceptionYear>
 
     <prerequisites>
