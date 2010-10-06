@@ -105,6 +105,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.atricore.idbus.console.appliance</groupId>
+            <artifactId>com.atricore.idbus.console.appliance.console-default-idau</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.atricore.idbus.console</groupId>
             <artifactId>com.atricore.idbus.console.web</artifactId>
             <version>${atricore.console.version}</version>
@@ -116,6 +122,13 @@
             <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
             <version>${version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.services</artifactId>
+            <version>${version}</version>
+        </dependency>
+        
 
     </dependencies>
 
