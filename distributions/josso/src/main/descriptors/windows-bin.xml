@@ -20,6 +20,7 @@
     <formats>
         <format>zip</format>
     </formats>
+
     <fileSets>
 
         <fileSet>
@@ -73,15 +74,7 @@
           <lineEnding>dos</lineEnding>
       </fileSet>
 
-        <!-- Copy over the examples -->
-        <fileSet>
-            <directory>../demos</directory>
-            <outputDirectory>/demos/</outputDirectory>
-            <lineEnding>dos</lineEnding>
-            <excludes>
-                <exclude>**/target/**</exclude>
-            </excludes>
-        </fileSet>
+
 
       <!-- Copy over files that should not get the line endings converted -->
       <fileSet>
