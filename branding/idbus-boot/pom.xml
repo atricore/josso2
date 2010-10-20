@@ -29,12 +29,12 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>josso-all</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
     <packaging>bundle</packaging>
-    <version>2.0.0</version>
+    <version>2.0.1-SNAPSHOT</version>
     <name>Atricore JOSSO 2 :: IDBus Boot branding</name>
 
     <dependencies>
