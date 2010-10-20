@@ -31,7 +31,7 @@
                 <exclude>**/org.ops4j.pax.url.mvn.cfg</exclude>
                 <exclude>**/org.ops4j.pax.url.mvn.cfg.online</exclude>
                 <exclude>**/system.properties</exclude>
-                <exclude>**/org.apache.felix.karaf.features.cfg</exclude>
+                <exclude>**/org.apache.karaf.features.cfg</exclude>
                 <exclude>**/idbus.jar</exclude>
             </excludes>
         </fileSet>

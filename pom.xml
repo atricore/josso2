@@ -38,12 +38,12 @@
     </prerequisites>
 
     <properties>
-        <felix.karaf.version>1.6.0</felix.karaf.version>
+        <karaf.version>2.1.0</karaf.version>
         <felix.plugin.version>2.1.0</felix.plugin.version>
         <felix.osgi.version>1.4.0</felix.osgi.version>
 
-        <atricore.idbus.version>1.0.0</atricore.idbus.version>
-        <atricore.console.version>1.0.0-SNAPSHOT</atricore.console.version>
+        <atricore.idbus.version>1.1.0-SNAPSHOT</atricore.idbus.version>
+        <atricore.console.version>1.0.1-SNAPSHOT</atricore.console.version>
         <josso1.version>1.8.3</josso1.version>
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
