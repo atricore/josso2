@@ -91,7 +91,7 @@
                         <Import-Package>*</Import-Package>
                         <Private-Package>!*</Private-Package>
                         <Export-Package>
-                            org.apache.karaf.branding;-split-package:=merge-first,
+                            org.apache.felix.karaf.branding;-split-package:=merge-first,
                             org.atricore.*
                         </Export-Package>
                     </instructions>

@@ -9,7 +9,6 @@
     <feature name="josso-console-svcs" version="${version}">
         <bundle>mvn:org.atricore.josso/org.atricore.josso.services/${version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-default-idau/${atricore.console.version}</bundle>
-        <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-jaas/${atricore.console.version}</bundle>
         
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
