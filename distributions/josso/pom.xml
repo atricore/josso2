@@ -111,7 +111,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.atricore.idbus.console.appliance/</groupId>
+            <groupId>com.atricore.idbus.console.appliance</groupId>
             <artifactId>com.atricore.idbus.console.appliance.console-jaas</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
