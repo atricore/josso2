@@ -73,6 +73,7 @@
         <!-- JOSSO 2 Dependencies -->
 
         <!-- Atricore Console -->
+
         <dependency>
             <groupId>com.atricore.idbus.console.lifecycle</groupId>
             <artifactId>com.atricore.idbus.console.lifecycle.main</artifactId>
@@ -84,7 +85,6 @@
             <artifactId>com.atricore.idbus.console.lifecycle.command</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.atricore.idbus.console.activation</groupId>
@@ -109,6 +109,13 @@
             <artifactId>com.atricore.idbus.console.appliance.console-default-idau</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.appliance/</groupId>
+            <artifactId>com.atricore.idbus.console.appliance.console-jaas</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+        
 
         <dependency>
             <groupId>com.atricore.idbus.console</groupId>
