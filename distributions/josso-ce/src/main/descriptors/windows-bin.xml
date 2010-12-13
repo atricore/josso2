@@ -122,9 +122,9 @@
         </file>
         -->
         <file>
-            <source>${basedir}/target/classes/josso-features.xml</source>
+            <source>${basedir}/target/classes/josso-ce-features.xml</source>
             <outputDirectory>/features/org/atricore/josso/atricore-josso/${version}</outputDirectory>
-            <destName>atricore-josso-${version}-features.xml</destName>
+            <destName>atricore-josso-ce-${version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>dos</lineEnding>
         </file>

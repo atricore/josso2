@@ -27,13 +27,13 @@
 
     <parent>
         <groupId>org.atricore.josso</groupId>
-        <artifactId>josso-all</artifactId>
+        <artifactId>josso-ce-all</artifactId>
         <version>2.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>org.atricore.josso.services</artifactId>
     <packaging>bundle</packaging>
-    <name>Atricore JOSSO 2 :: Services</name>
+    <name>JOSSO 2 CE :: Services</name>
 
     <dependencies>
 

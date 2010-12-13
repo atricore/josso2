@@ -32,10 +32,10 @@
         <version>2.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>josso</artifactId>
+    <artifactId>josso-ce</artifactId>
     <packaging>pom</packaging>
     <version>2.1.0-SNAPSHOT</version>
-    <name>Atricore JOSSO 2 :: Distribution : JOSSO Standalone </name>
+    <name>JOSSO 2 CE :: Distribution : Standalone </name>
 
     <dependencies>
 
