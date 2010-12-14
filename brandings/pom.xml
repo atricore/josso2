@@ -32,7 +32,7 @@
         <version>2.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>branding</artifactId>
+    <artifactId>brandings</artifactId>
     <packaging>pom</packaging>
     <version>2.1.0-SNAPSHOT</version>
     <name>JOSSO 2 CE :: Branding</name>
