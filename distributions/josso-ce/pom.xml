@@ -126,7 +126,7 @@
 
         <dependency>
             <groupId>org.atricore.josso</groupId>
-            <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
+            <artifactId>org.atricore.josso.branding</artifactId>
             <version>${version}</version>
         </dependency>
 
@@ -215,7 +215,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>org.atricore.josso</groupId>
-                                    <artifactId>org.atricore.josso.branding.idbus.boot</artifactId>
+                                    <artifactId>org.atricore.josso.branding</artifactId>
                                     <version>${version}</version>
                                     <outputDirectory>target/dependencies/lib</outputDirectory>
                                     <destFileName>idbus.jar</destFileName>

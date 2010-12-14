@@ -51,7 +51,7 @@
     </properties>
 
     <modules>
-        <module>branding/idbus-boot</module>
+        <module>branding</module>
         <module>services/josso-services</module>
         <module>distributions</module>
     </modules>
