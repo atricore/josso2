@@ -123,8 +123,8 @@
         -->
         <file>
             <source>${basedir}/target/classes/josso-ce-features.xml</source>
-            <outputDirectory>/features/org/atricore/josso/atricore-josso/${version}</outputDirectory>
-            <destName>atricore-josso-ce-${version}-features.xml</destName>
+            <outputDirectory>/features/org/atricore/josso/josso-ce/${version}</outputDirectory>
+            <destName>josso-ce-${version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>dos</lineEnding>
         </file>
