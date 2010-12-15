@@ -8,6 +8,10 @@
 
     <feature name="josso-ce-console-svcs" version="${version}">
         <bundle>mvn:org.atricore.josso/org.atricore.josso.services/${version}</bundle>
+
+        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.command/${atricore.console.version}</bundle>
+
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-default-idau/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-jaas/${atricore.console.version}</bundle>
         
