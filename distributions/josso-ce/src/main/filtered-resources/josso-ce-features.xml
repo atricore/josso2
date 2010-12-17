@@ -9,6 +9,7 @@
     <feature name="josso-ce-console-svcs" version="${version}">
         <bundle>mvn:org.atricore.josso/org.atricore.josso.services/${version}</bundle>
 
+        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.josso2-license-v1_0/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.command/${atricore.console.version}</bundle>
 
@@ -25,7 +26,6 @@
     <feature name="josso-ce-console-web" version="${version}">
         <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war</bundle>
     </feature>
-
 
     <feature name="josso-ce" version="${version}">
         <feature version="${atricore.idbus.version}">atricore</feature>

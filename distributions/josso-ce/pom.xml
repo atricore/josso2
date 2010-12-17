@@ -88,6 +88,12 @@
 
         <dependency>
             <groupId>com.atricore.idbus.console.licensing</groupId>
+            <artifactId>com.atricore.idbus.console.licensing.josso2-license-v1_0</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.licensing</groupId>
             <artifactId>com.atricore.idbus.console.licensing.main</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
