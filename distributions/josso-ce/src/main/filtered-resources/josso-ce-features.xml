@@ -14,9 +14,10 @@
 
     <!-- JOSSO CE Servies -->
     <feature name="josso-ce-svcs" version="${version}">
-        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.josso2-license-v1_0/${atricore.console.version}</bundle>
-        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.main/${atricore.console.version}</bundle>
-        <bundle>mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.command/${atricore.console.version}</bundle>
+        <!-- License Manager service -->
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.josso2-license-v1_0/${atricore.console.version}</bundle>
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.main/${atricore.console.version}</bundle>
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.command/${atricore.console.version}</bundle>
 
         <bundle>mvn:org.atricore.josso/org.atricore.josso.services/${version}</bundle>
     </feature>
@@ -36,8 +37,6 @@
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
 
-        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
-        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
     </feature>
 
     <!-- JOSSO CE Console Web -->
