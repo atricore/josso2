@@ -133,7 +133,6 @@
             <artifactId>com.atricore.idbus.console.appliance.console-jaas</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
-        
 
         <dependency>
             <groupId>com.atricore.idbus.console</groupId>
@@ -154,7 +153,6 @@
             <version>${version}</version>
         </dependency>
         
-
     </dependencies>
 
     <build>
