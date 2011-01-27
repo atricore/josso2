@@ -138,6 +138,7 @@
             <groupId>com.atricore.idbus.console</groupId>
             <artifactId>com.atricore.idbus.console.web</artifactId>
             <version>${atricore.console.version}</version>
+            <classifier>ce</classifier>
             <type>war</type>
         </dependency>
 
