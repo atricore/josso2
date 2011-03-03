@@ -69,7 +69,7 @@
             <outputDirectory>/</outputDirectory>
             <lineEnding>unix</lineEnding>
         </fileSet>
-        
+
         <fileSet>
             <directory>target/classes/bin</directory>
             <outputDirectory>/bin/</outputDirectory>
