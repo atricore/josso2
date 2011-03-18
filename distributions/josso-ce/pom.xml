@@ -106,6 +106,12 @@
 
         <dependency>
             <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.protocol</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
             <artifactId>com.atricore.idbus.console.activation.main</artifactId>
             <version>${atricore.console.version}</version>
         </dependency>
