@@ -149,6 +149,14 @@
         </dependency>
 
         <dependency>
+            <groupId>com.atricore.idbus.console</groupId>
+            <artifactId>com.atricore.idbus.console.docs</artifactId>
+            <version>${atricore.console.version}</version>
+            <type>war</type>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.atricore.josso</groupId>
             <artifactId>org.atricore.josso.branding</artifactId>
             <version>${version}</version>

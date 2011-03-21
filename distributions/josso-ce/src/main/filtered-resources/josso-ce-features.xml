@@ -46,6 +46,7 @@
     <!-- JOSSO CE Console Web -->
     <feature name="josso-ce-console-web" version="${version}">
         <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war/ce</bundle>
+        <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.docs/${atricore.console.version}/war</bundle>
     </feature>
 
 
