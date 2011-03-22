@@ -54,6 +54,7 @@
         <module>brandings</module>
         <module>services/josso-services</module>
         <module>distributions</module>
+        <module>samples/sample-branding</module>
     </modules>
 
     <!-- TODO !
