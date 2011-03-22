@@ -51,6 +51,7 @@
     </properties>
 
     <modules>
+        <module>archetypes</module>
         <module>brandings</module>
         <module>services/josso-services</module>
         <module>distributions</module>
