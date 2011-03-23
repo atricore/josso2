@@ -22,26 +22,16 @@
   ~
   -->
 
-<archetype>
-    <id>josso2-archetype</id>
-    <resources>
-        <resource>pom.xml</resource>
-        <resource filtered="false">src/main/resources/resources/img/content/company-logo-1.gif</resource>
-        <resource filtered="false">src/main/resources/resources/img/content/company-logo-2.png</resource>
-        <resource>src/main/resources/index.jsp</resource>
-        <resource>src/main/resources/WEB-INF/templates/layout.jsp</resource>
-        <resource>src/main/java/org/atricore/idbus/applications/server/ui/claims/empty</resource>
-        <resource>src/main/java/org/atricore/idbus/applications/server/ui/error/empty</resource>
-        <resource>src/main/webapp/resources/css/empty</resource>
-        <resource>src/main/webapp/resources/img/empty</resource>
-        <resource>src/main/webapp/WEB-INF/classes/empty</resource>
-        <resource>src/main/webapp/WEB-INF/templates/claims/empty</resource>
-        <resource>src/main/webapp/WEB-INF/templates/errors/empty</resource>
-        <resource>src/main/webapp/WEB-INF/tlds/empty</resource>
-    </resources>
+<archetype-descriptor name="josso2-archetype">
+    <resource>pom.xml</resource>
 
-    <!--
     <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources/img/content</directory>
+        </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
             <directory>src/main/java/org/atricore/idbus/applications/server/ui/claims</directory>
         </fileSet>
@@ -52,8 +42,19 @@
             <directory>src/main/webapp/resources/css</directory>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
-            <directory>src/main/webapp/resources/img/content</directory>
+            <directory>src/main/webapp/resources/img</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/webapp/WEB-INF/classes</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/webapp/WEB-INF/templates/claims</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/webapp/WEB-INF/templates/errors</directory>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/webapp/WEB-INF/tlds</directory>
         </fileSet>
     </fileSets>
-    -->
-</archetype>
+</archetype-descriptor>
