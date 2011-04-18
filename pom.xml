@@ -38,12 +38,16 @@
     </prerequisites>
 
     <properties>
+        <derby.version>10.5.3.0_1</derby.version>
+
         <karaf.version>2.1.0</karaf.version>
         <felix.plugin.version>2.1.0</felix.plugin.version>
         <felix.osgi.version>1.4.0</felix.osgi.version>
 
+        <!-- Atricore -->
         <atricore.idbus.version>1.1.0-SNAPSHOT</atricore.idbus.version>
         <atricore.console.version>1.0.0-SNAPSHOT</atricore.console.version>
+
         <josso1.version>1.8.4-SNAPSHOT</josso1.version>
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>

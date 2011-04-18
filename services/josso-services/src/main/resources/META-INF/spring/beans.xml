@@ -15,33 +15,81 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
                     http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
                     ">
     <!-- ===================================================================== -->
-    <!-- Define a DB Server for IDBus Server application                       -->
+    <!-- Define a DB Server for to be used as JOSSO Persistence                -->
+    <!-- ===================================================================== -->
+
     <bean id="JOSSODbServerDescriptor"
           class="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor" >
-        <property name="port" value="${db.port}"/>
-        <property name="username" value="${db.username}"/>
-        <property name="password" value="${db.password}"/>
+        <property name="port" value="${dbserver.port}"/>
+        <property name="username" value="${dbserver.username}"/>
+        <property name="password" value="${dbserver.password}"/>
     </bean>
     <!-- Contribute the DB Server Descriptor using Spring DM -->
     <osgi:service id="osgiJOSSODbServerDescriptor"
                   ref="JOSSODbServerDescriptor"
             interface="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor"/>
 
+    <!-- ===================================================================== -->
+    <!-- Define a JDBC Default DS and export it as OSGi service                -->
+    <!-- ===================================================================== -->
+
+    <!--
+    <bean id="josso-ds" class="org.apache.derby.jdbc.ClientDataSource">
+        <property name="serverName" value="${jdbc.host}"/>
+        <property name="portNumber" value="${jdbc.port}"/>
+        <property name="databaseName" value="${jdbc.name}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    -->
+    <bean id="josso-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${javax.jdo.option.ConnectionDriverName}"/>
+        <property name="url" value="${javax.jdo.option.ConnectionURL}"/>
+        <property name="username" value="${javax.jdo.option.ConnectionUserName}"/>
+        <property name="password" value="${javax.jdo.option.ConnectionPassword}"/>
+    </bean>
+
+
+    <!-- Export Default JDBC DS as OSGi service -->
+    <osgi:service id="osgi-default-ds" ref="josso-ds"
+                  interface="javax.sql.DataSource" >
+        <service-properties>
+            <entry key="jdbcDS" value="default-ds"/>
+        </service-properties>
+    </osgi:service>
+
+
+
     <!-- =================================================================== -->
     <!-- Configuration Admin entry                                           -->
     <!-- =================================================================== -->
-    <osgix:cm-properties id="jossoSvcsProps" persistent-id="org.atricore.josso.services">
-        <!-- AQM Properties -->
-        <prop key="db.host">localhost</prop>
-        <prop key="db.port">1527</prop>
-        <prop key="db.username">atricore</prop>
-        <prop key="db.password">admin</prop>
 
-        <!-- EHCache properties
-        <prop key="ehcache.config">file:${karaf.base}/etc/ehcache.xml</prop>
-        -->
+    <!-- Use spring bean setup, to allow multiple config sources -->
+    <!--ctx:property-placeholder properties-ref="lifecycleProps" /-->
+    <bean id="myBundleConfigurer"
+                class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="propertiesArray">
+            <list>
+                <ref bean="jossoSvcsProps"/>
+                <ref bean="jossoDbProps"/>
+            </list>
+        </property>
+    </bean>
+
+    <osgix:cm-properties id="jossoSvcsProps" persistent-id="org.atricore.josso.services">
+        <!-- RFU : -->
+        <prop key="dbserver.port">1527</prop>
+        <prop key="dbserver.username">admin</prop>
+        <prop key="dbserver.password">admin</prop>
     </osgix:cm-properties>
 
-    <ctx:property-placeholder properties-ref="jossoSvcsProps" />
+    <osgix:cm-properties id="jossoDbProps" persistent-id="com.atricore.idbus.console.db">
+        <prop key="javax.jdo.option.ConnectionURL">jdbc:mysql://localhost/idbus-console</prop>
+        <prop key="javax.jdo.option.ConnectionUserName">atricore</prop>
+        <prop key="javax.jdo.option.ConnectionPassword">admin</prop>
+        <prop key="javax.jdo.option.ConnectionDriverName">com.mysql.jdbc.Driverr</prop>
+    </osgix:cm-properties>
+
 
 </beans>

@@ -155,7 +155,6 @@
             <type>war</type>
         </dependency>
 
-
         <dependency>
             <groupId>org.atricore.josso</groupId>
             <artifactId>org.atricore.josso.branding</artifactId>
@@ -167,7 +166,7 @@
             <artifactId>org.atricore.josso.services</artifactId>
             <version>${version}</version>
         </dependency>
-        
+
     </dependencies>
 
     <build>
