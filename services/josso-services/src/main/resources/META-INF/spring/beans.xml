@@ -85,10 +85,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
     </osgix:cm-properties>
 
     <osgix:cm-properties id="jossoDbProps" persistent-id="com.atricore.idbus.console.db">
-        <prop key="javax.jdo.option.ConnectionURL">jdbc:mysql://localhost/idbus-console</prop>
+        <prop key="javax.jdo.option.ConnectionURL">jdbc:derby://localhost:1527/atricore-console;create=true</prop>
         <prop key="javax.jdo.option.ConnectionUserName">atricore</prop>
         <prop key="javax.jdo.option.ConnectionPassword">admin</prop>
-        <prop key="javax.jdo.option.ConnectionDriverName">com.mysql.jdbc.Driverr</prop>
+        <prop key="javax.jdo.option.ConnectionDriverName">org.apache.derby.jdbc.ClientDriver</prop>
     </osgix:cm-properties>
 
 
