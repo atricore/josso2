@@ -30,6 +30,7 @@
                 <!-- Exclude the files we're replacing to avoid duplicated ZIP entries -->
                 <exclude>**/org.ops4j.pax.url.mvn.cfg</exclude>
                 <exclude>**/org.ops4j.pax.url.mvn.cfg.online</exclude>
+                <exclude>**/org.apache.karaf.shell.cfg</exclude>
                 <exclude>**/system.properties</exclude>
                 <exclude>**/org.apache.karaf.features.cfg</exclude>
                 <exclude>**/idbus.jar</exclude>
