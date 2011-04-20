@@ -73,13 +73,13 @@
     <distributionManagement>
 
         <repository>
-            <id>josso-m2-repo</id>
+            <id>josso-m2-deploy-repo</id>
             <name>JOSSO Release Distribution Repository</name>
             <url>scp://repository.atricore.org/var/www/repository.josso.org/m2-release-repository</url>
         </repository>
 
         <snapshotRepository>
-            <id>josso-m2-snapshot-repo</id>
+            <id>josso-m2-snapshot-deploy-repo</id>
             <name>JOSSO Development Snapshot Repository</name>
             <url>scp://repository.josso.org/var/www/repository.josso.org/m2-snapshot-repository</url>
         </snapshotRepository>
