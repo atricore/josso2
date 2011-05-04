@@ -29,37 +29,6 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
                   ref="JOSSODbServerDescriptor"
             interface="org.atricore.idbus.bundles.apache.derby.NetworkServerDescriptor"/>
 
-    <!-- ===================================================================== -->
-    <!-- Define a JDBC Default DS and export it as OSGi service                -->
-    <!-- ===================================================================== -->
-
-    <!--
-    <bean id="josso-ds" class="org.apache.derby.jdbc.ClientDataSource">
-        <property name="serverName" value="${jdbc.host}"/>
-        <property name="portNumber" value="${jdbc.port}"/>
-        <property name="databaseName" value="${jdbc.name}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
-    -->
-    <bean id="josso-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${javax.jdo.option.ConnectionDriverName}"/>
-        <property name="url" value="${javax.jdo.option.ConnectionURL}"/>
-        <property name="username" value="${javax.jdo.option.ConnectionUserName}"/>
-        <property name="password" value="${javax.jdo.option.ConnectionPassword}"/>
-    </bean>
-
-
-    <!-- Export Default JDBC DS as OSGi service -->
-    <osgi:service id="osgi-default-ds" ref="josso-ds"
-                  interface="javax.sql.DataSource" >
-        <service-properties>
-            <entry key="jdbcDS" value="default-ds"/>
-        </service-properties>
-    </osgi:service>
-
-
-
     <!-- =================================================================== -->
     <!-- Configuration Admin entry                                           -->
     <!-- =================================================================== -->
