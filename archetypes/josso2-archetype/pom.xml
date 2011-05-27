@@ -31,7 +31,7 @@
         <version>2.2.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>josso2-archetype</artifactId>
+    <artifactId>josso2-archetype-branding</artifactId>
     <packaging>maven-archetype</packaging>
     <version>2.2.0-SNAPSHOT</version>
     <name>JOSSO 2 CE :: Josso 2 Archetype</name>
