@@ -72,6 +72,21 @@
 
         <!-- JOSSO 2 Dependencies -->
 
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>josso-ce-repo</artifactId>
+            <version>${pom.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>josso-ce-repo</artifactId>
+            <version>${pom.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+
         <!-- Atricore Console -->
 
         <dependency>
@@ -211,7 +226,7 @@
                         </goals>
 
                         <configuration>
-                            <includeArtifactIds>atricore-idbus,josso</includeArtifactIds>
+                            <includeArtifactIds>atricore-idbus,josso,josso-ce-repo</includeArtifactIds>
                             <useSubDirectoryPerType>true</useSubDirectoryPerType>
                             <excludeTransitive>true</excludeTransitive>
                         </configuration>

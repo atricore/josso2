@@ -1,0 +1,18 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>poi</groupId>
+  <artifactId>poi</artifactId>
+  <version>2.5.1</version>
+
+  <dependencies>
+  </dependencies>
+
+  <distributionManagement>
+    <relocation>
+      <groupId>poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>2.5.1-final-20040804</version>
+    </relocation>
+  </distributionManagement>
+
+</project>

@@ -32,10 +32,15 @@
             <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/agents</directory>
             <outputDirectory>/josso/dist/agents</outputDirectory>
         </fileSet>
-        
+
         <fileSet>
             <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/samples</directory>
             <outputDirectory>/josso/dist/samples</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/dependency/tar.gzs/josso-ce-repo-${version}</directory>
+            <outputDirectory>/data/work/maven/repository</outputDirectory>
         </fileSet>
 
         <fileSet>

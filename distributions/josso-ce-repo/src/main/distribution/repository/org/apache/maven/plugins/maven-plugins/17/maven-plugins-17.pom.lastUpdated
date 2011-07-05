@@ -1,0 +1,4 @@
+#Last modified on: Mon Jul 04 15:45:48 ART 2011
+#Mon Jul 04 15:45:48 ART 2011
+osgi\://atricore-central.error=URL [mvn\:org.apache.maven.plugins/maven-plugins/17/pom] could not be resolved.
+osgi\://atricore-central=1309805148261

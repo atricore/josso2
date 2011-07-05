@@ -16,7 +16,8 @@
     limitations under the License.
 -->
 <assembly>
-    <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
+    <id></id>
+    <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
     <formats>
         <format>zip</format>
     </formats>
@@ -41,67 +42,71 @@
             <directory>target/dependency/zips/josso-${josso1.version}/dist/agents</directory>
             <outputDirectory>/josso/dist/agents</outputDirectory>
         </fileSet>
+
         <fileSet>
             <directory>target/dependency/zips/josso-${josso1.version}/dist/samples</directory>
             <outputDirectory>/josso/dist/samples</outputDirectory>
         </fileSet>
 
+        <fileSet>
+            <directory>target/dependency/zips/josso-ce-repo-${version}/</directory>
+            <outputDirectory>/data/work/maven/repository</outputDirectory>
+        </fileSet>
 
-      <!-- Copy license and other files from root -->
-      <fileSet>
-          <directory>..</directory>
-          <outputDirectory>/</outputDirectory>
-          <includes>
-              <include>README</include>
-              <include>RELEASE*</include>
-          </includes>
-          <lineEnding>dos</lineEnding>
-      </fileSet>
+        <!-- Copy license and other files from root -->
+        <fileSet>
+            <directory>..</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README</include>
+                <include>RELEASE*</include>
+            </includes>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
 
-      <!-- Copy over everything that needs to get dos line endings -->
-      <fileSet>
-          <directory>src/main/distribution/text</directory>
-          <outputDirectory>/</outputDirectory>
-          <lineEnding>dos</lineEnding>
-      </fileSet>
-      <fileSet>
-          <directory>src/main/distribution/windows-text</directory>
-          <outputDirectory>/</outputDirectory>
-          <lineEnding>dos</lineEnding>
-      </fileSet>
-      <fileSet>
-          <directory>target/classes/bin</directory>
-          <outputDirectory>/bin/</outputDirectory>
-          <lineEnding>dos</lineEnding>
-          <includes>
-              <include>admin.bat</include>
-          </includes>
-      </fileSet>
-      <fileSet>
-          <directory>target/classes/etc</directory>
-          <outputDirectory>/etc/</outputDirectory>
-          <lineEnding>dos</lineEnding>
-      </fileSet>
+        <!-- Copy over everything that needs to get dos line endings -->
+        <fileSet>
+            <directory>src/main/distribution/text</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/distribution/windows-text</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/bin</directory>
+            <outputDirectory>/bin/</outputDirectory>
+            <lineEnding>dos</lineEnding>
+            <includes>
+                <include>admin.bat</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
 
 
+        <!-- Copy over files that should not get the line endings converted -->
+        <fileSet>
+            <directory>src/main/distribution/binary</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
 
-      <!-- Copy over files that should not get the line endings converted -->
-      <fileSet>
-          <directory>src/main/distribution/binary</directory>
-          <outputDirectory>/</outputDirectory>
-      </fileSet>
+        <!-- Copy over the files that should not get the line endings converted but need to be chmod to 755 -->
+        <fileSet>
+            <directory>src/main/distribution/windows-binary</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
 
-      <!-- Copy over the files that should not get the line endings converted but need to be chmod to 755 -->
-      <fileSet>
-          <directory>src/main/distribution/windows-binary</directory>
-          <outputDirectory>/</outputDirectory>
-      </fileSet>
-
-      <!-- Copy over jar files -->
-      <fileSet>
-          <directory>target/dependencies</directory>
-          <outputDirectory>/</outputDirectory>
-      </fileSet>
+        <!-- Copy over jar files -->
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
 
     </fileSets>
 

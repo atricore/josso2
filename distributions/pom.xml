@@ -38,6 +38,7 @@
     <name>JOSSO 2 CE :: Distributions</name>
 
     <modules>
+        <module>josso-ce-repo</module>
         <module>josso-ce</module>
     </modules>
 

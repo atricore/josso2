@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ JOSSO: Java Open Single Sign-On
+  ~
+  ~ Copyright 2004-2009, Atricore, Inc.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+    ~ JOSSO: Java Open Single Sign-On
+    ~
+    ~ Copyright 2004-2008, Atricore, Inc.
+    ~
+    ~ This is free software; you can redistribute it and/or modify it
+    ~ under the terms of the GNU Lesser General Public License as
+    ~ published by the Free Software Foundation; either version 2.1 of
+    ~ the License, or (at your option) any later version.
+    ~
+    ~ This software is distributed in the hope that it will be useful,
+    ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    ~ Lesser General Public License for more details.
+    ~
+    ~ You should have received a copy of the GNU Lesser General Public
+    ~ License along with this software; if not, write to the Free
+    ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.josso</groupId>
+        <artifactId>josso-parent</artifactId>
+        <version>1.8.4</version>
+    </parent>
+
+    <groupId>org.josso</groupId>
+    <artifactId>components</artifactId>
+    <name>JOSSO :: Components</name>
+    <description>Components</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        
+        <module>josso-default-secdomainselector</module>
+        <module>josso-default-secdomainregistry</module>
+        <module>josso-appctx-secdomainmatcher</module>
+        <module>josso-vhost-secdomainmatcher</module>
+        <module>josso-simple-secdomainmatcher</module>
+
+        <module>josso-default-authenticator</module>
+        <module>josso-strong-authscheme</module>
+        <module>josso-basic-authscheme</module>
+        <module>josso-ntlm-authscheme</module>
+        <module>josso-bind-authscheme</module>
+        <module>josso-rememberme-authscheme</module>
+
+        <module>josso-default-assertionmgr</module>
+        <module>josso-default-assertionidgen</module>
+        <module>josso-db-assertionstore</module>
+        <module>josso-memory-assertionstore</module>
+
+        <module>josso-default-auditmgr</module>
+        <module>josso-logger-audittrailhandler</module>
+
+        <module>josso-default-eventmgr</module>
+        <module>josso-default-eventmgrclient</module>
+
+        <module>josso-default-identitymgr</module>
+        <module>josso-default-identityprovider</module>
+        <module>josso-memory-identitystore</module>
+        <module>josso-db-identitystore</module>
+        <module>josso-ldap-identitystore</module>
+        <module>josso-virtual-identitystore</module>
+
+        <module>josso-default-sessionmgr</module>
+        <module>josso-default-sessionidgen</module>
+        <module>josso-memory-sessionstore</module>
+        <module>josso-db-sessionstore</module>
+        <module>josso-serialized-sessionstore</module>
+
+        <module>josso-spring-security</module>
+
+        <module>josso-ws</module>
+        <module>josso-ws-v1_2</module>
+        <module>josso-protocol</module>
+        <module>josso-protocol-client</module>
+
+        <module>josso-default-passwordgenerator</module>
+        <module>josso-default-passwordmanager</module>
+        <module>josso-email-passworddistributor</module>
+        <module>josso-simple-lostpasswordprocess</module>
+
+
+    </modules>
+
+</project>
+
