@@ -40,7 +40,7 @@
 
         <fileSet>
             <directory>target/dependency/tar.gzs/josso-ce-repo-${version}</directory>
-            <outputDirectory>/data/work/maven/repository</outputDirectory>
+            <outputDirectory>/m3-local-repository</outputDirectory>
         </fileSet>
 
         <fileSet>
