@@ -43,12 +43,15 @@
         <karaf.version>2.2.1</karaf.version>
         <felix.plugin.version>2.1.0</felix.plugin.version>
         <felix.osgi.version>1.4.0</felix.osgi.version>
+        <osgi.version>4.2.0</osgi.version>
 
         <!-- Atricore -->
         <atricore.idbus.version>1.2.1-SNAPSHOT</atricore.idbus.version>
         <atricore.console.version>1.1.1-SNAPSHOT</atricore.console.version>
 
         <josso1.version>1.8.6-SNAPSHOT</josso1.version>
+
+
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
         <compiler.fork>true</compiler.fork>
@@ -57,6 +60,7 @@
     <modules>
         <module>archetypes</module>
         <module>brandings</module>
+        <module>tooling</module>
         <module>services/josso-services</module>
         <module>distributions</module>
         <module>samples/sample-branding</module>

@@ -31,6 +31,8 @@
     <!-- JOSSO CE Console Services -->
     <feature name="josso-ce-console-svcs" version="${version}">
 
+        <bundle>mvn:org.atricore.josso/org.atricore.josso.tooling.wrapper/${version}</bundle>
+
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-default-idau/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-jaas/${atricore.console.version}</bundle>
 
