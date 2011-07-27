@@ -111,7 +111,7 @@ public class InstallCommand extends OsgiCommandSupport {
             props.put("${karaf.home}", System.getProperty("karaf.home").replace('\\', '/'));
             props.put("${karaf.base}", base.getPath().replace('\\', '/'));
             props.put("${karaf.data}", System.getProperty("karaf.data").replace('\\', '/'));
-            props.put("${java.home}", javaHome.replace('\\', '/'));:q
+            props.put("${java.home}", javaHome.replace('\\', '/'));
 
 
             props.put("${name}", name);
@@ -212,13 +212,6 @@ public class InstallCommand extends OsgiCommandSupport {
             System.out.println("before installing and starting the service.");
             System.out.println("");
             if (os.startsWith("Win")) {
-
-                System.out.println("You must configure the following environment variables for the account running the service:");
-                System.out.println("  set KARAF_BASAE=" + base.getPath());
-                System.out.println("  set KARAF_HOME=" + System.getProperty("karaf.home"));
-                System.out.println("  set KARAF_DATA=" + System.getProperty("karaf.data"));
-                System.out.println("  set JAVA_HOME=" + javaHome);
-                System.out.println("");
                 System.out.println("To install the service, run: ");
                 System.out.println("  C:> " + serviceInstallFile.getPath());
                 System.out.println("");
@@ -247,7 +240,11 @@ public class InstallCommand extends OsgiCommandSupport {
             } else if (os.startsWith("Linux")) {
 
                 System.out.println("The way the service is installed depends upon your flavor of Linux.");
-                System.out.println("Your Linux flavor is " + (linuxDistro != null ? linuxDistro : " undetected!"));
+
+                if (linuxDistro != null)
+                    System.out.println("The detected Linux flavor is " + linuxDistro);
+                else
+                    System.out.println("The Linux flavor was not detected");
 
                 if (isRedhatFamily(linuxDistro) || !isDebianFamily(linuxDistro)) {
                     System.out.println("");
