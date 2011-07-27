@@ -1,0 +1,85 @@
+#!/bin/sh
+##
+## '##' is velocity comment -> use $H instead
+##
+#set( $H = '###' )
+$H BEGIN INIT INFO
+# Provides: $w_name
+# Required-Start: $start_dependencies
+# Required-Stop: $stop_dependencies
+# Default-Start:  2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: $w_long_name
+# Description: $w_description
+$H END INIT INFO
+# config: $w_conf_file
+# pidfile: $w_wrapper_pid_file
+# apppidfile: $w_app_pid_file
+#-----------------------------------------------------------------------------
+# YAJSW sh script template.  Suitable for starting and stopping
+#  wrapped daemon on POSIX platforms.
+#-----------------------------------------------------------------------------
+
+## JOSSO should provide this values
+# Uncommet to specify a default user to run the service
+# JOSSO_USER=josso
+# User that will run the process
+#set($subit1 = 'JOSSO_USER=${JOSSO_USER:-"josso"}')
+#set($subit2 = 'if [ "$JOSSO_USER" = "RUNASIS" ]; then')
+#set($subit3 = '  SUBIT=""')
+#set($subit4 = 'else')
+#set($subit5 = '  SUBIT="su - $JOSSO_USER -c "')
+#set($subit6 = 'fi')
+
+$subit1
+$subit2
+$subit3
+$subit4
+$subit5
+$subit6
+
+status() {
+    eval "$w_status_cmd"
+}
+
+stopit() {
+    echo "Stopping $w_name ..."
+	eval "$w_stop_cmd"
+}
+startit() {
+    echo "Starting $w_name ..."
+    eval "$w_start_cmd"
+}
+
+
+case "$1" in
+    'start')
+        startit
+        ;;
+
+    'stop')
+        stopit
+        ;;
+
+    'restart')
+        stopit
+        startit
+        ;;
+
+
+    'force-reload')
+        stopit
+        startit
+        ;;
+
+    'status')
+        status
+        ;;
+
+    *)
+        echo "Usage: $0 { start | stop | restart | status }"
+        exit 1
+        ;;
+esac
+
+exit $?

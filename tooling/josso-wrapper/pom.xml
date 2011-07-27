@@ -59,6 +59,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -100,7 +107,6 @@
                         <Import-Package>
                             !${project.artifactId}*,
                             !org.apache.karaf.main,
-                            !org.tanukisoftware.wrapper,
                             org.apache.felix.service.command,
                             org.apache.felix.gogo.commands,
                             org.apache.karaf.shell.console,

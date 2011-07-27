@@ -6,15 +6,15 @@
 
 # resolve links - $0 may be a softlink
 
-current=${karaf.base}
+current=${karaf.base}/bin
 cd `dirname "$0"`
-PRGDIR=`pwd`
+PRGDIR=${karaf.base}/bin
 cd "$current"
 
-yajsw_home="$PRGDIR"
+yajsw_home=${karaf.base}/lib/wrapper
 export yajsw_home
 
-yajsw_jar="$yajsw_home"/lib/wrappper/wrapper.jar
+yajsw_jar="$yajsw_home"/wrapper.jar
 export yajsw_jar
 
 yajsw_java_options=-Xmx15m
@@ -26,11 +26,18 @@ export java_exe
 # show java version
 "$java_exe" -version
 
-conf_file="$yajsw_home"/etc/${name}-wrapper.conf
+conf_file="$yajsw_home"/../../etc/${name}-wrapper.conf
 export conf_file
 
-conf_default_file="$yajsw_home"/etc/${name}-wrapper.conf.default
+conf_default_file="$yajsw_home"/../../etc/${name}-wrapper.conf.default
 export conf_default_file
+
+KARAF_BASE=${karaf.base}
+KARAF_DATA=${karaf.data}
+KARAF_HOME=${karaf.home}
+JAVA_HOME=${java.home}
+
+export KARAF_BASE KARAF_DATA KARAF_HOME JAVA_HOME
 
 
 
