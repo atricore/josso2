@@ -249,10 +249,16 @@ public class InstallCommand extends OsgiCommandSupport {
                 if (isRedhatFamily(linuxDistro) || !isDebianFamily(linuxDistro)) {
                     System.out.println("");
                     System.out.println(Ansi.ansi().a(Ansi.Attribute.INTENSITY_BOLD).a("On Redhat/Fedora/CentOS Systems (run as root):").a(Ansi.Attribute.RESET).toString());
-
                     System.out.println("  Before starting: ");
+                    System.out.println("");
+                    System.out.println("   Create 'josso' user)");
+                    System.out.println("    $ useradd josso");
+                    System.out.println("");
+                    System.out.println("   Prepare the installer and the environment)");
                     System.out.println("    $ cd " + base.getPath() + "/bin");
                     System.out.println("    $ chmod a+x *.sh");
+                    System.out.println("    $ mkdir /var/run/josso2");
+                    System.out.println("    $ chown josso.josso /var/run/josso2");
                     System.out.println("");
                     System.out.println("  To install the service: ");
                     System.out.println("    $ ./" + name + "-service-install.sh");
@@ -280,8 +286,15 @@ public class InstallCommand extends OsgiCommandSupport {
                     System.out.println("");
                     System.out.println(Ansi.ansi().a(Ansi.Attribute.INTENSITY_BOLD).a("On Ubuntu/Debian Systems:").a(Ansi.Attribute.RESET).toString());
                     System.out.println("  Before starting: ");
+                    System.out.println("");
+                    System.out.println("   Create 'josso' user)");
+                    System.out.println("    $ useradd josso");
+                    System.out.println("");
+                    System.out.println("   Prepare the installer and the environment)");
                     System.out.println("    $ cd " + base.getPath() + "/bin");
                     System.out.println("    $ chmod a+x *.sh");
+                    System.out.println("    $ mkdir /var/run/josso2");
+                    System.out.println("    $ chown josso.josso /var/run/josso2");
                     System.out.println("");
                     System.out.println("  To install the service:");
                     System.out.println("");
