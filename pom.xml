@@ -29,7 +29,7 @@
     <artifactId>josso-ce-all</artifactId>
     <packaging>pom</packaging>
 
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <name>JOSSO 2 CE :: All POM</name>
     <inceptionYear>2009</inceptionYear>
 
@@ -45,7 +45,7 @@
         <felix.osgi.version>1.4.0</felix.osgi.version>
 
         <!-- Atricore -->
-        <atricore.idbus.version>1.2.0</atricore.idbus.version>
+        <atricore.idbus.version>1.2.1</atricore.idbus.version>
         <atricore.console.version>1.1.0</atricore.console.version>
 
         <josso1.version>1.8.5</josso1.version>
