@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+     http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<!-- $Rev: 636214 $ $Date: 2008-03-11 23:16:13 -0700 (Tue, 11 Mar 2008) $ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>3</version>
+    </parent>
+
+    <groupId>org.apache.geronimo.genesis</groupId>
+    <artifactId>genesis</artifactId>
+    <name>Genesis</name>
+    <packaging>pom</packaging>
+    <inceptionYear>2003</inceptionYear>
+
+    <version>1.4</version>
+
+    <description>
+        Genesis provides support for Maven2 builds; adding shared configurations
+        and common plugins.
+    </description>
+
+    <url>http://geronimo.apache.org/maven/${siteId}/${version}</url>
+
+    <scm>
+        <connection>scm:svn:http://svn.apache.org/repos/asf/geronimo/genesis/tags/genesis-1.4</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/geronimo/genesis/tags/genesis-1.4</developerConnection>
+        <url>http://svn.apache.org/viewvc/geronimo/genesis/tags/genesis-1.4</url>
+    </scm>
+
+    <properties>
+        <!-- set siteId to artifactId for any "top level" project rooting a website -->
+        <siteId>genesis</siteId>
+        <!-- IMPORTANT update this to the release version before releasing -->
+        <legalBundleVersion>1.4</legalBundleVersion>
+    </properties>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.0-beta-7</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.0.4</version>
+                </plugin>
+
+                <plugin>
+                    <inherited>true</inherited>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.0-alpha-4</version>
+                </plugin>
+
+                <plugin>
+                    <inherited>true</inherited>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+
+                <plugin>
+                    <inherited>true</inherited>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.0.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-idea-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.0-beta-6</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>rat-maven-plugin</artifactId>
+                    <version>1.0-alpha-3</version>
+                    <configuration>
+                        <excludeSubProjects>false</excludeSubProjects>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <configuration>
+                    <jdkName>1.5</jdkName>
+                    <jdkLevel>1.5</jdkLevel>
+                    <linkModules>true</linkModules>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rat-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <site>
+            <id>geronimo-website</id>
+            <url>${staging.siteURL}/${siteId}/${version}</url>
+        </site>
+    </distributionManagement>
+
+    <modules>
+        <module>legal-bundle</module>
+        <module>config</module>
+        <module>plugins</module>
+    </modules>
+
+    <profiles>
+
+        <profile>
+            <id>release</id>
+
+            <build>
+                <plugins>
+                    
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <configuration>
+                            <useReleaseProfile>false</useReleaseProfile>
+                            <goals>deploy</goals>
+                            <arguments>-Prelease</arguments>
+                        </configuration>
+                    </plugin>
+
+                    <!-- We want a source jar -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- We want to sign the artifact, the POM, and all attached artifacts -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- We want to deploy the artifact to a staging location for perusal -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <altDeploymentRepository>${deploy.altRepository}</altDeploymentRepository>
+                            <updateReleaseInfo>true</updateReleaseInfo>
+                        </configuration>
+                    </plugin>
+
+                    <!-- We want the JavaDoc JAR published with the release -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <source>1.5</source>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>full</id>
+
+            <build>
+                <plugins>
+
+                    <!-- We want a source jar -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- We want the JavaDoc JAR published with the release -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <source>1.5</source>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+</project>
+
