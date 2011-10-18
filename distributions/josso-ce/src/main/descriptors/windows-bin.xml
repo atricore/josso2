@@ -50,7 +50,7 @@
 
         <fileSet>
             <directory>target/dependency/zips/josso-ce-repo-${version}/</directory>
-            <outputDirectory>/data/work/maven/repository</outputDirectory>
+            <outputDirectory>/m3-local-repository</outputDirectory>
         </fileSet>
 
         <!-- Copy license and other files from root -->
