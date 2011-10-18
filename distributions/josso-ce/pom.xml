@@ -181,12 +181,12 @@
             <type>war</type>
         </dependency>
 
-        <dependency>
+        <!--dependency>
             <groupId>com.atricore.idbus.console</groupId>
             <artifactId>com.atricore.idbus.console.docs</artifactId>
             <version>${atricore.console.version}</version>
             <type>war</type>
-        </dependency>
+        </dependency-->
 
     </dependencies>
 
