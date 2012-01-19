@@ -7,16 +7,41 @@
         The meaning of the tags should be natural ...
     -->
     <info>
+<<<<<<< HEAD
         <appname>${project.artifactId}-${project.version}</appname>
         <appversion>${project.version}</appversion>
         <url>http://www.atricore.com/</url>
+=======
+        <appname>${project.artifactId}</appname>
+        <appversion>${project.version}</appversion>
+        <url>http://www.atricore.com/</url>
+        <authors>
+            <author email="info@atricore.com" name="Atricore, Inc."/>
+        </authors>
+>>>>>>> 613df6e... * Implemented Unix and Windows self-installer
     </info>
 
     <!-- 
         The gui preferences indication.
         Sets the installer window to 640x480. It will not be able to change the size.
     -->
+<<<<<<< HEAD
     <guiprefs width="640" height="480" resizable="no"/>
+=======
+    <guiprefs height="540" resizable="no" width="720">
+        <modifier key="useButtonIcons" value="no"/>
+        <modifier key="useLabelIcons" value="no"/>
+        <modifier key="labelGap" value="2"/>
+        <modifier key="layoutAnchor" value="NORTHWEST"/>
+        <modifier key="useHeadingPanel" value="yes"/>
+        <modifier key="headingImageOnLeft" value="no"/>
+        <modifier key="headingLineCount" value="1"/>
+        <modifier key="headingFontSize" value="1.5"/>
+        <modifier key="headingBackgroundColor" value="0x00ffffff"/>
+        <modifier key="headingPanelCounter" value="progressbar"/>
+        <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
+    </guiprefs>
+>>>>>>> 613df6e... * Implemented Unix and Windows self-installer
 
     <!-- 
         The locale section.
@@ -31,7 +56,15 @@
         The ids must be these ones if you want to use the LicencePanel and/or the InfoPanel.
     -->
     <resources>
+<<<<<<< HEAD
         <res id="LicencePanel.licence" src="Eula.txt"/>
+=======
+        <res id="HTMLInfoPanel.intro_eng"           src="../intro_eng.html" />
+        <res id="HTMLInfoPanel.installcomplete_eng"      src="../install-complete_eng.html" />
+        <res id="LicencePanel.licence"          src="../Eula.txt"/>
+        <res id="CustomLangpack.xml_eng"        src="../CustomLangpack_eng.xml"/>
+        <res id="Heading.image"                 src="../atricore-weblogo.png"/>
+>>>>>>> 613df6e... * Implemented Unix and Windows self-installer
     </resources>
 
     <!-- 
@@ -39,6 +72,7 @@
         We indicate here which panels we want to use. The order will be respected.
     -->
     <panels>
+<<<<<<< HEAD
         <panel classname="LicencePanel"/>
         <panel classname="TargetPanel"/>
         <panel classname="InstallPanel"/>
@@ -48,6 +82,23 @@
     <!--
         The packs section.
         We specify here our packs.
+=======
+        <panel classname="CheckedHelloPanel" />
+        <panel classname="HTMLInfoPanel" id="intro" encoding="ISO-8859-1"/>
+        <panel classname="LicencePanel" />
+        <panel classname="TargetPanel" />
+        <panel classname="InstallPanel"/>
+        <panel classname="HTMLInfoPanel" id="installcomplete" encoding="ISO-8859-1"/>
+        <panel classname="FinishPanel" />
+    </panels>
+
+    <!-- ==================================================== -->
+    <!-- BOTH INSTALL FILES SHOULD BE EQUAL UP TO THIS POINT  -->
+    <!-- ==================================================== -->
+    <!--
+        The packs section.
+        We specify here our packs, this section si platform dependent (unix/windows) :
+>>>>>>> 613df6e... * Implemented Unix and Windows self-installer
     -->
     <packs>
         <pack name="Base" required="yes">
@@ -55,7 +106,11 @@
             <fileset dir="../../${project.artifactId}-${project.version}-unix.dir/${project.artifactId}-${project.version}-unix" targetdir="$INSTALL_PATH">
                     <includes name="**"/>
             </fileset>
+<<<<<<< HEAD
             <file src="Eula.txt" targetdir="$INSTALL_PATH"/>
+=======
+            <file src="../Eula.txt" targetdir="$INSTALL_PATH"/>
+>>>>>>> 613df6e... * Implemented Unix and Windows self-installer
         </pack>
     </packs>
 
