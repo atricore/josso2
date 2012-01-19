@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<!-- The English langpack -->
+
+<langpack>
+
+    <!-- General installer strings -->
+    <str id="installer.title" txt="Atricore, Inc. - Installation of "/>
+    <str id="HelloPanel.url" txt="Visit us at "/>
+    <str id="HTMLInfoPanel.headline.intro" txt="JOSSO Community Edition"/>
+    <str id="HTMLInfoPanel.headline.installcomplete" txt="Congratulations!"/>
+    <str id="installer.madewith" txt=""/>
+</langpack>

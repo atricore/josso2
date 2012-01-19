@@ -36,6 +36,10 @@
     <packaging>pom</packaging>
     <version>2.3.0-SNAPSHOT</version>
     <name>JOSSO 2 CE :: Distribution : Standalone </name>
+    <properties>
+        <staging.dir>${project.build.directory}/staging</staging.dir>
+        <izpack-standalone.version>4.3.1</izpack-standalone.version>
+    </properties>
 
     <dependencies>
 
@@ -200,6 +204,17 @@
                     <include>**/*</include>
                 </includes>
             </resource>
+
+            <!-- IzPack resources -->
+            <resource>
+                <directory>${basedir}/src/izpack</directory>
+                <targetPath>${basedir}/target/staging</targetPath>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+
         </resources>
         
         <plugins>
@@ -297,7 +312,7 @@
                             <descriptors>
                                 <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
                             </descriptors>
-                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <finalName>${pom.artifactId}-${pom.version}-unix</finalName>
                             <tarLongFileMode>gnu</tarLongFileMode>
                         </configuration>
                     </execution>
@@ -312,15 +327,55 @@
                             <descriptors>
                                 <descriptor>src/main/descriptors/windows-bin.xml</descriptor>
                             </descriptors>
-                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <finalName>${pom.artifactId}-${pom.version}-windows</finalName>
                             <appendAssemblyId>true</appendAssemblyId>
                             <assemblyId/>
                         </configuration>
                     </execution>
                     
                 </executions>
-            </plugin>            
-            
+            </plugin>
+
+            <!-- Create Windows/Unix installers -->
+            <plugin>
+                <groupId>org.codehaus.izpack</groupId>
+                <artifactId>izpack-maven-plugin</artifactId>
+                <version>1.0-alpha-5</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.izpack</groupId>
+                        <artifactId>izpack-standalone-compiler</artifactId>
+                        <version>${izpack-standalone.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>unix-installer</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>izpack</goal>
+                        </goals>
+                        <configuration>
+                            <izpackBasedir>${staging.dir}/unix</izpackBasedir>
+                            <customPanelDirectory>${staging.dir}/unix</customPanelDirectory>
+                            <kind>unix</kind>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>windows-installer</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>izpack</goal>
+                        </goals>
+                        <configuration>
+                            <izpackBasedir>${staging.dir}/windows</izpackBasedir>
+                            <customPanelDirectory>${staging.dir}/windows</customPanelDirectory>
+                            <kind>windows</kind>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
