@@ -19,6 +19,7 @@
     <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
     <formats>
         <format>tar.gz</format>
+        <format>dir</format>
     </formats>
 
     <fileSets>
@@ -26,6 +27,14 @@
         <fileSet>
             <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}</directory>
             <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>**/org.ops4.pax.url.mvn.cfg</exclude>
+                <exclude>**/org.ops4.pax.url.mvn.cfg.online</exclude>
+                <exclude>**/org.apache.karaf.shell.cfg</exclude>
+                <exclude>**/system.properties</exclude>
+                <exclude>**/org.apache.karaf.features.cfg</exclude>
+                <exclude>**/idbus.jar</exclude>
+            </excludes>
         </fileSet>
 
         <fileSet>

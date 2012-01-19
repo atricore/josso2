@@ -72,6 +72,8 @@
 
     <distributionManagement>
 
+
+
         <repository>
             <id>josso-m2-deploy-repo</id>
             <name>JOSSO Release Distribution Repository</name>
@@ -87,6 +89,24 @@
     </distributionManagement>
 
     <repositories>
+        <repository>
+
+            <id>atricore-m2-commercial-repo</id>
+            <name>Atricore Commercial Maven2 Repository</name>
+            <url>http://repository.atricore.com/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
         <!-- JOSSO Releases Repository -->
         <repository>
 

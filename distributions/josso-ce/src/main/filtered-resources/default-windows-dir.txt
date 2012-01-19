@@ -1,0 +1,1 @@
+C:\${project.artifactId}-${project.version}

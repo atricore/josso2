@@ -20,6 +20,7 @@
     <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
     <formats>
         <format>zip</format>
+        <format>dir</format>
     </formats>
 
     <fileSets>
