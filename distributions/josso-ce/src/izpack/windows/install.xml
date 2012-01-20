@@ -78,7 +78,9 @@
         <res id="TargetPanel.dir.windows" src="../../classes/default-windows-dir.txt"/>
         <res id="HTMLInfoPanel.intro_eng"           src="../intro_eng.html" />
         <res id="HTMLInfoPanel.installcomplete_eng"      src="../install-complete_eng.html" />
+        <!--
         <res id="LicencePanel.licence"          src="../Eula.txt"/>
+        -->
         <res id="CustomLangpack.xml_eng"        src="../CustomLangpack_eng.xml"/>
         <res id="Heading.image"                 src="../atricore-weblogo.png"/>
     </resources>
@@ -102,7 +104,9 @@
 =======
         <panel classname="CheckedHelloPanel" />
         <panel classname="HTMLInfoPanel" id="intro" encoding="ISO-8859-1"/>
+        <!--
         <panel classname="LicencePanel" />
+        -->
         <panel classname="TargetPanel" />
         <panel classname="InstallPanel"/>
         <panel classname="HTMLInfoPanel" id="installcomplete" encoding="ISO-8859-1"/>
