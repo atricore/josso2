@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a2ae39e... * Missing Eula
 Version 2.1, February 1999
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc.
@@ -456,6 +459,7 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
 END OF TERMS AND CONDITIONS
+<<<<<<< HEAD
 =======
 This End-User License Agreement ("EULA") is a legal agreement between you, either a single end-user or a single entity, and Atricore Inc. ("ATRICORE").  By installing this computer software and accompanying user documentation (the "software"), you indicate your acceptance of all the terms and conditions of this EULA.  If you do not agree to any of the terms or conditions of this EULA, do not install or use the software.
 1. JOSSOEEInstallation. The Software may be installed as a cluster of runtime servers with an associated administrative console. Each such initial installation is a “JOSSOEEInstallation” and requires a separate License Key. The Software’s administrative console must be kept active as a standalone server or as part of a server processing Transactions.
@@ -478,3 +482,5 @@ MOREOVER, ATRICORE DOES NOT WARRANT AND EXPRESSLY DISCLAIMS ANY WARRANTIES THAT 
 17. Contact Information. If Licensee has any questions about this Agreement, or if Licensee needs to contact ATRICORE for any reason, please direct all correspondence to: ATRICORE Corporation, 10281 Sunset Drive, Suite B-103, Miami, Florida 33173, United States of America or email info@atricore.com.
 
 >>>>>>> 613df6e... * Implemented Unix and Windows self-installer
+=======
+>>>>>>> a2ae39e... * Missing Eula
