@@ -1,1 +1,1 @@
-C:\${project.artifactId}-${project.version}
+C:\atricore\${project.artifactId}-${project.version}
