@@ -41,6 +41,11 @@
         <izpack-standalone.version>4.3.1</izpack-standalone.version>
     </properties>
 
+    <properties>
+        <staging.dir>${project.build.directory}/staging</staging.dir>
+        <izpack-standalone.version>4.3.1</izpack-standalone.version>
+    </properties>
+
     <dependencies>
 
         <!-- IDBus distribution -->
@@ -300,7 +305,7 @@
                 <executions>
                     <execution>
                         <id>make-assembly</id>
-                        <phase>none</phase>
+                        <phase>package</phase>
                     </execution>
                     <execution>
                         <id>unix-bin</id>
@@ -334,9 +339,33 @@
                     </execution>
                     
                 </executions>
+            </plugin>            
+            
+            <!--  copy other checked resource into staging area, expected by install.xml -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <outputDirectory>${staging.dir}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/izpack</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
-            <!-- Create Windows/Unix installers -->
             <plugin>
                 <groupId>org.codehaus.izpack</groupId>
                 <artifactId>izpack-maven-plugin</artifactId>
