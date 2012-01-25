@@ -2,29 +2,11 @@
 
 <installation version="1.0">
 
-<<<<<<< HEAD
-    <!-- 
-=======
     <!--
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
         The info section.
         The meaning of the tags should be natural ...
     -->
     <info>
-<<<<<<< HEAD
-        <appname>${project.artifactId}-${project.version}</appname>
-        <appversion>${project.version}</appversion>
-        <url>http://www.atricore.com/</url>
-    </info>
-
-    <!-- 
-        The gui preferences indication.
-        Sets the installer window to 640x480. It will not be able to change the size.
-    -->
-    <guiprefs width="640" height="480" resizable="no"/>
-
-    <!-- 
-=======
         <appname>${project.artifactId}</appname>
         <appversion>${project.version}</appversion>
         <url>http://www.atricore.com/</url>
@@ -52,7 +34,6 @@
     </guiprefs>
 
     <!--
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
         The locale section.
         Asks here to include the English and French langpacks.
     -->
@@ -60,21 +41,11 @@
         <langpack iso3="eng"/>
     </locale>
 
-<<<<<<< HEAD
-    <!-- 
-=======
     <!--
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
         The resources section.
         The ids must be these ones if you want to use the LicencePanel and/or the InfoPanel.
     -->
     <resources>
-<<<<<<< HEAD
-        <res id="LicencePanel.licence" src="Eula.txt"/>
-    </resources>
-
-    <!-- 
-=======
         <res id="TargetPanel.dir.windows" src="../../classes/default-windows-dir.txt"/>
         <res id="HTMLInfoPanel.intro_eng"           src="../intro_eng.html" />
         <res id="HTMLInfoPanel.installcomplete_eng"      src="../install-complete_eng.html" />
@@ -86,22 +57,10 @@
     </resources>
 
     <!--
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
         The panels section.
         We indicate here which panels we want to use. The order will be respected.
     -->
     <panels>
-<<<<<<< HEAD
-        <panel classname="LicencePanel"/>
-        <panel classname="TargetPanel"/>
-        <panel classname="InstallPanel"/>
-        <panel classname="FinishPanel"/>
-    </panels>
-
-    <!--
-        The packs section.
-        We specify here our packs.
-=======
         <panel classname="CheckedHelloPanel" />
         <panel classname="HTMLInfoPanel" id="intro" encoding="ISO-8859-1"/>
         <!--
@@ -120,7 +79,6 @@
     <!--
         The packs section.
         We specify here our packs, this section si platform dependent (unix/windows) :
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
     -->
     <packs>
         <pack name="Base" required="yes">
@@ -128,11 +86,7 @@
             <fileset dir="../../${project.artifactId}-${project.version}-windows.dir/${project.artifactId}-${project.version}-windows" targetdir="$INSTALL_PATH">
                     <includes name="**"/>
             </fileset>
-<<<<<<< HEAD
-            <file src="Eula.txt" targetdir="$INSTALL_PATH"/>
-=======
-            <file src="../Eula.txt" targetdir="$INSTALL_PATH"/>
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
+            <!--file src="../Eula.txt" targetdir="$INSTALL_PATH"/-->
         </pack>
     </packs>
 

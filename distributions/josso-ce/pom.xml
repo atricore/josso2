@@ -40,14 +40,6 @@
         <staging.dir>${project.build.directory}/staging</staging.dir>
         <izpack-standalone.version>4.3.1</izpack-standalone.version>
     </properties>
-<<<<<<< HEAD
-
-    <properties>
-        <staging.dir>${project.build.directory}/staging</staging.dir>
-        <izpack-standalone.version>4.3.1</izpack-standalone.version>
-    </properties>
-=======
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
 
     <dependencies>
 
@@ -342,7 +334,7 @@
                     </execution>
                     
                 </executions>
-<<<<<<< HEAD
+
             </plugin>            
             
             <!--  copy other checked resource into staging area, expected by install.xml -->
@@ -370,11 +362,7 @@
                 </executions>
             </plugin>
 
-=======
-            </plugin>
 
-            <!-- Create Windows/Unix installers -->
->>>>>>> 613df6e... * Implemented Unix and Windows self-installer
             <plugin>
                 <groupId>org.codehaus.izpack</groupId>
                 <artifactId>izpack-maven-plugin</artifactId>
