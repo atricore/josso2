@@ -30,7 +30,6 @@
             <excludes>
                 <exclude>**/org.ops4.pax.url.mvn.cfg</exclude>
                 <exclude>**/org.ops4.pax.url.mvn.cfg.online</exclude>
-                <exclude>**/org.apache.karaf.shell.cfg</exclude>
                 <exclude>**/system.properties</exclude>
                 <exclude>**/org.apache.karaf.features.cfg</exclude>
                 <exclude>**/idbus.jar</exclude>
