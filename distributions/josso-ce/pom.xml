@@ -112,6 +112,12 @@
         <!-- Atricore Console -->
 
         <dependency>
+            <groupId>com.atricore.idbus.console.settings</groupId>
+            <artifactId>com.atricore.idbus.console.settngs.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.atricore.idbus.console.lifecycle</groupId>
             <artifactId>com.atricore.idbus.console.lifecycle.main</artifactId>
             <version>${atricore.console.version}</version>
