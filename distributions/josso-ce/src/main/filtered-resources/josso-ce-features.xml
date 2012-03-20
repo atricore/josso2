@@ -38,8 +38,8 @@
 
         <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.settings.main/${atricore.console.version}</bundle>
 
-        <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.brandservice.main/${atricore.console.version}</bundle>
-        <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.brandservice.command/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.command/${atricore.console.version}</bundle>
 
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.protocol/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
