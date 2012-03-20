@@ -124,6 +124,18 @@
         </dependency>
 
         <dependency>
+            <groupId>com.atricore.idbus.console.brandservice</groupId>
+            <artifactId>com.atricore.idbus.console.brandservice.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.brandservice</groupId>
+            <artifactId>com.atricore.idbus.console.brandservice.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.atricore.idbus.console.lifecycle</groupId>
             <artifactId>com.atricore.idbus.console.lifecycle.command</artifactId>
             <version>${atricore.console.version}</version>
