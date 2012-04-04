@@ -49,7 +49,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
     <osgix:cm-properties id="jossoSvcsProps" persistent-id="org.atricore.josso.services">
         <!-- RFU : -->
         <prop key="dbserver.port">1527</prop>
-        <prop key="dbserver.username">admin</prop>
+        <prop key="dbserver.username">atricore</prop>
         <prop key="dbserver.password">admin</prop>
     </osgix:cm-properties>
 
