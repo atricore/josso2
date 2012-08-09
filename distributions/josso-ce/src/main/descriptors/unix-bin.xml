@@ -28,8 +28,8 @@
             <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}</directory>
             <outputDirectory>/</outputDirectory>
             <excludes>
-                <exclude>**/org.ops4.pax.url.mvn.cfg</exclude>
-                <exclude>**/org.ops4.pax.url.mvn.cfg.online</exclude>
+                <exclude>**/org.ops4j.pax.url.mvn.cfg</exclude>
+                <exclude>**/org.ops4j.pax.url.mvn.cfg.online</exclude>
                 <exclude>**/system.properties</exclude>
                 <exclude>**/org.apache.karaf.features.cfg</exclude>
                 <exclude>**/idbus.jar</exclude>

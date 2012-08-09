@@ -89,7 +89,6 @@
             <lineEnding>dos</lineEnding>
         </fileSet>
 
-
         <!-- Copy over files that should not get the line endings converted -->
         <fileSet>
             <directory>src/main/distribution/binary</directory>
