@@ -1,0 +1,15 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Apr 04 16:25:27 EDT 2011
+http\://people.apache.org/repo/m2-snapshot-repository/.error=
+http\://people.apache.org/repo/m2-ibiblio-rsync-repository/.error=
+http\://svn.apache.org/repos/asf/servicemix/m2-repo/.lastUpdated=1301948727215
+http\://download.java.net/maven/2/.lastUpdated=1301948725360
+http\://people.apache.org/repo/m2-ibiblio-rsync-repository/.lastUpdated=1301948726376
+http\://repository.josso.org/.error=
+http\://download.java.net/maven/2/.error=
+http\://people.apache.org/repo/m2-snapshot-repository/.lastUpdated=1301948726955
+http\://svn.apache.org/repos/asf/servicemix/m2-repo/.error=
+http\://download.java.net/maven/1/.error=Could not transfer artifact org.apache\:apache\:pom\:8 from/to java.net M1 (http\://download.java.net/maven/1)\: No connector available to access repository java.net M1 (http\://download.java.net/maven/1) of type legacy using the available factories WagonRepositoryConnectorFactory
+legacy-http\://download.java.net/maven/1/.lastUpdated=1301948725361
+http\://repository.sonatype.org/content/groups/public/.lastUpdated=1301948727680
+http\://repository.josso.org/.lastUpdated=1301948725427
