@@ -505,7 +505,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins/>
     </build>
 
 
