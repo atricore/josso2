@@ -5,7 +5,8 @@
     <feature name="josso-ce" version="${version}">
         <feature version="${atricore.idbus.version}">common</feature>
         <feature version="${version}">josso-ce-svcs</feature>
-
+        <feature version="${atricore.idbus.version}">atricore-monitoring-builtin</feature>
+        <feature version="${atricore.idbus.version}">atricore-auditing-builtin</feature>
         <feature version="${atricore.idbus.version}">atricore</feature>
         <feature version="${atricore.idbus.version}">atricore-management</feature>
         <feature version="${version}">josso-ce-console</feature>
@@ -29,7 +30,7 @@
     </feature>
 
     <!-- JOSSO CE Console Services -->
-    <feature name="josso-ce-console-svcs" version="${version}">
+    <feature name="josso-ce-console-svcs" version="${vers/ion}">
 
         <bundle>mvn:org.atricore.josso/org.atricore.josso.tooling.wrapper/${version}</bundle>
 
