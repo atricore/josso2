@@ -249,6 +249,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <escapeString>@@</escapeString>
+                </configuration>
             </plugin>
             
             <plugin>
