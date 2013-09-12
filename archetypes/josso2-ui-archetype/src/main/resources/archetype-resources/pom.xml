@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Atricore IDBus
+  ~
+  ~ Copyright (c) 2009, Atricore Inc.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>bundle</packaging>
+
+
+    <properties>
+        <felix.plugin.version>2.1.0</felix.plugin.version>
+        <apache-wicket.version>6.5.0</apache-wicket.version>
+        <ops4j.paxwicket.version>2.1.0</ops4j.paxwicket.version>
+        <atricore.idbus.vesion>1.4.0-SNAPSHOT</atricore.idbus.vesion>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.atricore.idbus.kernel</groupId>
+            <artifactId>org.atricore.idbus.kernel.main</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus.capabilities.sso</groupId>
+            <artifactId>org.atricore.idbus.capabilities.sso.main</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus.capabilities.sso</groupId>
+            <artifactId>org.atricore.idbus.capabilities.sso.ui</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- WICKET DEPENDENCIES -->
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+            <version>${apache-wicket.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+            <version>${apache-wicket.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ops4j.pax.wicket</groupId>
+            <artifactId>org.ops4j.pax.wicket.service</artifactId>
+            <version>${ops4j.paxwicket.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <supportedProjectTypes>
+                        <supportedProjectType>bundle</supportedProjectType>
+                    </supportedProjectTypes>
+                    <instructions>
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Fragment-Host>org.atricore.idbus.capabilities.sso.ui</Fragment-Host>
+                        <Private-Package>!*</Private-Package>
+                        <Bundle-ClassPath>.</Bundle-ClassPath>
+                    </instructions>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- JOSSO Releases Repository -->
+        <repository>
+
+            <id>josso-m2-repo</id>
+            <name>JOSSO Maven2 Repository</name>
+            <url>http://repository.josso.org/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- JOSSO Snapshot Repository -->
+        <repository>
+
+            <id>josso-m2-snapshot-repo</id>
+            <name>JOSSO Maven2 Snapshots Repository</name>
+            <url>http://repository.josso.org/m2-snapshot-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+
+        </repository>
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-m2-repo</id>
+            <name>Atricore Maven2 Repository</name>
+            <url>http://repository.atricore.org/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-m2-snapshot-repo</id>
+            <name>Atricore Maven2 SanpshotsRepository</name>
+            <url>http://repository.atricore.org/m2-snapshot-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+
+        </repository>
+
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-m2-commercial-repo</id>
+            <name>Atricore.com Maven2 Repository</name>
+            <url>http://repository.atricore.com/m2-release-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </snapshots>
+
+        </repository>
+
+        <!-- Dependencies not on central repo -->
+        <repository>
+
+            <id>atricore-com-m2-snapshot-repo</id>
+            <name>Atricore.com Maven2 SanpshotsRepository</name>
+            <url>http://repository.atricore.com/m2-snapshot-repository</url>
+
+            <releases>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+            </releases>
+
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+
+        </repository>
+
+        <!-- Apache -->
+        <repository>
+            <id>apache</id>
+            <name>Apache Releases Repository</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- Codehaus -->
+        <repository>
+            <id>codehaus</id>
+            <name>Codehaus repository</name>
+            <url>http://repository.codehaus.org</url>
+            <releases>
+            </releases>
+            <snapshots>
+            </snapshots>
+        </repository>
+
+        <!-- OPS4J -->
+        <repository>
+            <id>ops4j</id>
+            <name>Open Participation Software for Java</name>
+            <url>http://repository.ops4j.org/maven2</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>java.net M2</id>
+            <url>http://download.java.net/maven/2</url>
+            <snapshots>
+            </snapshots>
+            <releases>
+            </releases>
+        </repository>
+
+    </repositories>
+
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>java.net M2</id>
+            <url>http://download.java.net/maven/2</url>
+            <snapshots>
+            </snapshots>
+            <releases>
+            </releases>
+        </pluginRepository>
+
+        <pluginRepository>
+            <!-- JOSSO -->
+            <id>josso-m2-repo</id>
+            <name>JOSSO Maven2 Repository</name>
+            <url>http://repository.josso.org</url>
+        </pluginRepository>
+
+        <!-- Apache releases -->
+        <pluginRepository>
+            <id>apache-releases</id>
+            <name>Apache Releases repository</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <!-- ServiceMix releases -->
+        <pluginRepository>
+            <id>apach-servicemix</id>
+            <name>Apache ServiceMix</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>forge</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+            </releases>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>josso</id>
+            <url>http://repository.josso.org/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>DataNucleus_1</id>
+            <url>http://www.datanucleus.org/downloads/maven/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>DataNucleus_2</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+
+</project>

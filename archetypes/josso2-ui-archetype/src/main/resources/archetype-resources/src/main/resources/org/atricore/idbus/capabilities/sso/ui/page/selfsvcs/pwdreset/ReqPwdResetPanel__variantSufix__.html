@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:panel>
+
+    <!-- Add / Edit User Form -->
+    <!-- This form can be used to add/edit a user -->
+    <h2 class="gt-form-head"><wicket:message key="title"/></h2>
+    <div class="gt-form gt-content-box">
+
+        <div wicket:id="feedbackBox">
+            <span wicket:id="feedback"/>
+        </div>
+
+        <form wicket:id="reqPwdResetForm">
+            <fieldset>
+
+                <div class="gt-form-row gt-width-33">
+                    <label for="username"><wicket:message key="claims.label.username"/></label>
+                    <input wicket:id="username" type="text" class="gt-form-text" path="username" />
+                </div>
+
+                <!-- form row -->
+                <div class="gt-form-row">
+                    <input class="gt-btn-gray-medium" type="submit" value="Continue" wicket:id="doReqPwdReset" />
+                </div>
+                <!-- /form row -->
+
+
+
+            </fieldset>
+
+        </form>
+    </div>
+
+</wicket:panel>
+</body>
+</html>

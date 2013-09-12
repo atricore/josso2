@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:wicket="http://www.ops4j.org/schema/wicket" xmlns:ns4="http://www.springframework.org/schema/tool"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.ops4j.org/schema/wicket http://www.ops4j.org/schema/wicket/wicket.xsd ">
+
+    <bean id="${uiId}" class="org.atricore.idbus.capabilities.sso.ui.WebBranding">
+        <property name="id" value="${uiId}"/>
+        <property name="skin" value="${variant}"/>
+        <property name="defaultLocale" value="en"/>
+        <!-- property name="fallbackUrl" value="https://www.mycompany.com"/-->
+    </bean>
+
+    <osgi:service id="${uiId}-osgi" ref="${uiId}"
+                  interface="org.atricore.idbus.capabilities.sso.ui.WebBranding"/>
+
+</beans>

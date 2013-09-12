@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:panel>
+
+    <!-- Add / Edit User Form -->
+    <!-- This form can be used to add/edit a user -->
+    <h2 class="gt-form-head"><wicket:message key="title"/></h2>
+    <div class="gt-form gt-content-box">
+
+        <div wicket:id="feedbackBox">
+            <span wicket:id="feedback"/>
+        </div>
+
+        <form wicket:id="reqRegistrationForm">
+            <fieldset>
+
+                <div class="clearfix">
+                    <!-- left column -->
+                    <div class="gt-left-col">
+
+
+                        <div class="gt-form-row gt-width-66">
+                            <label for="firstName"><wicket:message key="claims.label.firstName"/></label>
+                            <input wicket:id="firstName" type="text" class="gt-form-text" path="firstName" />
+                        </div>
+
+
+                        <div class="gt-form-row gt-width-66">
+                            <label for="lastName"><wicket:message key="claims.label.lastName"/></label>
+                            <input wicket:id="lastName" type="text" class="gt-form-text" path="lastName" />
+                        </div>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="gt-right-col">
+
+
+                        <div class="gt-form-row gt-width-66">
+                            <label for="company"><wicket:message key="claims.label.company"/></label>
+                            <input wicket:id="company" type="text" class="gt-form-text" path="company" />
+                        </div>
+
+                        <div class="gt-form-row gt-width-66">
+                            <label for="phone"><wicket:message key="claims.label.phone"/></label>
+                            <input wicket:id="phone" type="text" class="gt-form-text" path="phone" />
+                        </div>
+
+
+                        <div class="gt-form-row gt-width-66">
+                            <label for="username"><wicket:message key="claims.label.email"/></label>
+                            <input wicket:id="username" type="email" class="gt-form-text" path="username" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- form row -->
+                <div class="gt-form-row">
+                    <input class="gt-btn-gray-medium" type="submit" value="Submit" wicket:id="doReqRegistration" />
+                </div>
+                <!-- /form row -->
+
+            </fieldset>
+
+        </form>
+    </div>
+
+</wicket:panel>
+</body>
+</html>

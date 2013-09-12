@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Error</title>
+</head>
+
+<body>
+<wicket:extend>
+    <div id="idbus-error" class="gt-bd clearfix">
+        <div class="gt-content">
+            <div>
+                <h2 class="gt-table-head"><wicket:message key="error.title"/></h2>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h6><wicket:message key="error.status.title"/> <span wicket:id="status"/>&nbsp;<span wicket:id="secStatus"/></h6>
+                    </li>
+                    <li>
+                        <h6><wicket:message key="error.status.details"/> <span wicket:id="details"/></h6>
+                    </li>
+                </ul>
+
+                <h3>
+                    <wicket:message key="error.debug.title"/>
+                </h3>
+
+                <span wicket:id="causes">
+                    <p class="gt-notice-box">
+                        <span wicket:id="cause"/>
+                    </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</wicket:extend>
+</body>
+</html>

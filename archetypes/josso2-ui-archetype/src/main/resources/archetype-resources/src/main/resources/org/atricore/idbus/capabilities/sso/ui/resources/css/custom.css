@@ -1,0 +1,30 @@
+/*
+Template:	GT-502
+File:		custom.css - Use this file to add any custom styles you need
+
+If you add styles to this template, be sure to include it in your template files.
+*/
+
+.gt-table-login {
+    margin: 0;
+}
+.gt-table-login a {
+    display: block;
+    padding: 1px 0 1px 22px;
+    background: url(../images/famfamfam/icons/lock_go.png) no-repeat 0 50%;
+}
+.gt-table-login a:link, .gt-table-login a:visited {
+    color: #7898aa;
+}
+.gt-table-login a:hover {
+    color: #365b6d;
+    text-decoration: none!important;
+}
+
+.gt-hr hr {
+    display: block;
+    height: 1px;
+    border: 0 #ccc;
+    border-top: 1px solid;
+    margin: 1em 0; padding: 0;
+}

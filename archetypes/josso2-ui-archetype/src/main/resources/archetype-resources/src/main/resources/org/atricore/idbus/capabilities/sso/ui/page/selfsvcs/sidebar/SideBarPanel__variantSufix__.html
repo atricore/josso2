@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+
+<wicket:panel>
+
+    <!-- Sidebar Content -->
+    <div class="gt-sidebar-content">
+        <h3><wicket:message key="account">Account</wicket:message></h3>
+        <p><span wicket:id="fullName">fullName</span><br/></p>
+        <p><wicket:message key="email">email:</wicket:message> <spam wicket:id="email">my-email@example.com</spam></p>
+    </div><!-- /Sidebar Content -->
+
+    <!-- Sidebar Navigation -->
+    <div class="gt-sidebar-nav gt-sidebar-nav-blue">
+        <h3><wicket:message key="app.sps.quicklink"/></h3>
+        <ul>
+            <li wicket:id="apps">
+                <a href="#" wicket:id="ssoLink">
+                    <span wicket:id="name">My App</span>
+                </a>
+            </li>
+        </ul>
+    </div><!-- /Sidebar Navigation -->
+
+
+
+
+
+</wicket:panel>
+
+</html>

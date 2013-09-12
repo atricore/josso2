@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W5C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:panel>
+
+    <!-- Add / Edit User Form -->
+    <!-- This form can be used to add/edit a user -->
+    <h2 class="gt-form-head"><wicket:message key="title"/></h2>
+    <div class="gt-form gt-content-box">
+
+        <div wicket:id="feedbackBox">
+            <span wicket:id="feedback"/>
+        </div>
+
+        <form wicket:id="registerForm">
+            <fieldset>
+
+                <div class="clearfix">
+                    <div class="gt-form-row gt-width-33 clearfix">
+                        <label for="password"><wicket:message key="claims.label.tmpPassword"/></label>
+                        <input wicket:id="password" type="password" class="gt-form-text" path="name" />
+                    </div>
+                    <div class="gt-form-row gt-width-33 clearfix">
+                        <label for="newPassword"><wicket:message key="claims.label.newPassword"/></label>
+                        <input wicket:id="newPassword" type="password" class="gt-form-text" path="newPassword" />
+                    </div>
+                    <div class="gt-form-row gt-width-33 clearfix">
+                        <label for="retypedPassword"><wicket:message key="claims.label.retypedPassword"/></label>
+                        <input wicket:id="retypedPassword" type="password" class="gt-form-text" path="retypedPassword" />
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <div class="clearfix">
+
+                    <!-- left column -->
+                    <div class="gt-left-col">
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secQuestion1"><wicket:message key="claims.label.securityQuestion"/></label>
+                            <select wicket:id="secQuestion1" path="secQuestion1">
+                                <option value="1">What is your maternal grandmother's maiden name</option>
+                            </select>
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="customSecQuestion1"><wicket:message key="claims.label.customSecurityQuestion"/></label>
+                            <input wicket:id="customSecQuestion1" class="gt-form-text" path="customSecQuestion1" />
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secAnswer1"><wicket:message key="claims.label.securityAnswer"/></label>
+                            <input wicket:id="secAnswer1" class="gt-form-text" path="secAnswer1"  />
+                        </div>
+
+
+                    </div>
+
+                    <!-- right column -->
+                    <div class="gt-right-col">
+                        <div class="gt-form-row gt-width-33 clearfix">
+                            <label for="useCustomSecQuestion1"><wicket:message key="claims.label.useCustomSecurityQuestion"/></label>
+                            <input wicket:id="useCustomSecQuestion1" type="checkbox" class="gt-form-text" path="useCustomSecQuestion1" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <div class="clearfix">
+                    <!-- left column -->
+                    <div class="gt-left-col">
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secQuestion2"><wicket:message key="claims.label.securityQuestion"/></label>
+                            <select wicket:id="secQuestion2" path="secQuestion2">
+                                <option value="1">What is your maternal grandmother's maiden name</option>
+                            </select>
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="customSecQuestion2"><wicket:message key="claims.label.customSecurityQuestion"/></label>
+                            <input wicket:id="customSecQuestion2" class="gt-form-text" path="customSecQuestion2" />
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secAnswer2"><wicket:message key="claims.label.securityAnswer"/></label>
+                            <input wicket:id="secAnswer2" class="gt-form-text" path="secAnswer2"  />
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- right column -->
+                    <div class="gt-right-col">
+
+                        <div class="gt-form-row gt-width-33 clearfix">
+                            <label for="useCustomSecQuestion2"><wicket:message key="claims.label.useCustomSecurityQuestion"/></label>
+                            <input wicket:id="useCustomSecQuestion2" type="checkbox" class="gt-form-text" path="useCustomSecQuestion2" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <div class="clearfix">
+                    <!-- left column -->
+                    <div class="gt-left-col">
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secQuestion3"><wicket:message key="claims.label.securityQuestion"/></label>
+                            <select wicket:id="secQuestion3" path="secQuestion3">
+                                <option value="1">What is your maternal grandmother's maiden name</option>
+                            </select>
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="customSecQuestion3"><wicket:message key="claims.label.customSecurityQuestion"/></label>
+                            <input wicket:id="customSecQuestion3" class="gt-form-text" path="customSecQuestion3" />
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secAnswer3"><wicket:message key="claims.label.securityAnswer"/></label>
+                            <input wicket:id="secAnswer3" class="gt-form-text" path="secAnswer3"  />
+                        </div>
+
+                    </div>
+
+
+                    <!-- right column -->
+                    <div class="gt-right-col">
+
+                        <div class="gt-form-row gt-width-33 clearfix">
+                            <label for="useCustomSecQuestion3"><wicket:message key="claims.label.useCustomSecurityQuestion"/></label>
+                            <input wicket:id="useCustomSecQuestion3" type="checkbox" class="gt-form-text" path="useCustomSecQuestion3" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <div class="clearfix">
+                    <!-- left column -->
+                    <div class="gt-left-col">
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secQuestion4"><wicket:message key="claims.label.securityQuestion"/></label>
+                            <select wicket:id="secQuestion4" path="secQuestion4">
+                                <option value="1">What is your maternal grandmother's maiden name</option>
+                            </select>
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="customSecQuestion4"><wicket:message key="claims.label.customSecurityQuestion"/></label>
+                            <input wicket:id="customSecQuestion4" class="gt-form-text" path="customSecQuestion4" />
+                        </div>
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secAnswer4"><wicket:message key="claims.label.securityAnswer"/></label>
+                            <input wicket:id="secAnswer4" class="gt-form-text" path="secAnswer4"  />
+                        </div>
+
+                    </div>
+
+
+                    <!-- right column -->
+                    <div class="gt-right-col">
+
+                        <div class="gt-form-row gt-width-33 clearfix">
+                            <label for="useCustomSecQuestion4"><wicket:message key="claims.label.useCustomSecurityQuestion"/></label>
+                            <input wicket:id="useCustomSecQuestion4" type="checkbox" class="gt-form-text" path="useCustomSecQuestion4" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <div class="clearfix">
+                    <!-- left column -->
+                    <div class="gt-left-col">
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secQuestion5"><wicket:message key="claims.label.securityQuestion"/></label>
+                            <select wicket:id="secQuestion5" path="secQuestion5">
+                                <option value="1">What is your maternal grandmother's maiden name</option>
+                            </select>
+                        </div>
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="customSecQuestion5"><wicket:message key="claims.label.customSecurityQuestion"/></label>
+                            <input wicket:id="customSecQuestion5" class="gt-form-text" path="customSecQuestion5" />
+                        </div>
+
+
+                        <div class="gt-form-row gt-width-99 clearfix">
+                            <label for="secAnswer5"><wicket:message key="claims.label.securityAnswer"/></label>
+                            <input wicket:id="secAnswer5" class="gt-form-text" path="secAnswer5"  />
+                        </div>
+
+                    </div>
+                    <!-- right column -->
+                    <div class="gt-right-col">
+
+                        <div class="gt-form-row gt-width-33 clearfix">
+                            <label for="useCustomSecQuestion5"><wicket:message key="claims.label.useCustomSecurityQuestion"/></label>
+                            <input wicket:id="useCustomSecQuestion5" type="checkbox" class="gt-form-text" path="useCustomSecQuestion5" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="gt-hr"><hr/></div>
+
+                <!-- form row -->
+                <div class="gt-form-row">
+                    <input class="gt-btn-gray-medium" type="submit" value="Submit" wicket:id="doRegister"/>
+                </div>
+                <!-- /form row -->
+
+
+            </fieldset>
+
+        </form>
+    </div>
+
+</wicket:panel>
+</body>
+</html>

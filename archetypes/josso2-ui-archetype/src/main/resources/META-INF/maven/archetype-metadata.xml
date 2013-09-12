@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        name="josso2-ui"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <requiredProperties>
+
+        <requiredProperty key="uiId"/>
+        <requiredProperty key="variant">
+            <defaultValue>${uiId}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="variantSufix">
+            <defaultValue>_${variant}</defaultValue>
+        </requiredProperty>
+
+        <!-- Standard Maven props. -->
+        <requiredProperty key="groupId"/>
+        <requiredProperty key="artifactId">
+            <defaultValue>${uiId}-ui</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="package">
+            <defaultValue>${groupId}</defaultValue>
+        </requiredProperty>
+
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.html</include>
+                <include>**/*.jpg</include>
+                <include>**/*.png</include>
+                <include>**/*.css</include>
+                <include>**/*.gif</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>

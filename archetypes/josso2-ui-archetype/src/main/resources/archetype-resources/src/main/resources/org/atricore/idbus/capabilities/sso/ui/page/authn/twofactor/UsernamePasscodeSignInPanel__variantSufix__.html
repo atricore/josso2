@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:panel>
+
+    <div id="authentication">
+
+        <div class="message error">
+            <span wicket:id="feedback"/>
+        </div>
+
+        <div id="bysy_indicator">
+            <span><wicket:message key="general.text.processing"/></span>
+        </div>
+
+        <div id="subwrapper">
+
+            <div class="main">
+                <h2><wicket:message key="claims.title.userLogin"/></h2>
+
+                <p><wicket:message key="claims.text.userLogin"/></p>
+
+                <form wicket:id="signInForm">
+                    <fieldset>
+                        <div><label for="username"><wicket:message key="claims.label.username"/></label><input wicket:id="username" cssClass="text" path="username"
+                                                                                                               tabindex="10"/>
+                        </div>
+                        <div><label for="passcode"><wicket:message key="claims.label.passcode"/></label><input wicket:id="passcode" type="password" cssClass="text error" path="passcode"
+                                                                                                               tabindex="10"/>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <input class="button indent" type="button" value="Login" onclick="saveForm(this);"/>
+                    </div>
+                    <br/>
+                    <br/>
+                </form>
+
+                <div class="highlight">
+                    <h3 class="help"><wicket:message key="claims.title.help"/></h3>
+
+                    <p><wicket:message key="claims.text.login.help"/></p>
+
+                    <div class="footer"></div>
+
+                </div>
+                <!-- /highlight -->
+
+            </div>
+            <!-- /main -->
+        </div>
+
+    </div>
+    <!-- /authentication -->
+</wicket:panel>
+</body>
+</html>
+
+
+
+
+
+

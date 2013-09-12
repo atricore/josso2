@@ -1,0 +1,21 @@
+/*(C)2008 Atricore, Inc */
+/* CSS by Nicolas Calabrese  */
+
+/************************************************************************************************************************************************
+  S T Y L E S   F O R   I E 6   O N L Y
+************************************************************************************************************************************************/
+
+      p.alert {padding:10px 0 10px 0; background:#FFFFA5 url(images/icon-alert.gif) no-repeat 10px; color:#000; font-size:1.2em;  border-bottom:1px solid #DED181;  text-align:left;  text-indent:30px; margin-bottom:1px}
+      body {background-position:0 33px;}
+      label {padding:0 0 0 0; }
+
+      #content #authentication  .highlight,
+      #content #lost-password .highlight {width:290px; right:50px;}
+      
+      #content #authentication-success .highlight,
+      #content #partner-protected .highlight,
+      #content #partner-public .highlight {width:530px; float:left; }
+            
+      #content #authentication-success #user-info,
+      #content #partner-public #login-options,
+      #content #partner-protected #login-options {display:inline;}

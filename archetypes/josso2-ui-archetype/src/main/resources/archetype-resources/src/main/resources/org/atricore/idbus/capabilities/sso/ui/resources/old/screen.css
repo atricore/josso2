@@ -1,0 +1,286 @@
+@import url('reset.css');
+
+/*(C)2008 Atricore, Inc */
+/* CSS by Nicolas Calabrese  */
+
+/************************************************************************************************************************************************
+  S T Y L E S   B Y   S E C T I O N
+-------------------------------------------------------------------------------------------------------------------------------------------------
+  $ Common Styles
+  $ Authentication (authentication.html)
+  $ Authentication-success (authentication-success.html)
+  $ Lost-password (lost-password.html)
+  $ warning (warning.html)
+  $ Partner-protected (partner-protected.html)
+************************************************************************************************************************************************/
+
+
+body {text-align:center; background:#1A2739 url(images/body.jpg) no-repeat 50% 0; font-family:Arial, Tahoma, Verdana, Helvetica, sans-serif;}
+#wrapper {width:840px; margin:0 auto!important; font-size:1.4em; }
+
+      
+/* Header */
+
+      #header {background:#EAEAEA url(images/header.jpg) no-repeat; position:relative; width:835px; height:196px; }
+            #header h1, #header h2 {position:absolute;}
+                  #header h1 {top:54px; left:23px; }
+                  #header h2 {top:37px; left:567px; }
+
+
+/* Content */
+
+      /* Notifications */ 
+      .message {background:#FFF7C2; border-bottom:1px solid #EEE7C2; padding:13px; }
+      .message p {color:#625D49; padding:0 0 0 30px; font-weight:bold; font-size:0.9em; background:url(images/icons.gif) no-repeat -2px -58px;}
+      .message.error p {background-position:-2px -113px;}
+
+
+      /* Main Content */ 
+      #content {text-align:left; background:#fff; color:#1A2739; border-top:4px solid #1A2739; width:798px; position:relative; margin:0 auto; margin-top:-52px; }
+      #content #subwrapper {margin:50px 60px 0 60px; padding-bottom:20px; position:relative; }
+      
+      #content .button {display:block; background:#8C1012 url(images/buttons.jpg) no-repeat; width:123px; height:39px; border:0; font-size:1.2em; color:#fff; font-family:Arial;
+      line-height:39px; text-align:center; text-decoration:none;  }
+      #content .button:hover {background-position:0 -70px; color:#fff; }
+      #content .button.medium {background-position:0 -138px; width:179px;}
+      #content .button.medium:hover {background-position:0 -207px;}
+      #content .button.big {background-position:0 -277px; width:262px;}
+      #content .button.big:hover {background-position:0 -346px;}
+      
+      #content h2 {color:#1A2739; font-size:1.5em; margin:0 0 25px 0; }
+      #content h3 {color:#8F080A; font-size:1.1em; margin:0 0 25px 0; }
+      #content .main p {margin:0 0 25px 0;}
+      #content a, #content code {font-size:0.9em; color:#860F11; }
+      #content code {padding:5px; }
+      #content a:hover, #content a:focus {color:#BF181F; }
+      #content .arrow {background:#fff url(images/icons.gif) no-repeat -8px -161px;padding:2px 3px 3px 16px ;  }
+      #content .note {font-size:0.9em}
+      
+      
+      /* Highlight */       
+      #content .highlight {text-align:left; background:#FFF7C2 url(images/highlight-top.jpg) repeat-x; padding:20px 23px 23px 23px; border:1px solid #ECE6C4; margin:0 0 25px 0; }
+      #content .highlight.info {padding:8px 23px; }
+      #content .highlight h3 {color:#000101; font-size:1.2em; margin:0 0 5px 0; }
+      #content .highlight h3.help {background:url(images/icons.gif) no-repeat -2px 0; padding:2px 3px 3px 30px ; }
+      #content .highlight p {color:#625D49; font-size:0.9em; line-height:1.4; margin-bottom:0}
+      #content .highlight .footer {background:url(images/highlight-shadow.jpg) no-repeat 50% 0; height:33px; position:absolute; bottom:-35px}
+
+      #content .highlight.horizontal {padding:8px 10px; position:relative; margin-bottom:35px; background:#FFF7C2; }
+      #content .highlight.horizontal p {color:#625D49; padding:2px 0 2px 30px;  font-size:0.9em; background:#FFF7C2 url(images/icons.gif) no-repeat -2px -58px; }
+      #content .highlight.horizontal .footer {background-position: 50% -70px; height:33px; position:absolute; bottom:-35px; left:0; }
+      
+      
+/* Footer */
+
+      #footer {text-align:center; background:#1A2739 url(images/footer.gif) no-repeat center top; padding-top:40px; /* position:relative; top:-65px;  */
+      color:#939AAE; font-family:Tahoma; font-size:0.8em; }
+      
+
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* Content */
+
+      /* Main Content */ 
+      #content #authentication  { }
+      #content #authentication  fieldset {width:340px; display:block; }
+      #content #authentication  form label {width:110px;  }
+      #content #authentication  form .indent, #content .main p.indent {margin-left:107px; clear:both; }
+      #content #authentication  form .checkbox {}
+      
+      /* Highlight */  
+      #content #authentication  .highlight {position:absolute; top:55px; right:0; width:246px; } /* Check IE6 Stylesheet too */
+      #content #authentication  .highlight .footer {width:290px; right:0px;}
+      
+      
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Authentication-success
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* Content */
+
+      /* Main Content */ 
+      #content #authentication-success { }
+      
+      /* Highlight */  
+      #content #authentication-success .highlight {width:510px; float:left; } /* Check IE6 Stylesheet too */
+      #content #authentication-success .highlight .footer {width:528px; right:0px;}
+      
+      #content #authentication-success .button {float:right;}
+
+      /* User info */        
+      #content #authentication-success #user-info {clear:both; padding-top:10px; width:100%; overflow:hidden; } /* Check IE6 and IE7 Stylesheets too */
+      
+      #authentication-success #user-info #col1, 
+      #authentication-success #user-info #col3  {margin:0 38px 0 0; }
+
+      #authentication-success #user-info #col1, 
+      #authentication-success #user-info #col2  {margin-bottom:30px; }
+      
+      #authentication-success #user-info #col1, 
+      #authentication-success #user-info #col2, 
+      #authentication-success #user-info #col3, 
+      #authentication-success #user-info #col4  {float:left; width:320px; }
+      
+      #authentication-success #user-info h3 {display:block; border-bottom:1px solid #DDDDDD; margin:0 0 5px 0; }
+      #authentication-success #user-info h4 {float:left; padding:0 5px 0 0; clear:left; }
+      #authentication-success #user-info p {margin:0; float:left; }
+      #authentication-success #user-info ul {font-size:0.9em; }
+      
+
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Lost-password
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+      /* Content */
+      #content #lost-password form label {float:none;}
+      #content #lost-password form input.text {width:292px; }
+      #content #lost-password form input.button {clear:both; }
+      
+      
+      /* Highlight */  
+      #content #lost-password .highlight {position:absolute; top:115px; right:0; width:246px; } /* Check IE6 Stylesheet too */
+      #content #lost-password .highlight .footer {width:290px; right:0px;}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Password-distributted
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+      /* Content */
+
+      /* Highlight */
+      #content #password-distributed .highlight {width:510px; float:left; } /* Check IE6 Stylesheet too */
+      #content #password-distributed .highlight .footer {width:528px; right:0px;}
+
+      #content #password-distributed .button {float:right;}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+      /* Content */
+
+      /* Main Content */
+      #content #authentication  { }
+      #content #authentication  fieldset {width:340px; display:block; }
+      #content #authentication  form label {width:110px;  }
+      #content #authentication  form .indent, #content .main p.indent {margin-left:107px; clear:both; }
+      #content #authentication  form .checkbox {}
+
+      /* Highlight */
+      #content #authentication  .highlight {position:absolute; top:55px; right:0; width:246px; } /* Check IE6 Stylesheet too */
+      #content #authentication  .highlight .footer {width:290px; right:0px;}
+
+
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ warning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* Content */
+
+      /* Main Content */ 
+      #content #warning { }
+      
+      /* Highlight */  
+      #content #warning .highlight {width:510px; float:left; } /* Check IE6 Stylesheet too */
+      #content #warning .highlight .footer {width:528px; right:0px;}
+      
+      #content #warning .button {float:right;}
+
+      /* Login-options */        
+      #content #warning #login-options {clear:both; padding-top:10px; width:100%; overflow:hidden; } /* Check IE6 and IE7 Stylesheets too */
+      
+      #warning #login-options #col1  {margin:0 38px 0 0; }
+    
+      #warning #login-options #col1,
+      #warning #login-options #col2  {float:left; width:320px; }
+      
+      #warning #login-options h3 {display:block; border-bottom:1px solid #DDDDDD; margin:0 0 5px 0; }
+      #warning #login-options h4 {float:left; padding:0 5px 0 0; clear:left; }
+      #warning #login-options p {margin:0; float:left; line-height:1.4;font-size:0.9em;  }
+      #warning #login-options a {font-size:1em;  }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ warning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* Content */
+
+      /* Main Content */
+      #content #warning { }
+
+      /* Highlight */
+      #content #warning .highlight {width:510px; float:left; } /* Check IE6 Stylesheet too */
+      #content #warning .highlight .footer {width:528px; right:0px;}
+
+      #content #warning .button {float:right;}
+
+      /* Login-options */
+      #content #warning #login-options {clear:both; padding-top:10px; width:100%; overflow:hidden; } /* Check IE6 and IE7 Stylesheets too */
+
+      #warning #login-options #col1  {margin:0 38px 0 0; }
+
+      #warning #login-options #col1,
+      #warning #login-options #col2  {float:left; width:320px; }
+
+      #warning #login-options h3 {display:block; border-bottom:1px solid #DDDDDD; margin:0 0 5px 0; }
+      #warning #login-options h4 {float:left; padding:0 5px 0 0; clear:left; }
+      #warning #login-options p {margin:0; float:left; line-height:1.4;font-size:0.9em;  }
+      #warning #login-options a {font-size:1em;  }
+
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Partner-protected
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+     
+
+/* Content */
+
+      /* Main Content */ 
+      #content #idbus-error { }
+      
+      /* Highlight */  
+      #content #idbus-error .highlight {width:510px; float:left; } /* Check IE6 Stylesheet too */
+      #content #idbus-error .highlight .footer {width:528px; right:0px;}
+      
+      #content #idbus-error .button {float:right;}
+
+      /* Login-options */        
+      #content #idbus-error #login-options {clear:both; padding-top:10px; width:100%; overflow:hidden; } /* Check IE6 and IE7 Stylesheets too */
+      
+      #idbus-error #login-options #col1  {margin:0 38px 0 0; }
+    
+      #idbus-error #login-options #col1, 
+      #idbus-error #login-options #col2  {float:left; width:320px; margin-bottom:30px;}
+
+      #idbus-error #login-options #col3  {width:100%; clear:both; }
+      
+      #idbus-error #login-options h3 {display:block; border-bottom:1px solid #DDDDDD; margin:0 0 5px 0; }
+      #idbus-error #login-options h4 {float:left; padding:0 5px 0 0; clear:left; }
+      #idbus-error #login-options p {margin:0; float:left; line-height:1.4;font-size:0.9em;  }
+      #idbus-error #login-options a {font-size:1em;  }
+      #idbus-error #login-options ul {font-size:0.8em;}
+      #idbus-error #login-options ul strong {font-size:1.2em; padding:0 5px 0 0; }
+      #idbus-error #login-options ul li {border:1px solid #fff;}
+      #idbus-error #login-options ul li:hover {background:#F6F6F6; border-top:1px dotted #D3D3D3; border-bottom:1px dotted #D3D3D3 }
+
+
+
+
+      
+      
+      
+      

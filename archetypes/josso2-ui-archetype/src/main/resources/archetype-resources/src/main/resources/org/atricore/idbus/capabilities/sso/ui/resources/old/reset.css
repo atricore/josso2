@@ -1,0 +1,111 @@
+/*(C)2008 Atricore, Inc */
+/* CSS by Nicolas Calabrese  */
+
+/************************************************************************************************************************************************
+  S T A N D A R I Z E   C S S   S T Y L E S
+-------------------------------------------------------------------------------------------------------------------------------------------------
+  $ Reset the default CSS styles
+  $ Set new base Styles
+************************************************************************************************************************************************/
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Reset the default CSS styles (Eric Meyer)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+      {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+      body {line-height: 1;}
+      ul {list-style: none;}
+      blockquote, q {quotes: none;}
+
+      /* Remember to define focus styles! */
+      :focus {outline: 0;}
+
+      /* Remember to highlight inserts somehow! */
+      ins {text-decoration: none;}
+      del {text-decoration: line-through;}
+
+      /* Tables still need 'cellspacing="0"' in the markup */
+      table {border-collapse: collapse; border-spacing: 0;}
+
+      a {cursor:hand;}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Set new base Styles (Adaptation of Bluetrip)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Typography */ 
+      html {font-size: 62.5%; font-family: arial, tahoma, verdana, sans-serif;}
+      strong, th, thead td, h1, h2, h3, h4, h5, h6 {font-weight: bold;}
+      cite, em, dfn {font-style: italic;}
+      code, kbd, samp, pre, tt, var, input[type='text'], textarea {font-size: 92%; font-family: monaco, "Lucida Console", courier, monospace;}
+      del {text-decoration: line-through; color: #666;}
+      ins, dfn {border-bottom: 1px solid #ccc;}
+      small, sup, sub {font-size: 85%;}
+      abbr, acronym {text-transform: uppercase; font-size: 85%; letter-spacing: .1em;}
+      a abbr, a acronym {border: none;}
+      abbr[title], acronym[title], dfn[title] {cursor: help; border-bottom: 1px solid #ccc;}
+      sup {vertical-align: super;}
+      sub {vertical-align: sub;}
+
+
+/* Quotes */
+      blockquote {border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; color: #666;}
+      blockquote *:first-child:before {content: "\201C";}
+      blockquote *:first-child:after {content: "\201D";}
+
+/* Forms */
+
+      form {margin:0 0 25px 0;}
+            form input.error {border:1px solid #C50F11!important; background:#F6EEEE; } 
+      fieldset {/* padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; */ padding:0 0 15px 0;}
+      legend {font-weight: bold; font-size:1.2em; margin-bottom:0 10em; display:block;  }
+      label {font-weight: bold; display:block;  float:left; clear:left; margin:0 0 15px 0; padding:0 0 0 0; } /* Check IE6 Stylesheet too */
+      textarea, input.text, select {border: 1px solid #BFC8D2; background: #F6F6F6; width:200px;  height:26px; color:#424242; font-size:16px; 
+      font-family:Arial, Tahoma, sans-serif; padding:5px 5px 0 5px;  float:left; margin:0 0 15px 0; }
+      select {padding:0.2em 0; }
+      textarea {margin-bottom:2em; }
+      textarea:hover, input.text:hover, select:hover {border-color: #677280;}
+      textarea:focus, input.text:focus, select:focus {border-color: #fff; outline: 2px solid #467CBA;}
+      input, select {cursor: pointer;}
+      input.text {cursor: text;}
+      input.button {}
+      form li {margin:1em 0; }
+      textarea {width:550px; height:150px; font-family:Tahoma, Arial, Verdana, Helvetica, sans-serif; }
+      form h5 {margin:1em 0; font-size:1.2em; }
+      .left, .right {width:47%; }
+      .left {float:left; border-right: 1px dotted #ddd; padding-right:15px}
+      .right {float:right; padding-left:15px}
+      .center {clear:both; padding-top:0.1em}
+          
+
+/* Base sizes */
+      #wrapper {font-size: 1.2em; line-height: 1.6em;}
+
+
+/* Tables */
+      #wrapper table {border-top: 1px solid #ccc;  border-left: 1px solid #ccc;}
+      #wrapper th, #wrapper td {border-bottom: 1px solid #ddd; border-right: 1px solid #ccc;}
+
+      
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ $ Usefull clases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+                
+      html > body p.browser-support {display:none;} /* Check IE6 Stylesheet too */
+      
+/* Clearing */
+      .clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+      .clearfix {display: inline-block;}
+      /* Hides from IE-mac \*/
+      * html .clearfix {height: 1%;}
+      .clearfix {display: block;}
+      /* End hide from IE-mac */
+      
+      .clear {clear:both;}
+ 
