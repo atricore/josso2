@@ -11,7 +11,7 @@
         <requiredProperty key="variant">
             <defaultValue>${uiId}</defaultValue>
         </requiredProperty>
-        <requiredProperty key="variantSufix">
+        <requiredProperty key="variantSuffix">
             <defaultValue>_${variant}</defaultValue>
         </requiredProperty>
 
