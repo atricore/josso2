@@ -1,3 +1,5 @@
-Second generation of the JOSSO (Java Open Single Sign-On) project.
-==================================================================
+josso2
+======
+
+Second Generation of JOSSO (Java Open Single Sign-On).
 
