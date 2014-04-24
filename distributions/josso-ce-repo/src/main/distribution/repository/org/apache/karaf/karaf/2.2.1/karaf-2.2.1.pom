@@ -178,7 +178,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
+        <!--repository>
             <id>fusesource.snapshots</id>
             <name>FuseSource snapshot repository</name>
             <url>http://repo.fusesource.com/nexus/content/repositories/snapshots</url>
@@ -188,7 +188,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>
+        </repository-->
         <!-- OPS4J SNAPSHOT repository -->
         <repository>
             <id>ops4j.sonatype.snapshots.deploy</id>
