@@ -30,7 +30,7 @@
     </feature>
 
     <!-- JOSSO CE Console Services -->
-    <feature name="josso-ce-console-svcs" version="${vers/ion}">
+    <feature name="josso-ce-console-svcs" version="${version}">
 
         <bundle>mvn:org.atricore.josso/org.atricore.josso.tooling.wrapper/${version}</bundle>
 
