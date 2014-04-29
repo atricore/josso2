@@ -5,12 +5,12 @@
    <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>archetypes</artifactId>
-        <version>2.4.0</version>
+        <version>2.4.1-SNAPSHOT</version>
     </parent>
 
   <groupId>org.atricore.josso.archetypes</groupId>
   <artifactId>josso2-ui-archetype</artifactId>
-  <version>2.4.0</version>
+  <version>2.4.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
     <name>JOSSO 2 :: Archetypes : UI Branding</name>

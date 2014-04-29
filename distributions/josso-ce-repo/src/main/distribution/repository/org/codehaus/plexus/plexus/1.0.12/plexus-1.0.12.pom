@@ -303,7 +303,7 @@
             </goals>
             <configuration>
               <resourceBundles>
-                <resourceBundle>org.apache:apache-jar-resource-bundle:1.3.0</resourceBundle>
+                <resourceBundle>org.apache:apache-jar-resource-bundle:1.3.1-SNAPSHOT</resourceBundle>
               </resourceBundles>
             </configuration>
           </execution>
