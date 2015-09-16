@@ -30,8 +30,8 @@
 
     <properties>
         <felix.plugin.version>2.1.0</felix.plugin.version>
-        <apache-wicket.version>6.5.0</apache-wicket.version>
-        <ops4j.paxwicket.version>2.1.0</ops4j.paxwicket.version>
+        <apache-wicket.version>6.7.0</apache-wicket.version>
+        <ops4j.paxwicket.version>2.1.1</ops4j.paxwicket.version>
         <atricore.idbus.vesion>1.4.2-SNAPSHOT</atricore.idbus.vesion>
     </properties>
 
