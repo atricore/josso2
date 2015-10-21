@@ -26,7 +26,7 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>josso-ce-all</artifactId>
-        <version>2.4.1-SNAPSHOT</version>
+        <version>2.4.1</version>
     </parent>
 
     <groupId>org.atricore.josso</groupId>
