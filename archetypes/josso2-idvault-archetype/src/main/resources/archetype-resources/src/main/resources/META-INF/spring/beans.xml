@@ -1,0 +1,193 @@
+#set ( $artifactIdUppercase = $artifactId.toUpperCase() )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+       xmlns:ctx="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/osgi
+                    http://www.springframework.org/schema/osgi/spring-osgi.xsd
+                    http://www.springframework.org/schema/osgi-compendium
+                    http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+                    ">
+
+    <bean name="${artifactId}-connector" class="org.atricore.idbus.kernel.main.provisioning.spi.IdentityConnector">
+        <property name="name" value="${artifactId}-connector"/>
+        <property name="storeName" value="${artifactId}-store"/>
+        <property name="description" value="${artifactId} (id-connector)"/>
+        <property name="vault" ref="${artifactId}-idvault"/>
+        <property name="target" ref="${artifactId}-pst"/>
+        <property name="partition" ref="${artifactId}-idpart"/>
+        <property name="shared" value="true"/>
+    </bean>
+
+    <bean name="${artifactId}-psp" class="org.atricore.idbus.kernel.main.mediation.provider.ProvisioningServiceProviderImpl">
+        <property name="name" value="${artifactId}-psp"/>
+        <property name="description" value="${artifactId} Provisioning Service Provider"/>
+        <property name="role" value="PSP"/>
+        <property name="channel" ref="${artifactId}-psp-default-channel"/>
+
+        <property name="provisioningTargets">
+            <list>
+                <ref bean="${artifactId}-pst"/>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean name="${artifactId}-idau" class="org.atricore.idbus.kernel.main.mediation.osgi.OsgiIdentityMediationUnit"
+          depends-on="bpms-manager,cxf">
+        <property name="name" value="${artifactId}-mediation-unit"/>
+        <property name="container" ref="${artifactId}-idau-container"/>
+
+        <property name="channels">
+            <list>
+                <!-- =================================== -->
+                <!-- psp Channels                        -->
+                <!-- =================================== -->
+                <ref bean="${artifactId}-psp-default-channel"/>
+
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.atricore.idbus.kernel.main.mediation.camel.OsgiCamelIdentityMediationUnitContainerImpl" name="${artifactId}-idau-container">
+        <property name="name" value="${artifactId}-idau-engine" />
+        <property name="cxfBus" ref="cxf"/>
+    </bean>
+
+    <bean name="${artifactId}-psp-default-channel" class="org.atricore.idbus.kernel.main.mediation.channel.PspChannelImpl">
+        <property name="name" value="${artifactId}-psp-default-channel"/>
+        <property name="description" value="PSP ${artifactId} default channel"/>
+        <property name="identityMediator" ref="${artifactId}-psp-spml2-mediator"/>
+        <property name="unitContainer" ref="${artifactId}-idau-container"/>
+        <property name="location" value="http://localhost:8081/IDBUS/${artifactIdUppercase}/PSP-${artifactIdUppercase}/SPML2"/>
+        <property name="provider" ref="${artifactId}-psp"/>
+
+        <property name="endpoints">
+            <list>
+                <bean name="${artifactId}-psp-local-endpoint" class="org.atricore.idbus.kernel.main.mediation.endpoint.IdentityMediationEndpointImpl">
+                    <property name="name" value="${artifactId}-psp-local-endpoint"/>
+                    <property name="type" value="{urn:oasis:names:tc:SPML:2:0}PSPService" />
+                    <property name="binding" value="urn:oasis:names:tc:SPML:2:0:bindings:LOCAL"/>
+                    <property name="location" value="local:/${artifactIdUppercase}-PSP/SPML2/LOCAL"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="${artifactId}-psp-spml2-mediator" class="org.atricore.idbus.capabilities.spmlr2.main.psp.SpmlR2PSPMediator">
+        <property name="bindingFactory">
+            <bean class="org.atricore.idbus.capabilities.spmlr2.main.binding.SpmlR2BindingFactory"/>
+        </property>
+    </bean>
+
+    <bean name="${artifactId}-psp-client" class="org.atricore.idbus.capabilities.spmlr2.main.client.SpmlR2MediationClientImpl">
+        <property name="psp" ref="${artifactId}-psp"/>
+        <property name="serviceType" value="{urn:oasis:names:tc:SPML:2:0}PSPService"/>
+        <property name="binding" value="urn:oasis:names:tc:SPML:2:0:bindings:LOCAL" />
+    </bean>
+
+    <!-- ============================================================= -->
+    <!-- Identity Vault / Partition JDO Based -->
+    <!-- ============================================================= -->
+    <bean name="${artifactId}-pst" class="org.atricore.idbus.kernel.main.provisioning.impl.ProvisioningTargetImpl" init-method="init" destroy-method="shutDown">
+        <property name="name" value="${artifactId}-pst"/>
+        <property name="description" value="${artifactId} Embedded Provisioning Target"/>
+
+        <property name="identityPartition" ref="${artifactId}-idpart"/>
+        <property name="schemaManager" ref="${artifactId}-schema-manager"/>
+        <property name="mediationPartition" ref="mediation-partition"/>
+    </bean>
+
+    <bean class="${package}.idvault.IdentityPartition" name="${artifactId}-idpart">
+        <property name="name" value="${artifactId}-idpart"/>
+        <property name="description" value="${artifactId} Identity Partition"/>
+        <property name="identityStore" ref="${artifactId}-idstore"/>
+    </bean>
+
+    <bean name="${artifactId}-idvault" class="org.atricore.idbus.kernel.main.provisioning.impl.IdentityVaultImpl" >
+        <property name="name" value="${artifactId}-idvault"/>
+        <property name="description" value="${artifactId} Identity Vault"/>
+        <property name="identityPartitions">
+            <set>
+                <ref bean="${artifactId}-idpart"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean name="${artifactId}-idstore" class="org.atricore.idbus.kernel.main.store.DefaultPartitionStore">
+        <property name="partition" ref="${artifactId}-idpart"/>
+    </bean>
+
+    <bean name="${artifactId}-schema-manager" class="${package}.idvault.SchemaManager" init-method="init">
+        <property name="schemaName" value="${artifactId}-schema-manager"/>
+    </bean>
+
+
+    <osgix:cm-properties id="${artifactId}-props" persistent-id="${package}.idvault">
+    </osgix:cm-properties>
+
+    <ctx:property-placeholder properties-ref="${artifactId}-props" />
+
+    <!-- ========================================== -->
+    <!-- References to platform services            -->
+    <!-- ========================================== -->
+    <osgi:reference timeout="60" cardinality="1..1" interface="org.apache.cxf.Bus" id="cxf"/>
+
+    <osgi:reference id="bpms-manager" cardinality="1..1" timeout="60"
+                    interface="org.atricore.idbus.kernel.planning.jbpm.BPMSManager" />
+
+    <osgi:reference id="idbus-config" interface="org.atricore.idbus.kernel.main.util.ConfigurationContext"/>
+
+    <osgi:reference timeout="60" cardinality="1..1"
+                    interface="org.atricore.idbus.kernel.common.support.jdbc.JDBCDriverManager" id="jdbc-manager"/>
+
+    <osgi:reference id="mediation-partition" timeout="60" cardinality="1..1"
+                    interface="org.atricore.idbus.kernel.main.provisioning.spi.MediationPartition"
+                    filter="(&amp;(partitionName=part-default))"/>
+
+    <!-- ================================================= -->
+    <!-- Exported services (must match connector settings) -->
+    <!-- ================================================= -->
+
+    <osgi:service id="${artifactId}-idau-exporter" ref="${artifactId}-idau"
+                  interface="org.atricore.idbus.kernel.main.mediation.osgi.OsgiIdentityMediationUnit" />
+
+    <osgi:service id="${artifactId}-osgi-psp-client"
+                  ref="${artifactId}-psp-client"
+                  interface="org.atricore.idbus.capabilities.spmlr2.main.SpmlR2Client"/>
+
+
+    <osgi:service id="${artifactId}-osgi-pst"
+                  ref="${artifactId}-pst"
+                  interface="org.atricore.idbus.kernel.main.provisioning.spi.ProvisioningTarget">
+        <service-properties>
+            <!-- This MUST match the PST Bean property named 'name' -->
+            <entry key="pstName" value="${artifactId}-pst"/>
+        </service-properties>
+    </osgi:service>
+
+    <osgi:service id="${artifactId}-osgi-connector"
+                  ref="${artifactId}-connector"
+                  interface="org.atricore.idbus.kernel.main.provisioning.spi.IdentityConnector">
+        <service-properties>
+            <!-- This MUST match the Identity Connector Bean property named 'name' -->
+            <entry key="connectorName" value="${artifactId}-connector"/>
+        </service-properties>
+    </osgi:service>
+
+    <osgi:service id="${artifactId}-osgi-idstore"
+                  ref="${artifactId}-idstore"
+                  interface="org.atricore.idbus.kernel.main.store.identity.IdentityPartitionStore">
+        <service-properties>
+            <!-- This MUST match the Identity Connector Bean property named 'storeName' -->
+            <entry key="storeName" value="${artifactId}-store"/>
+        </service-properties>
+    </osgi:service>
+
+</beans>

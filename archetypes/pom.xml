@@ -38,6 +38,7 @@
 
     <modules>
         <module>josso2-ui-archetype</module>
+        <module>josso2-idvault-archetype</module>
     </modules>
 
 </project>

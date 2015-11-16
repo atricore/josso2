@@ -55,7 +55,7 @@ init() {
 }
 
 run() {
-    mvn -B  archetype:generate -Dmaven.repo.remote=${JOSSO2_REPO} -DarchetypeGroupId=org.atricore.josso.archetypes -DarchetypeArtifactId=josso2-ui-archetype -DarchetypeVersion=${JOSSO2_VERSION} -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dpackage=${PACAKGE} -DuiId=${UI_ID} -Dvariatn=${VARIANT} -DvariantSuffix=${VARIANT_SUFFIX}
+    mvn -B  archetype:generate -Dmaven.repo.remote=${JOSSO2_REPO} -DarchetypeGroupId=org.atricore.josso.archetypes -DarchetypeArtifactId=josso2-ui-archetype -DarchetypeVersion=${JOSSO2_VERSION} -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dpackage=${PACKAGE} -DuiId=${UI_ID} -Dvariant=${VARIANT} -DvariantSuffix=${VARIANT_SUFFIX}
 }
 
 main() {
