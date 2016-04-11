@@ -11,7 +11,7 @@
     <packaging>bundle</packaging>
 
     <properties>
-        <atricore.idbus.vesion>1.4.2-SNAPSHOT</atricore.idbus.vesion>
+        <atricore.idbus.vesion>1.5.0-SNAPSHOT</atricore.idbus.vesion>
         <felix.plugin.version>2.1.0</felix.plugin.version>
         <felix.osgi.version>1.4.0</felix.osgi.version>
         <slf4j-log4j12.version>1.5.8</slf4j-log4j12.version>
