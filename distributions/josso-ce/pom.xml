@@ -29,12 +29,12 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>distributions</artifactId>
-        <version>2.4.3-SNAPSHOT</version>
+        <version>2.4.3</version>
     </parent>
 
     <artifactId>josso-ce</artifactId>
     <packaging>pom</packaging>
-    <version>2.4.3-SNAPSHOT</version>
+    <version>2.4.3</version>
     <name>JOSSO 2 CE :: Distribution : Standalone </name>
     <properties>
         <staging.dir>${project.build.directory}/staging</staging.dir>
