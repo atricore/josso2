@@ -51,7 +51,7 @@
         <atricore.console.version>1.4.0-SNAPSHOT</atricore.console.version>
 
         <updateNumber>000</updateNumber>
-        <josso1.version>1.8.11-SNAPSHOT</josso1.version>
+        <josso1.version>1.8.14-SNAPSHOT</josso1.version>
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
         <compiler.fork>true</compiler.fork>
