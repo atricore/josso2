@@ -32,7 +32,7 @@ public class WorkbenchCredentialsGenerator implements InstallerListener {
     }
 
     public void afterDir(File file, PackFile packFile) throws Exception {
-        System.err.println("afterDir: " + file.getName());
+
     }
 
     public void beforeFile(File file, PackFile packFile) throws Exception {
