@@ -210,6 +210,12 @@
             <type>war</type>
         </dependency-->
 
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.izpack</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -234,7 +240,7 @@
             </resource>
 
         </resources>
-        
+
         <plugins>
 
             <plugin>
@@ -253,7 +259,7 @@
                     <escapeString>@@</escapeString>
                 </configuration>
             </plugin>
-            
+
             <plugin>
 
                 <groupId>org.apache.maven.plugins</groupId>
@@ -286,10 +292,40 @@
                             <useRepositoryLayout>true</useRepositoryLayout>
                             <outputDirectory>target/dependencies/system</outputDirectory>
                             <excludeTransitive>true</excludeTransitive>
-                            <excludeArtifactIds>apache-felix-karaf,atricore-idbus,josso</excludeArtifactIds>
+                            <excludeArtifactIds>apache-felix-karaf,atricore-idbus,josso,org.atricore.josso.izpack</excludeArtifactIds>
                         </configuration>
 
                     </execution>
+
+                    <execution>
+                        <id>copy-izpack-actions</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+
+                            <artifactItems>
+
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.josso.izpack</artifactId>
+                                    <version>${version}</version>
+                                    <outputDirectory>${staging.dir}/unix/bin/customActions</outputDirectory>
+                                    <destFileName>WorkbenchCredentialsGenerator.jar</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.josso.izpack</artifactId>
+                                    <version>${version}</version>
+                                    <outputDirectory>${staging.dir}/windows/bin/customActions</outputDirectory>
+                                    <destFileName>WorkbenchCredentialsGenerator.jar</destFileName>
+                                </artifactItem>
+
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+
 
                     <execution>
                         <id>copy</id>
@@ -298,7 +334,7 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
-                            
+
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>org.atricore.josso</groupId>
@@ -310,8 +346,8 @@
                             </artifactItems>
                         </configuration>
                     </execution>
-                    
-                    
+
+
                 </executions>
             </plugin>
 
@@ -354,11 +390,11 @@
                             <assemblyId/>
                         </configuration>
                     </execution>
-                    
+
                 </executions>
 
-            </plugin>            
-            
+            </plugin>
+
             <!--  copy other checked resource into staging area, expected by install.xml -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -407,6 +443,11 @@
                             <izpackBasedir>${staging.dir}/unix</izpackBasedir>
                             <customPanelDirectory>${staging.dir}/unix</customPanelDirectory>
                             <kind>unix</kind>
+                            <classpathElements>
+                                <classpathElement>
+
+                                </classpathElement>
+                            </classpathElements>
                         </configuration>
                     </execution>
                     <execution>

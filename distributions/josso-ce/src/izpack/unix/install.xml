@@ -2,7 +2,7 @@
 
 <installation version="1.0">
 
-    <!-- 
+    <!--
         The info section.
         The meaning of the tags should be natural ...
     -->
@@ -15,7 +15,7 @@
         </authors>
     </info>
 
-    <!-- 
+    <!--
         The gui preferences indication.
         Sets the installer window to 640x480. It will not be able to change the size.
     -->
@@ -33,7 +33,7 @@
         <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
     </guiprefs>
 
-    <!-- 
+    <!--
         The locale section.
         Asks here to include the English and French langpacks.
     -->
@@ -41,7 +41,7 @@
         <langpack iso3="eng"/>
     </locale>
 
-    <!-- 
+    <!--
         The resources section.
         The ids must be these ones if you want to use the LicencePanel and/or the InfoPanel.
     -->
@@ -55,7 +55,7 @@
         <res id="Heading.image"                 src="../atricore-weblogo.png"/>
     </resources>
 
-    <!-- 
+    <!--
         The panels section.
         We indicate here which panels we want to use. The order will be respected.
     -->
@@ -70,6 +70,11 @@
         <panel classname="HTMLInfoPanel" id="installcomplete" encoding="ISO-8859-1"/>
         <panel classname="FinishPanel" />
     </panels>
+
+    <listeners>
+        <listener installer="WorkbenchCredentialsGenerator">
+        </listener>
+    </listeners>
 
     <!-- ==================================================== -->
     <!-- BOTH INSTALL FILES SHOULD BE EQUAL UP TO THIS POINT  -->

@@ -37,6 +37,7 @@
 
     <modules>
         <module>josso-wrapper</module>
+        <module>josso-izpack</module>
     </modules>
 
 </project>
