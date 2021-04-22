@@ -33,11 +33,9 @@
     <feature name="josso-ce-console-svcs" version="${version}">
 
         <bundle>mvn:org.atricore.josso/org.atricore.josso.tooling.wrapper/${version}</bundle>
-
+        <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.settings.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-default-idau/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-jaas/${atricore.console.version}</bundle>
-
-        <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.settings.main/${atricore.console.version}</bundle>
 
         <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.command/${atricore.console.version}</bundle>
@@ -53,7 +51,7 @@
 
     <!-- JOSSO CE Console Web -->
     <feature name="josso-ce-console-web" version="${version}">
-        <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war/ce</bundle>
+        <!--bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.web/${atricore.console.version}/war/ce</bundle-->
         <!--bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.docs/${atricore.console.version}/war</bundle-->
     </feature>
 

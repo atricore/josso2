@@ -9,7 +9,7 @@ setlocal
 set DIRNAME=%~dp0%
 set PROGNAME=%~nx0%
 set ARGS=%*
-set JOSSO2_VERSION=2.5.0-SNAPSHOT
+set JOSSO2_VERSION=2.5.2-SNAPSHOT
 set JOSSO2_REPO=http://repository.josso.org/m2-release-repository,http://repository.josso.org/m2-snapshot-repository
 
 goto :BEGIN
@@ -44,7 +44,7 @@ set VARIANT_SUFFIX = _%VARIANT%
 
 :RUN
 set ARGS=%1 %2 %3 %4 %5 %6 %7 %8
-mvn -B  archetype:generate -Dmaven.repo.remote="%JOSSO2_REPO%" -DarchetypeGroupId="org.atricore.josso.archetypes" -DarchetypeArtifactId="josso2-ui-archetype" -DarchetypeVersion="%JOSSO2_VERSION%" -DgroupId="%GROUP_ID%" -DartifactId="%ARTIFACT_ID%" -Dpackage="%PACAKGE%" -DuiId="%UI_ID%" -Dvariatn="%VARIANT%" -DvariantSuffix="%VARIANT_SUFFIX%"
+mvn -B  archetype:generate -Dmaven.repo.remote="%JOSSO2_REPO%" -DarchetypeGroupId="org.atricore.josso.archetypes" -DarchetypeArtifactId="josso2-ui-archetype" -DarchetypeVersion="%JOSSO2_VERSION%" -DgroupId="%GROUP_ID%" -DartifactId="%ARTIFACT_ID%" -Dpackage="%PACKAGE%" -DuiId="%UI_ID%" -Dvariant="%VARIANT%" -DvariantSuffix="%VARIANT_SUFFIX%"
 
 :END
 

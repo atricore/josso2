@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <atricore.idbus.vesion>1.5.0-SNAPSHOT</atricore.idbus.vesion>
+        <felix.plugin.version>2.1.0</felix.plugin.version>
+        <felix.osgi.version>1.4.0</felix.osgi.version>
+        <slf4j-log4j12.version>1.5.8</slf4j-log4j12.version>
+        <spring.osgi.version>1.2.0</spring.osgi.version>
+        <spring.version>3.1.0.RELEASE</spring.version>
+        <commons-logging.version>1.1.1</commons-logging.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.atricore.idbus.kernel.common</groupId>
+            <artifactId>org.atricore.idbus.kernel.common.support</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus.kernel</groupId>
+            <artifactId>org.atricore.idbus.kernel.main</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus.kernel</groupId>
+            <artifactId>org.atricore.idbus.kernel.planning</artifactId>
+            <version>${atricore.idbus.vesion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>${felix.osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-log4j12.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-core</artifactId>
+            <version>${spring.osgi.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>org.springframework.aop</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>org.springframework.beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>org.springframework.context</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>org.springframework.core</artifactId>
+                </exclusion>
+            </exclusions>
+
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <!--maxmem>256M</maxmem-->
+                    <fork>${compiler.fork}</fork>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+
+                        <Bundle-Name>Atricore IDBus :: SSO : Custom Identity Vault - ${artifactId}</Bundle-Name>
+                        <Bundle-Description>This bundle contains an example Custom Identity Vault
+                        </Bundle-Description>
+                        <!-- Bundle Symbolic name is hard coded in datanucleus code! -->
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>
+                            org.apache.commons.logging; version="[1.0,1.1.99)"; provider=paxlogging,
+                            org.apache.log4j; version="[1.2,1.3)"; provider=paxlogging,
+                            org.apache.camel.util.jndi,
+                            org.springframework.aop; version="${spring.version}",
+                            org.springframework.aop.aspectj; version="${spring.version}",
+                            org.springframework.aop.aspectj.annotation; version="${spring.version}",
+                            org.springframework.aop.aspectj.autoproxy; version="${spring.version}",
+                            org.springframework.aop.config; version="${spring.version}",
+                            org.springframework.aop.framework; version="${spring.version}",
+                            org.springframework.aop.framework.adapter; version="${spring.version}",
+                            org.springframework.aop.framework.autoproxy; version="${spring.version}",
+                            org.springframework.aop.interceptor; version="${spring.version}",
+                            org.springframework.aop.scope; version="${spring.version}",
+                            org.springframework.aop.support; version="${spring.version}",
+                            org.springframework.aop.support.annotation; version="${spring.version}",
+                            org.springframework.aop.target; version="${spring.version}",
+                            org.springframework.aop.target.dynamic; version="${spring.version}",
+                            org.aopalliance.aop,
+                            org.aopalliance.intercept,
+                            org.atricore.idbus.kernel.main.store.identity; version="${atricore.idbus.vesion}",
+                            *
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

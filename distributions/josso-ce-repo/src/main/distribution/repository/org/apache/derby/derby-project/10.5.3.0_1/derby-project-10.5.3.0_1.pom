@@ -25,6 +25,7 @@
   <groupId>org.apache.derby</groupId>
   <artifactId>derby-project</artifactId>
   <version>10.5.3.0_1</version>
+  <!--version>10.11.1.1</version-->
   <packaging>pom</packaging>
   <name>Apache Derby Project</name>
   <description>Apache Derby is an open source relational database implemented entirely in Java.</description>
