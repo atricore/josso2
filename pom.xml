@@ -50,7 +50,7 @@
         <atricore.idbus.version>1.5.0-SNAPSHOT</atricore.idbus.version>
         <atricore.console.version>1.4.2-SNAPSHOT</atricore.console.version>
 
-        <updateNumber>004</updateNumber>
+        <updateNumber>008</updateNumber>
         <josso1.version>1.8.14-SNAPSHOT</josso1.version>
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
