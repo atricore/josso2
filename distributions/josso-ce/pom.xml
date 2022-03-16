@@ -201,6 +201,14 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.atricore.idbus.console</groupId>
+            <artifactId>com.atricore.idbus.console.rest</artifactId>
+            <version>${atricore.console.version}</version>
+            <classifier>ce</classifier>
+            <type>war</type>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -1,0 +1,19 @@
+{
+"josso-version": "2.5.2",
+"josso-cn-version": "2.0",
+"josso-os-version": "1.0",
+"josso-update": "20",
+"josso-folder": "../josso-ce/target/",
+"josso-dist": "{{user `josso-folder`}}/josso-ce-{{user `josso-version`}}-SNAPSHOT-unix.tar.gz",
+
+"aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+"aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+"aws_region": "us-east-1",
+
+"vbox_headless": "false",
+"vbox_ssh_user": "{{env `VBOX_SSH_USER`}}",
+"vbox_ssh_passwd": "{{env `VBOX_SSH_PASSWD`}}",
+"vbox_base_path": "{{env `VBOX_BASE_PATH`}}",
+
+"target": "/opt/atricore/josso-ce"
+}
