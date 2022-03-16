@@ -1,0 +1,96 @@
+{
+
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "ami_name": "atricore-josso-os-{{user `josso-os-version`}}",
+      "ami_description": "Atricore JOSSO OS {{user `josso-os-version`}}",
+      "instance_type": "m3.medium",
+      "region": "{{user `aws_region`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "amzn2-ami-hvm-2.0.20191024.3-x86_64-gp2",
+          "root-device-type": "ebs"
+        },
+        "owners": [
+          "137112412989"
+        ],
+        "most_recent": true
+      },
+      "ssh_username": "ec2-user"
+    },
+    {
+      "type": "virtualbox-ovf",
+      "source_path": "{{user `vbox_base_path`}}/CentOS_7/Exports/Minimal/CentOS_7_Minimal.ova",
+      "output_directory": "{{user `vbox_base_path`}}/Josso-{{user `josso-os-version`}}/Exports",
+      "communicator": "ssh",
+      "headless": "{{user `vbox_headless`}}",
+      "ssh_username": "{{user `vbox_ssh_user`}}",
+      "ssh_password": "{{user `vbox_ssh_passwd`}}",
+      "shutdown_command": "sudo /sbin/shutdown -P now",
+      "checksum": "260e8bc00ce62d06e6bd23943c316ca4",
+      "checksum_type": "md5",
+      "guest_additions_mode": "disable",
+      "vm_name": "JOSSO_OS_{{user `josso-os-version`}}",
+
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "2048"],
+        ["modifyvm", "{{.Name}}", "--cpus", "2"]
+      ]
+
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum install httpd mod_ssl java-1.8.0-openjdk-devel java-1.8.0-openjdk -y"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "./src/sshpass-1.06.tar.gz",
+      "destination": "/tmp/sshpass-1.06.tar.gz"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum groupinstall \"Development Tools\" -y",
+        "mkdir src",
+        "tar -zxf /tmp/sshpass-1.06.tar.gz -C src",
+        "cd src/sshpass-1.06 ; ./configure ; make ; sudo make install",
+        "sudo cp /usr/local/bin/sshpass /usr/bin"
+      ],
+      "override": {
+        "virtualbox-ovf": {
+          "execute_command": [
+            "sudo /usr/sbin/setsebool -P httpd_can_network_connect 1",
+            "sudo yum install sshpass"
+          ]
+        }
+      }
+    },
+    {
+      "type": "file",
+      "source": "./cfg/josso.conf",
+      "destination": "/tmp/josso.conf"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo mv /tmp/josso.conf /etc/httpd/conf.d/josso.conf",
+        "sudo systemctl enable httpd"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo groupadd atricore",
+        "sudo useradd atricore -g atricore"
+      ]
+    }
+  ]
+}
