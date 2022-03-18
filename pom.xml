@@ -47,7 +47,7 @@
         <commons-logging.version>1.1.1</commons-logging.version>
 
         <!-- Atricore -->
-        <atricore.idbus.version>1.5.0-SNAPSHOT</atricore.idbus.version>
+        <atricore.idbus.version>1.5.2-SNAPSHOT</atricore.idbus.version>
         <atricore.console.version>1.4.2-SNAPSHOT</atricore.console.version>
 
         <updateNumber>020</updateNumber>
@@ -516,5 +516,46 @@
         </pluginManagement>
     </build>
 
+    <profiles>
+
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <buildNumber>unstable</buildNumber>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>buildnumber-maven-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>create</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <format>{0,number}</format>
+                            <items>
+                                <item>buildNumber</item>
+                            </items>
+                            <doCheck>true</doCheck>
+                            <doUpdate>false</doUpdate>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
