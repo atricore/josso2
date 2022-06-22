@@ -1,0 +1,37 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "alpine:latest",
+      "export_path": "josso-cn-{{user `josso-cn-version`}}.tar",
+      "pull": true
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-import",
+      "repository": "atricore/josso-cn",
+      "tag": "{{user `josso-cn-version`}}",
+      "changes": [
+        "USER root",
+        "EXPOSE 8101 8081 8443",
+        "ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apk add openjdk8 sudo"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "addgroup atricore",
+        "adduser atricore -G atricore -D -H"
+      ]
+    }
+  ]
+}
