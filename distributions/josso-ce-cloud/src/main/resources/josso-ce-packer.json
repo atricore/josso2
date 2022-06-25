@@ -10,7 +10,7 @@
   "post-processors": [
     {
       "type": "docker-import",
-      "repository": "atricore/josso-ce",
+      "repository": "atricore/josso",
       "tag": "{{user `josso-version`}}-{{user `josso-update`}}",
       "changes": [
         "WORKDIR {{user `target`}}/server/bin",
