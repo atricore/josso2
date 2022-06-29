@@ -9,7 +9,7 @@ setlocal
 set DIRNAME=%~dp0%
 set PROGNAME=%~nx0%
 set ARGS=%*
-set JOSSO2_VERSION=2.6.0-SNAPSHOT
+set JOSSO2_VERSION=3.0.0-SNAPSHOT
 set JOSSO2_REPO=http://repository.josso.org/m2-release-repository,http://repository.josso.org/m2-snapshot-repository
 
 goto :BEGIN

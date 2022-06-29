@@ -29,7 +29,7 @@
     <artifactId>josso-ce-all</artifactId>
     <packaging>pom</packaging>
 
-    <version>2.6.0-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <name>JOSSO 2 CE :: All POM</name>
     <inceptionYear>2009</inceptionYear>
 
@@ -39,8 +39,8 @@
 
     <properties>
 
-        <josso.family.version>2.5</josso.family.version>
-        <josso2dist.version>2.6.0</josso2dist.version>
+        <josso.family.version>3.0</josso.family.version>
+        <josso2dist.version>3.0.0</josso2dist.version>
 
 
         <derby.version>10.5.3.0_1</derby.version>
