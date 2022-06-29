@@ -55,6 +55,11 @@
       "destination": "{{user `target`}}/server/bin/dstart"
     },
     {
+      "type": "file",
+      "source": "./cfg/etc/org.ops4j.pax.logging.cfg",
+      "destination": "{{user `target`}}/server/etc/org.ops4j.pax.logging.cfg"
+    },
+    {
       "type": "shell",
       "inline": [
         "sudo chown -R atricore.atricore {{user `target`}}/server/bin",
