@@ -1,0 +1,1 @@
+This is where user extensions should be installed, following Maven 2 repository structure.

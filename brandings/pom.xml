@@ -39,6 +39,7 @@
 
     <modules>
         <module>josso-ce-branding</module>
+        <module>iam-tf-branding</module>
     </modules>
 
 

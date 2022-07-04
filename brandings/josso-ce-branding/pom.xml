@@ -35,7 +35,7 @@
     <artifactId>org.atricore.josso.branding</artifactId>
     <packaging>bundle</packaging>
     <version>3.0.0-SNAPSHOT</version>
-    <name>JOSSO 2 CE :: IDBus Boot branding</name>
+    <name>JOSSO 2 CE :: Server branding</name>
 
     <dependencies>
         <dependency>

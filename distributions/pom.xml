@@ -40,6 +40,7 @@
     <modules>
         <module>josso-ce-repo</module>
         <module>josso-ce</module>
+        <module>iam-tf</module>
     </modules>
 
     <profiles>
@@ -52,6 +53,8 @@
         <profile>
             <id>cloud</id>
             <modules>
+                <module>iam-tf</module>
+                <module>iam-tf-cloud</module>
                 <module>josso-ce</module>
                 <module>josso-ce-cloud</module>
             </modules>

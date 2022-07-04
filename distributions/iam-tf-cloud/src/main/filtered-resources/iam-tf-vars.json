@@ -1,0 +1,25 @@
+{
+  "iam-tf-project-version": "${iamtf.version}",
+  "josso-version": "${josso2dist.version}",
+  "josso-cn-version": "2.0",
+  "josso-os-version": "1.0",
+  "josso1-version" : "${josso1.version}",
+  "iam-tf-version": "${iamtfdist.version}",
+  "iam-tf-update": "${buildNumber}",
+
+  "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+  "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+  "aws_region": "us-east-1",
+
+  "vbox_headless": "false",
+  "vbox_ssh_user": "{{env `VBOX_SSH_USER`}}",
+  "vbox_ssh_passwd": "{{env `VBOX_SSH_PASSWD`}}",
+  "vbox_base_path": "{{env `VBOX_BASE_PATH`}}",
+
+  "iamtf-folder": "${project.basedir}/../iam-tf/target/",
+
+  "iam-tf-server-folder": "{{user `iamtf-folder`}}/iam-tf-{{user `iam-tf-project-version`}}-unix.dir/iam-tf-{{user `josso-version`}}-SNAPSHOT-unix",
+  "iam-tf-dist": "{{user `iamtf-folder`}}/iam-tf-{{user `iam-tf-project-version`}}-unix.tar.gz",
+
+  "target": "/opt/atricore/iamtf"
+}

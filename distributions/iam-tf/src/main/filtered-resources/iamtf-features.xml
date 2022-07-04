@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features  name="atricore-josso-ce-${josso2.version}">
+
+    <!-- JOSSO CE -->
+    <feature name="josso-ce" version="${josso2.version}">
+        <feature version="${atricore.idbus.version}">common</feature>
+        <feature version="${josso2.version}">josso-ce-svcs</feature>
+        <feature version="${atricore.idbus.version}">atricore-monitoring-builtin</feature>
+        <feature version="${atricore.idbus.version}">atricore-auditing-builtin</feature>
+        <feature version="${atricore.idbus.version}">atricore</feature>
+        <feature version="${atricore.idbus.version}">atricore-management</feature>
+        <feature version="${josso2.version}">josso-ce-console</feature>
+    </feature>
+
+
+    <!-- JOSSO CE Servies -->
+    <feature name="josso-ce-svcs" version="${josso2.version}">
+        <!-- License Manager service -->
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.josso2-license-v1_0/${atricore.console.version}</bundle>
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.main/${atricore.console.version}</bundle>
+        <bundle start-level="35">mvn:com.atricore.idbus.console.licensing/com.atricore.idbus.console.licensing.command/${atricore.console.version}</bundle>
+
+        <bundle>mvn:org.atricore.josso/org.atricore.josso.services/${josso2.version}</bundle>
+    </feature>
+
+    <!-- JOSSO CE Console -->
+    <feature name="josso-ce-console" version="${josso2.version}">
+        <feature version="${josso2.version}">josso-ce-console-svcs</feature>
+        <feature version="${josso2.version}">josso-ce-console-web</feature>
+    </feature>
+
+    <!-- JOSSO CE Console Services -->
+    <feature name="josso-ce-console-svcs" version="${josso2.version}">
+
+        <bundle>mvn:org.atricore.josso/org.atricore.josso.tooling.wrapper/${josso2.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.settings/com.atricore.idbus.console.settings.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-default-idau/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.appliance/com.atricore.idbus.console.appliance.console-jaas/${atricore.console.version}</bundle>
+
+        <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.brandservice/com.atricore.idbus.console.brandservice.command/${atricore.console.version}</bundle>
+
+        <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.protocol/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
+
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
+
+    </feature>
+
+    <!-- JOSSO CE Console Web -->
+    <feature name="josso-ce-console-web" version="${josso2.version}">
+        <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.rest/${atricore.console.version}/war/ce</bundle>
+        <!-- bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.rest/${atricore.console.version}/war/ee</bundle -->
+    </feature>
+
+</features>

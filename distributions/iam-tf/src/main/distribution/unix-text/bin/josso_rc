@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# chkconfig: - 86 13
+# description: Start up Atricore services
+#
+# processname: josso
+# config:
+
+# ----------------------------------------------------------------------------------
+#
+# JOSSO Control Script
+#
+# To use this script run it as root - it will switch to the specified user
+#
+# Here is a little (and extremely primitive) startup/shutdown script
+# for RedHat systems. It assumes that JOSSO lives in /opt/atricore/josso-ee,
+# it's run by user 'atricore' and JDK binaries are in /opt/atricore/jdk/bin.
+# All this can be changed in the script itself.
+#
+# Either modify this script for your requirements or just ensure that
+# the following variables are set correctly before calling the script.
+# ----------------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------------
+# MODIFY THE FOLLOWING VARIABLES IF NECESSARY
+# ----------------------------------------------------------------------------------
+
+# define where JAVA JDK is installed
+JAVA_HOME=${JAVA_HOME:-"/opt/atricore/jdk1.6.0"}
+
+#define where JOSSO is - this is the directory containing directories log, bin, conf etc
+JOSSO_HOME=${JOSSO_HOME:-"/opt/atricore/josso-ee"}
+
+#define the user under which JOSSO will run, or use 'RUNASIS' to run as the current user
+JOSSO_USER=${JOSSO_USER:-"atricore"}
+
+# ----------------------------------------------------------------------------------
+# MODIFY THE FOLLOWING VARIABLES IF NECESSARY
+# ----------------------------------------------------------------------------------
+
+JAVAPTH=$JAVA_HOME/bin
+
+if [ "$JOSSO_USER" = "RUNASIS" ]; then
+  SUBIT=""
+else
+  SUBIT="su - $JOSSO_USER -c "
+fi
+
+JOSSO_CMD_START="$JOSSO_HOME/bin/start"
+JOSSO_CMD_STOP="$JOSSO_HOME/bin/stop"
+
+if [ -z "`echo $PATH | grep $JAVAPTH`" ]; then
+  export PATH=$PATH:$JAVAPTH
+fi
+
+if [ ! -d "$JOSSO_HOME" ]; then
+  echo JOSSO_HOME does not exist as a valid directory : $JOSSO_HOME
+  exit 1
+fi
+
+export JAVA_HOME
+
+case "$1" in
+start)
+    echo JOSSO_CMD_START = $JOSSO_CMD_START
+    cd $JOSSO_HOME/bin
+    if [ -z "$SUBIT" ]; then
+        eval $JOSSO_CMD_START
+    else
+        $SUBIT "$JOSSO_CMD_START"
+    fi
+    ;;
+stop)
+    echo JOSSO_CMD_STOP = $JOSSO_CMD_STOP
+    if [ -z "$SUBIT" ]; then
+        $JOSSO_CMD_STOP
+    else
+        $SUBIT "$JOSSO_CMD_STOP"
+    fi
+    ;;
+restart)
+    $0 stop
+    $0 start
+    ;;
+*)
+    echo "usage: $0 (start|stop|restart|help)"
+esac
+

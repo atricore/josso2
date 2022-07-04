@@ -1,0 +1,78 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "atricore/josso-cn:{{user `josso-cn-version`}}",
+      "export_path": "iam-tf-{{user `iam-tf-version`}}.tar",
+      "pull": false
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-import",
+      "repository": "atricore/iamtf",
+      "tag": "{{user `iam-tf-version`}}-{{user `iam-tf-update`}}",
+      "changes": [
+        "WORKDIR {{user `target`}}/server/bin",
+        "CMD {{user `target`}}/server/bin/dstart",
+        "USER root",
+        "EXPOSE 8101 8081 8443",
+        "ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "{{user `iam-tf-dist`}}",
+      "destination": "/tmp/iam-tf.tgz"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo mkdir -p {{user `target`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo tar -zxf /tmp/iam-tf.tgz -C {{user `target`}}"
+      ],
+      "valid_exit_codes": [0,1]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo rm /tmp/iam-tf.tgz",
+        "sudo mv {{user `target`}}/iam-tf-{{user `iam-tf-project-version`}}-unix {{user `target`}}/server",
+        "sudo rm -rf {{user `target`}}/server/iamtf",
+        "sudo chown  -R atricore.atricore {{user `target`}}"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "./docker/dstart",
+      "destination": "{{user `target`}}/server/bin/dstart"
+    },
+    {
+      "type": "file",
+      "source": "./cfg/etc/org.ops4j.pax.logging.cfg",
+      "destination": "{{user `target`}}/server/etc/org.ops4j.pax.logging.cfg"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo chown -R atricore.atricore {{user `target`}}/server/bin",
+        "sudo chmod u+x {{user `target`}}/server/bin/*"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo ln -sf /dev/stdout {{user `target`}}/server/data/atricore.out"
+      ]
+    }
+
+
+  ]
+}

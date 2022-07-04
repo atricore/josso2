@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Atricore IDBus
+  ~
+  ~ Copyright 2009, Atricore Inc.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.atricore.josso</groupId>
+        <artifactId>distributions</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>iam-tf</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>IAM.tf :: Distribution : Standalone </name>
+    <properties>
+        <staging.dir>${project.build.directory}/staging</staging.dir>
+        <izpack-standalone.version>4.3.1</izpack-standalone.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- IDBus distribution -->
+        <dependency>
+            <groupId>org.atricore.idbus</groupId>
+            <artifactId>atricore-idbus</artifactId>
+            <version>${atricore.idbus.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.idbus</groupId>
+            <artifactId>atricore-idbus</artifactId>
+            <version>${atricore.idbus.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- JOSSO 1 distribution -->
+
+        <dependency>
+            <groupId>org.josso</groupId>
+            <artifactId>josso</artifactId>
+            <version>${josso1.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.josso</groupId>
+            <artifactId>josso</artifactId>
+            <version>${josso1.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- JOSSO 2 Dependencies -->
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.tooling.wrapper</artifactId>
+            <version>${josso2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.iamtf.branding</artifactId>
+            <version>${iamtf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.services</artifactId>
+            <version>${josso2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>josso-ce-repo</artifactId>
+            <version>${josso2.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>josso-ce-repo</artifactId>
+            <version>${josso2.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+
+        <!-- Atricore Console -->
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.settings</groupId>
+            <artifactId>com.atricore.idbus.console.settings.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.brandservice</groupId>
+            <artifactId>com.atricore.idbus.console.brandservice.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.brandservice</groupId>
+            <artifactId>com.atricore.idbus.console.brandservice.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.licensing</groupId>
+            <artifactId>com.atricore.idbus.console.licensing.josso2-license-v1_0</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.licensing</groupId>
+            <artifactId>com.atricore.idbus.console.licensing.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.licensing</groupId>
+            <artifactId>com.atricore.idbus.console.licensing.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.protocol</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.main</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.activation</groupId>
+            <artifactId>com.atricore.idbus.console.activation.command</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.lifecycle</groupId>
+            <artifactId>com.atricore.idbus.console.lifecycle.support.springmetadata</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.appliance</groupId>
+            <artifactId>com.atricore.idbus.console.appliance.console-default-idau</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console.appliance</groupId>
+            <artifactId>com.atricore.idbus.console.appliance.console-jaas</artifactId>
+            <version>${atricore.console.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.atricore.josso</groupId>
+            <artifactId>org.atricore.josso.izpack</artifactId>
+            <version>${josso2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atricore.idbus.console</groupId>
+            <artifactId>com.atricore.idbus.console.rest</artifactId>
+            <version>${atricore.console.version}</version>
+            <classifier>ce</classifier>
+            <type>war</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <resources>
+            <resource>
+                <directory>${pom.basedir}/src/main/filtered-resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+
+            <!-- IzPack resources -->
+            <resource>
+                <directory>${basedir}/src/izpack</directory>
+                <targetPath>${basedir}/target/staging</targetPath>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+
+        </resources>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>filter</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <escapeString>@@</escapeString>
+                </configuration>
+            </plugin>
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.1</version>
+
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+
+                        <configuration>
+                            <includeArtifactIds>atricore-idbus,josso,josso-ce-repo</includeArtifactIds>
+                            <useSubDirectoryPerType>true</useSubDirectoryPerType>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>copy-deps</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+
+                        <configuration>
+                            <copyPom>true</copyPom>
+                            <useRepositoryLayout>true</useRepositoryLayout>
+                            <outputDirectory>target/dependencies/system</outputDirectory>
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludeArtifactIds>apache-felix-karaf,atricore-idbus,josso,org.atricore.josso.izpack</excludeArtifactIds>
+                        </configuration>
+
+                    </execution>
+
+                    <execution>
+                        <id>copy-izpack-actions</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+
+                            <artifactItems>
+
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.josso.izpack</artifactId>
+                                    <version>${josso2.version}</version>
+                                    <outputDirectory>${staging.dir}/unix/bin/customActions</outputDirectory>
+                                    <destFileName>WorkbenchCredentialsGenerator.jar</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.josso.izpack</artifactId>
+                                    <version>${josso2.version}</version>
+                                    <outputDirectory>${staging.dir}/windows/bin/customActions</outputDirectory>
+                                    <destFileName>WorkbenchCredentialsGenerator.jar</destFileName>
+                                </artifactItem>
+
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+
+
+                    <execution>
+                        <id>copy</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.atricore.josso</groupId>
+                                    <artifactId>org.atricore.iamtf.branding</artifactId>
+                                    <version>${project.version}</version>
+                                    <outputDirectory>target/dependencies/lib</outputDirectory>
+                                    <destFileName>idbus.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+
+
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-2</version>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                    </execution>
+                    <execution>
+                        <id>unix-bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}-unix</finalName>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>windows-bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/windows-bin.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}-windows</finalName>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <assemblyId/>
+                        </configuration>
+                    </execution>
+
+                </executions>
+
+            </plugin>
+
+            <!--  copy other checked resource into staging area, expected by install.xml -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <outputDirectory>${staging.dir}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/izpack</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.codehaus.izpack</groupId>
+                <artifactId>izpack-maven-plugin</artifactId>
+                <version>1.0-alpha-5</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.izpack</groupId>
+                        <artifactId>izpack-standalone-compiler</artifactId>
+                        <version>${izpack-standalone.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>unix-installer</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>izpack</goal>
+                        </goals>
+                        <configuration>
+                            <izpackBasedir>${staging.dir}/unix</izpackBasedir>
+                            <customPanelDirectory>${staging.dir}/unix</customPanelDirectory>
+                            <kind>unix</kind>
+                            <classpathElements>
+                                <classpathElement>
+
+                                </classpathElement>
+                            </classpathElements>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>windows-installer</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>izpack</goal>
+                        </goals>
+                        <configuration>
+                            <izpackBasedir>${staging.dir}/windows</izpackBasedir>
+                            <customPanelDirectory>${staging.dir}/windows</customPanelDirectory>
+                            <kind>windows</kind>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
