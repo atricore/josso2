@@ -10,6 +10,7 @@
         <feature version="${atricore.idbus.version}">atricore</feature>
         <feature version="${atricore.idbus.version}">atricore-management</feature>
         <feature version="${version}">josso-ce-console</feature>
+        <feature version="${version}">sso-extensions</feature>
     </feature>
 
 
@@ -55,7 +56,5 @@
         <bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.rest/${atricore.console.version}/war/ce</bundle>
         <!-- bundle>mvn:com.atricore.idbus.console/com.atricore.idbus.console.rest/${atricore.console.version}/war/ee</bundle -->
     </feature>
-
-
 
 </features>

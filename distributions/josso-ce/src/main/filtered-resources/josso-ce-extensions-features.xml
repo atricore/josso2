@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features  name="atricore-sso-extensions-${josso.family.version}">
+
+    <!-- Add custom extensions here -->
+    <feature name="sso-extensions" version="${josso.family.version}">
+
+    </feature>
+</features>

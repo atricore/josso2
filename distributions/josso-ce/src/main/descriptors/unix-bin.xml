@@ -25,6 +25,18 @@
     <fileSets>
 
         <fileSet>
+            <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}/bin</directory>
+            <outputDirectory>/bin</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>atricore</include>
+                <include>start</include>
+                <include>stop</include>
+                <include>admin</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
             <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}</directory>
             <outputDirectory>/</outputDirectory>
             <excludes>
@@ -38,26 +50,21 @@
 
         <fileSet>
             <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/agents</directory>
-            <outputDirectory>/josso/dist/agents</outputDirectory>
+            <outputDirectory>/server/josso/dist/agents</outputDirectory>
+            <excludes>
+                <exclude>**/log4j-1.2.14.jar</exclude>
+            </excludes>
         </fileSet>
 
-        <fileSet>
+        <!--fileSet>
             <directory>target/dependency/tar.gzs/josso-${josso1.version}/dist/samples</directory>
             <outputDirectory>/josso/dist/samples</outputDirectory>
-        </fileSet>
+        </fileSet-->
 
         <fileSet>
             <directory>target/dependency/tar.gzs/josso-ce-repo-${version}</directory>
             <outputDirectory>/m3-local-repository</outputDirectory>
         </fileSet>
-
-        <fileSet>
-            <directory>target/dependency/tar.gzs/atricore-idbus-${atricore.idbus.version}/bin</directory>
-            <outputDirectory>/bin</outputDirectory>
-            <lineEnding>unix</lineEnding>
-            <fileMode>0755</fileMode>
-        </fileSet>
-
 
         <!-- Copy license and other files from root -->
         <fileSet>
@@ -148,6 +155,15 @@
             <source>${basedir}/target/classes/josso-ce-features.xml</source>
             <outputDirectory>/features/org/atricore/josso/josso-ce/${version}</outputDirectory>
             <destName>josso-ce-${version}-features.xml</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+
+
+        <file>
+            <source>${basedir}/target/classes/josso-ce-extensions-features.xml</source>
+            <outputDirectory>/features/org/atricore/josso/josso-ce-extensions/${version}</outputDirectory>
+            <destName>josso-ce-extensions-${version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>

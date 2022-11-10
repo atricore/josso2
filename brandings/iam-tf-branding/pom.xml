@@ -35,7 +35,7 @@
     <artifactId>org.atricore.iamtf.branding</artifactId>
     <packaging>bundle</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>IAM.TF :: Server branding</name>
+    <name>IAM.tf :: Server branding</name>
 
     <dependencies>
         <dependency>

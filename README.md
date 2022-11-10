@@ -1,7 +1,7 @@
-josso2
-======
+IAM.tf / JOSSO 2
+================
 
-Second Generation of JOSSO (Java Open Single Sign-On).
+IAM.tf, Second Generation of JOSSO (Java Open Single Sign-On).
 
-Please visit www.josso.org for documentation.
+Please visit http://iam.tf for documentation.
 
