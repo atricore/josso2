@@ -44,8 +44,7 @@
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
 
-        <bundle>mvn:com.atricore.idbus.console.lifecycle/${atricore.console.version}</bundle>
-
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.support.graph/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
 
