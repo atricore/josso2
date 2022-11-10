@@ -62,7 +62,7 @@
         </fileSet-->
 
         <fileSet>
-            <directory>target/dependency/tar.gzs/josso-ce-repo-${version}</directory>
+            <directory>target/dependency/tar.gzs/josso-ce-repo-${josso2.version}</directory>
             <outputDirectory>/m3-local-repository</outputDirectory>
         </fileSet>
 
