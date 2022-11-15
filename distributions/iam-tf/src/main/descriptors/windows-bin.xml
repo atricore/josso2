@@ -30,6 +30,7 @@
             <outputDirectory>/</outputDirectory>
             <excludes>
                 <!-- Exclude the files we're replacing to avoid duplicated ZIP entries -->
+                <exclude>system/**</exclude>
                 <exclude>**/org.ops4j.pax.url.mvn.cfg</exclude>
                 <exclude>**/org.ops4j.pax.url.mvn.cfg.online</exclude>
                 <exclude>**/system.properties</exclude>
@@ -37,19 +38,27 @@
                 <exclude>**/idbus.jar</exclude>
             </excludes>
         </fileSet>
+        <fileSet>
+            <directory>target/dependency/zips/atricore-idbus-${atricore.idbus.version}/system</directory>
+            <outputDirectory>/data/work/maven/repository</outputDirectory>
+        </fileSet>
 
         <fileSet>
             <directory>target/dependency/zips/josso-${josso1.version}/dist/agents</directory>
             <outputDirectory>/josso/dist/agents</outputDirectory>
+            <excludes>
+                <exclude>**/log4j-1.2.14.jar</exclude>
+            </excludes>
         </fileSet>
 
-        <fileSet>
+        <!--fileSet>
             <directory>target/dependency/zips/josso-${josso1.version}/dist/samples</directory>
             <outputDirectory>/josso/dist/samples</outputDirectory>
-        </fileSet>
+        </fileSet-->
 
         <fileSet>
-            <directory>target/dependency/zips/josso-ce-repo-${version}/</directory>
+            <directory>target/dependency/zips/josso-ce-repo-${josso2.version}</directory>
+            <!--outputDirectory>/m3-local-repository</outputDirectory-->
             <outputDirectory>/data/work/maven/repository</outputDirectory>
         </fileSet>
 

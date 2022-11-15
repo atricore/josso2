@@ -38,8 +38,6 @@
     <name>JOSSO 2 CE :: Distributions</name>
 
     <modules>
-        <module>josso-ce-repo</module>
-        <module>josso-ce</module>
         <module>iam-tf</module>
     </modules>
 
@@ -52,6 +50,20 @@
         </profile>
         <profile>
             <id>cloud</id>
+            <modules>
+                <module>iam-tf</module>
+                <module>iam-tf-cloud</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>all</id>
+            <modules>
+                <module>iam-tf</module>
+                <module>josso-ce</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>cloud-all</id>
             <modules>
                 <module>iam-tf</module>
                 <module>iam-tf-cloud</module>

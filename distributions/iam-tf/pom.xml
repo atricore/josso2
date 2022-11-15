@@ -289,7 +289,7 @@
                         <configuration>
                             <copyPom>true</copyPom>
                             <useRepositoryLayout>true</useRepositoryLayout>
-                            <outputDirectory>target/dependencies/system</outputDirectory>
+                            <outputDirectory>target/dependencies/data/work/maven/repository</outputDirectory>
                             <excludeTransitive>true</excludeTransitive>
                             <excludeArtifactIds>apache-felix-karaf,atricore-idbus,josso,org.atricore.josso.izpack</excludeArtifactIds>
                         </configuration>
