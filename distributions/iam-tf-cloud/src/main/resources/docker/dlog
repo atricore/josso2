@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Set the file to be searched
+file="/opt/atricore/iamtf/server/data/log/atricore.log"
+
+# Set the string to be searched for
+search_string=$1
+
+# Start the loop to continuously search the file
+while true; do
+  # Search the file using grep
+  grep "$search_string" $file
+
+  # Check the exit code of the previous command
+  # If the exit code is 0, it means the string was found
+  if [ $? -eq 0 ]; then
+    # Exit the loop
+    break
+  fi
+
+  # Sleep for 5 seconds before searching the file again
+  sleep 5
+done
