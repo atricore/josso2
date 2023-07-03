@@ -92,3 +92,5 @@ org.atricore.idbus.log.mode=PRODUCTION
 # wire log
 ### ---------------------------------------------
 # log4j.category.<appliance-realm>.wire=TRACE, wire
+
+
