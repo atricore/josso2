@@ -28,12 +28,12 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>josso-ce-all</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>archetypes</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.1.0-SNAPSHOT</version>
     <name>JOSSO 2 :: Archetypes</name>
 
     <modules>
