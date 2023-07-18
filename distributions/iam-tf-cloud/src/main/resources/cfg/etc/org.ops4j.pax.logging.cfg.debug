@@ -83,6 +83,7 @@ log4j.category.org.apache.cxf=TRACE
 
 ## EHCache
 #log4j.category.net.sf.ehcache=TRACE
+log4j.category.org.atricore.idbus.idojos.ehcachesessionstore=INFO
 
 ## WADI
 #log4j.category.org.codehaus.wadi=TRACE
