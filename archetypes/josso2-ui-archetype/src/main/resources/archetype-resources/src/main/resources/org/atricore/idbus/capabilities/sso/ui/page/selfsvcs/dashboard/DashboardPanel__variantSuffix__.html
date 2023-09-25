@@ -4,12 +4,22 @@
 
 <body>
 <wicket:panel>
-    <!-- Partner Apps List Table -->
-    <h2 class="gt-table-head"><wicket:message key="ssoApplications">SSO Aplications</wicket:message></h2>
-    <!-- Content Box -->
-    <div class="gt-content-box">
-        <table  wicket:id="ssoApps" class="gt-table gt-user-table">[table]</table>
+
+    <div class="section-panel mb-3">
+
+        <header class="section-panel__header">
+            <h3><wicket:message key="app.section.subtitle"/></h3>
+        </header>
+
+        <p class="mb-5"><wicket:message key="app.section.intro"/></p>
+
+        <div class="table-responsive table--borderless">
+            <table wicket:id="ssoApps">
+                [table]
+            </table>
+        </div>
     </div>
+
 </wicket:panel>
 </body>
 </html>
