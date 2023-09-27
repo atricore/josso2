@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "debian:10",
+      "image": "adoptopenjdk/openjdk8:debian",
       "export_path": "josso-cn-deb-10-{{user `josso-cn-version`}}.tar",
       "pull": true
     }

@@ -29,7 +29,7 @@
     <artifactId>josso-ce-all</artifactId>
     <packaging>pom</packaging>
 
-    <version>2.6.1-SNAPSHOT</version>
+    <version>2.6.2-SNAPSHOT</version>
     <name>JOSSO 2 CE :: All POM</name>
     <inceptionYear>2009</inceptionYear>
 
@@ -40,7 +40,7 @@
     <properties>
 
         <josso.family.version>2.5</josso.family.version>
-        <josso2dist.version>2.6.1</josso2dist.version>
+        <josso2dist.version>2.6.2</josso2dist.version>
 
 
         <derby.version>10.5.3.0_1</derby.version>
@@ -52,8 +52,8 @@
         <commons-logging.version>1.1.1</commons-logging.version>
 
         <!-- Atricore -->
-        <atricore.idbus.version>1.6.1-SNAPSHOT</atricore.idbus.version>
-        <atricore.console.version>1.5.1-SNAPSHOT</atricore.console.version>
+        <atricore.idbus.version>1.6.2-SNAPSHOT</atricore.idbus.version>
+        <atricore.console.version>1.5.2-SNAPSHOT</atricore.console.version>
 
         <josso1.version>1.8.14-SNAPSHOT</josso1.version>
 
