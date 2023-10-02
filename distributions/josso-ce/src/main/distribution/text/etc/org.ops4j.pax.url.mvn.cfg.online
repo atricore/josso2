@@ -64,7 +64,7 @@
 #
 org.ops4j.pax.url.mvn.defaultRepositories=\
     file:${karaf.base}/features@snapshots,\
-    file:${karaf.base}/appliances@snapshots,\
+    file:${karaf.data}/appliances@snapshots,\
     file:${karaf.base}/extensions@snapshots
 
 #
