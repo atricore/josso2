@@ -8,7 +8,7 @@ all: build
 
 # Build the project
 build:
-	$(MVN) -o clean install -Dmaven.test.skip=true -P cloud,release
+	$(MVN) -o clean install -Dmaven.test.skip=true -P release
 
 # Clean the project
 clean:
