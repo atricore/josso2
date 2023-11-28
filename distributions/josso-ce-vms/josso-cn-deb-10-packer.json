@@ -1,0 +1,38 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "debian:10",
+      "export_path": "josso-cn-deb-10-{{user `josso-cn-version`}}.tar",
+      "pull": true
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-import",
+      "repository": "sgonzaleza3c/josso-cn-deb-10",
+      "tag": "{{user `josso-cn-version`}}",
+      "changes": [
+        "USER root",
+        "EXPOSE 8101 8081 8443",
+        "ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apt update",
+        "apt-cache search openjdk-8-jdk"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "addgroup atricore",
+        "useradd -g atricore  -md  /home/atricore/ atricore"
+      ]
+    }
+  ]
+}

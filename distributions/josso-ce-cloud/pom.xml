@@ -29,12 +29,12 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>distributions</artifactId>
-        <version>3.1.0-SNAPSHOT</version>
+        <version>3.1.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>josso-ce-cloud</artifactId>
     <packaging>pom</packaging>
-    <version>3.1.0-SNAPSHOT</version>
+    <version>3.1.2-SNAPSHOT</version>
     <name>JOSSO 2 CE :: Distribution : Cloud</name>
 
     <build>
@@ -120,6 +120,29 @@
                                         <argument>-only=docker</argument>
                                         <argument>-var-file=./josso-vars.json</argument>
                                         <argument>./josso-cn-packer.json</argument>
+                                    </arguments>
+                                    <environmentVariables>
+                                        <LANG>en_US</LANG>
+                                    </environmentVariables>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>josso-cn-deb-10</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <toolchain>paths</toolchain>
+                                    <executable>packer</executable>
+                                    <!-- optional -->
+                                    <workingDirectory>./target/classes</workingDirectory>
+                                    <arguments>
+                                        <argument>build</argument>
+                                        <argument>-only=docker</argument>
+                                        <argument>-var-file=./josso-vars.json</argument>
+                                        <argument>./josso-cn-deb-10-packer.json</argument>
                                     </arguments>
                                     <environmentVariables>
                                         <LANG>en_US</LANG>

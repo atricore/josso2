@@ -2,16 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>IdP Selection</title>
-</head>
-
 <body>
 <wicket:extend>
-    <div wicket:id="selectIdp" id="wrapper" class="gt-bd clearfix">
-        Here will be the idp selection form
-    </div>
+
+    <div class="card">
+
+        <header class="card-header">
+            <h1>
+                <img wicket:id="app-card-logo" class="logo logo-josso" alt="SSO" src="/IDBUS/processing-ui/josso25/img/josso-logo.svg"/>
+            </h1>
+        </header>
+
+        <div class="card-body">
+
+            <div wicket:id="selectIdp" id="wrapper">
+                Here will be the idp selection form
+            </div>
+
+        </div>
+
+    </div><!-- /card -->
+
 </wicket:extend>
 </body>
 </html>

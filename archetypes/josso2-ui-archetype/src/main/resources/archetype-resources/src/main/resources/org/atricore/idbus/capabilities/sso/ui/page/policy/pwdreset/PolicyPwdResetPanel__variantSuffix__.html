@@ -5,37 +5,203 @@
 <body>
 <wicket:panel>
 
-    <h2 class="gt-form-head"><wicket:message key="title"/></h2>
-    <div class="gt-form gt-content-box">
+    <h2><wicket:message key="app.section.subtitle"/></h2>
 
-        <div wicket:id="feedbackBox">
-            <span wicket:id="feedback"/>
+    <div wicket:id="feedbackBox">
+        <span wicket:id="feedback"/>
+    </div>
+
+    <p class="mb-5"><wicket:message key="app.section.intro"/></p>
+
+
+    <form class="form" method="post" wicket:id="pwdResetForm">
+
+        <hr class="spacer"/>
+
+        <div class="form-input">
+            <label for="currentPassword"><wicket:message key="claims.label.currentPassword"/></label>
+            <input wicket:id="currentPassword" type="password" class="form-text" path="currentPassword" id="currentPassword"/>
         </div>
 
-        <form wicket:id="pwdResetForm">
-            <fieldset>
+        <div class="form-input">
+            <label for="newPassword"><wicket:message key="claims.label.newPassword"/></label>
+            <input wicket:id="newPassword" type="password" class="form-text" path="newPassword" id="newPassword"/>
+        </div>
 
-                <div class="gt-form-row gt-width-33">
-                    <label for="currentPassword"><wicket:message key="claims.label.currentPassword"/></label>
-                    <input wicket:id="currentPassword" type="password" class="gt-form-text" path="currentPassword" />
-                </div>
-                <div class="gt-form-row gt-width-33">
-                    <label for="newPassword"><wicket:message key="claims.label.newPassword"/></label>
-                    <input wicket:id="newPassword" type="password" class="gt-form-text" path="newPassword" />
-                </div>
-                <div class="gt-form-row gt-width-33 clearfix">
-                    <label for="retypedPassword"><wicket:message key="claims.label.retypedPassword"/></label>
-                    <input wicket:id="retypedPassword" type="password" class="gt-form-text" path="retypedPassword" />
-                </div>
+        <!-- Strenght indicator -->
+        <figure class="pwForm__pw-meter mt-2 mb-3 ml-auto">
+            <div class="pwForm__pw-meter__bar" id="pwMeterBar"></div>
+            <div class="pwForm__pw-meter__message" id="pwMeterMessage" aria-live="assertive"></div>
+        </figure>
 
-                <div class="gt-form-row">
-                    <input class="gt-btn-gray-medium" type="submit" value="Submit" wicket:id="doPwdReset" />
-                </div>
+        <div class="form-input">
+            <label for="retypedPassword"><wicket:message key="claims.label.retypedPassword"/></label>
+            <input wicket:id="retypedPassword" type="password" class="form-text" path="retypedPassword" id="retypedPassword"/>
+        </div>
 
-            </fieldset>
+        <hr class="spacer">
 
-        </form>
-    </div>
+        <input class="btn btn--primary mb-2" type="submit" value="Submit" wicket:id="doPwdReset" id="doPwdReset"/>
+
+        <hr class="my-5"/>
+
+        <h4>Your password must contain</h4>
+
+        <ul>
+            <li>Two uppercase letters</li>
+            <li>A special character</li>
+            <li>Two digits</li>
+            <li>Three lower case letters</li>
+            <li>And must be at least 8 characters long.</li>
+        </ul>
+    </form>
+
+    <script>
+        /*
+        closeButton = document.querySelector(".feedbackPanel__close");
+        feedbackPanel = document.querySelector(".feedbackPanelSTICKY");
+
+        closeButton.addEventListener('click', remove);
+
+
+        function remove(e) {
+            feedbackPanel.remove();
+            return false;
+        }
+        */
+
+        // Password confirmation
+
+        var password = document.getElementById("newPassword")
+            , confirm_password = document.getElementById("retypedPassword");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+
+        // Password Strength Validation
+
+        /**
+         * @params:
+         * pwLength: number (optional, default: 8)
+         * @dependencies:
+         * #pwMeterBar (HTML <-)
+         * #pwMeterMessage (HTML <-)
+         * #pwNew (HTML <-)
+         * #pwSave (HTML <-)
+         **/
+
+        function passwordStrengthCheck(pwLength = 8) {
+            const config = {
+                pwPatterns: [
+                    { regExp: "^(.*[A-Z].*[A-Z].*)$" }, // two uppercase letters
+                    { regExp: "^(.*[!@#$&*].*)$" }, // special character
+                    { regExp: "^(.*[0-9].*[0-9].*)$" }, // two digits
+                    { regExp: "^(.*[a-z].*[a-z].*[a-z].*)$" }, // three lower case letters
+                    { regExp: "^(.{" + pwLength + ",})$" } // the pw length
+                ],
+                pwStatus: {
+                    good: {
+                        message: "Password is good!", // a11y
+                        color: "#3f9c17", // set color value (green)
+                        divisor: 0 // trigger good at config.pwPatterns.length / 0
+                    },
+                    weak: {
+                        message: "Password is weak!",
+                        color: "#ff8b00",
+                        divisor: 3 // trigger weak at config.pwPatterns.length / 3
+                    },
+                    critical: {
+                        message: "Password is critical!",
+                        color: "#e23f43", // red
+                        divisor: 2 // trigger critical at config.pwPatterns.length / 2
+                    }
+                }
+            };
+            const $pwMeterBar = document.querySelector("#pwMeterBar");
+            const $pwMeterMessage = document.querySelector("#pwMeterMessage");
+            const $pwNew = document.querySelector("#newPassword");
+            const $pwSave = document.querySelector("#doPwdReset");
+            let pwStrengthColor = config.pwStatus.critical.color;
+            let pwValidators = [];
+            let pwMatchChart = [];
+
+            // populate pwValidators array from config
+            config.pwPatterns.forEach(elem => {
+                pwValidators.push({ pattern: new RegExp(elem.regExp) });
+            });
+
+            // check input value against the pwValidators array
+            $pwNew.addEventListener("keyup", () => {
+                const inputValue = $pwNew.value;
+                let pwScoreCounter = 0;
+                let i = -1;
+
+                pwValidators.forEach(elem => {
+                    i++;
+                    switch (elem.pattern.test(inputValue)) {
+                        case true:
+                            pwMatchChart[i] = true;
+                            break;
+                        case false:
+                            pwMatchChart[i] = false;
+                            break;
+                    }
+                });
+
+                // check if validator is true and update score
+                pwMatchChart.forEach(elem => {
+                    if (elem) pwScoreCounter++;
+                });
+
+                // check for good / weak / critical and apply states
+                if (
+                    pwScoreCounter <=
+                    config.pwPatterns.length / config.pwStatus.good.divisor
+                ) {
+                    pwStrengthColor = config.pwStatus.good.color;
+                    $pwMeterMessage.innerHTML = config.pwStatus.good.message;
+                    $pwSave.removeAttribute("disabled");
+                }
+                if (
+                    pwScoreCounter <=
+                    config.pwPatterns.length -
+                    config.pwPatterns.length / config.pwStatus.weak.divisor
+                ) {
+                    pwStrengthColor = config.pwStatus.weak.color;
+                    $pwMeterMessage.innerHTML = config.pwStatus.weak.message;
+                    $pwSave.setAttribute("disabled", true);
+                }
+                if (
+                    pwScoreCounter <=
+                    config.pwPatterns.length -
+                    config.pwPatterns.length / config.pwStatus.critical.divisor
+                ) {
+                    pwStrengthColor = config.pwStatus.critical.color;
+                    $pwMeterMessage.innerHTML = config.pwStatus.critical.message;
+                    $pwSave.setAttribute("disabled", true);
+                }
+
+                // multiply score counter with (100 / 5 =) 20 (because we have five validators) for bar width
+                $pwMeterBar.style.width =
+                    pwScoreCounter * (100 / config.pwPatterns.length) + "%";
+                $pwMeterBar.style.background = pwStrengthColor;
+            });
+        }
+
+        // init
+        passwordStrengthCheck();
+
+    </script>
+
 
 </wicket:panel>
 </body>

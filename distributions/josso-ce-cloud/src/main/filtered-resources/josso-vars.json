@@ -1,7 +1,7 @@
 {
   "josso-project-version": "${project.version}",
   "josso-version": "${josso2dist.version}",
-  "josso-cn-version": "2.0",
+  "josso-cn-version": "2.2",
   "josso-os-version": "1.0",
   "josso1-version" : "${josso1.version}",
   "josso-update": "${buildNumber}",

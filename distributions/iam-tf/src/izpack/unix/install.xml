@@ -99,6 +99,9 @@
             <executable targetfile="$INSTALL_PATH/bin/stop">
                 <os family="unix" />
             </executable>
+            <executable targetfile="$INSTALL_PATH/bin/dstart">
+                <os family="unix" />
+            </executable>
         </pack>
     </packs>
 

@@ -86,17 +86,21 @@
     <packs>
         <pack name="Base" required="yes">
             <description>The base files</description>
-            <fileset dir="../../${project.artifactId}-${project.version}-unix.dir/${project.artifactId}-${project.version}-unix" targetdir="$INSTALL_PATH">
+            <fileset dir="../../${project.artifactId}-${project.version}-unix.dir/${project.artifactId}-${project.version}-unix"
+                     targetdir="$INSTALL_PATH">
                     <includes name="**"/>
             </fileset>
             <!--file src="../Eula.txt" targetdir="$INSTALL_PATH"/-->
-            <executable targetfile="$INSTALL_PATH/bin/atricore">
+            <executable targetfile="$INSTALL_PATH/bin/atricore" stage="never">
                 <os family="unix" />
             </executable>
-            <executable targetfile="$INSTALL_PATH/bin/start">
+            <executable targetfile="$INSTALL_PATH/bin/start" stage="never">
                 <os family="unix" />
             </executable>
-            <executable targetfile="$INSTALL_PATH/bin/stop">
+            <executable targetfile="$INSTALL_PATH/bin/stop" stage="never">
+                <os family="unix" />
+            </executable>
+            <executable targetfile="$INSTALL_PATH/bin/dstart" stage="never">
                 <os family="unix" />
             </executable>
         </pack>

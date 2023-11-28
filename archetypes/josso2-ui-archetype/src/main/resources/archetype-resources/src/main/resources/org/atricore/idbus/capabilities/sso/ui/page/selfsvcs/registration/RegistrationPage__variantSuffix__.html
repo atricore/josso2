@@ -4,14 +4,56 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>User Authentication</title>
+    <title>User Registration</title>
 </head>
 
 <body>
+
 <wicket:extend>
-    <div wicket:id="registration" id="wrapper" class="gt-bd clearfix">
-        Here will be the register form
+    <header class="page-header">
+        <div class="container-lg">
+            <div class="flex-row flex-top py-3">
+                <h1>
+                    <img wicket:id="app-page-logo" class="logo" src="josso25/img/josso-logo-alt.svg" width="200" alt="SSO">
+                </h1>
+                <nav class="ml-auto" wicket:id="utilityBox">
+                    <ul class="m-0">
+                        <li class="border-right pr-2"><wicket:message key="app.welcome"/> <b><span wicket:id="username"></span></b></li>
+                        <li><a class="btn btn--sm"wicket:id="logout" href="#"><wicket:message key="app.logout"/></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr class="m-0"/>
+        <div class="container-lg">
+
+            <nav class="main-nav" wicket:id="navbar">
+                <ul>
+                    <li><a href="#" wicket:id="dashboard">Dashboard</a></li>
+                    <li><a href="#" wicket:id="profile">Profile</a></li>
+                    <li><a href="#" wicket:id="pwdChange">Password Change</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-body mb-5 pb-5">
+        <div class="container">
+            <h1 class="py-5"><wicket:message key="app.section"/></h1>
+        </div>
+        <div class="container">
+
+            <article class="page-body-main" wicket:id="registration">
+                Content
+            </article>
+
+        </div>
     </div>
 </wicket:extend>
+
 </body>
 </html>
+
+
+

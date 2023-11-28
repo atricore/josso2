@@ -29,7 +29,7 @@
     <artifactId>josso-ce-all</artifactId>
     <packaging>pom</packaging>
 
-    <version>3.1.0-SNAPSHOT</version>
+    <version>3.1.2-SNAPSHOT</version>
     <name>JOSSO 2 CE :: All POM</name>
     <inceptionYear>2009</inceptionYear>
 
@@ -53,12 +53,12 @@
         <commons-logging.version>1.1.1</commons-logging.version>
 
         <!-- Atricore -->
-        <atricore.idbus.version>1.6.1-SNAPSHOT</atricore.idbus.version>
-        <atricore.console.version>1.5.1-SNAPSHOT</atricore.console.version>
+        <atricore.idbus.version>1.6.2-SNAPSHOT</atricore.idbus.version>
+        <atricore.console.version>1.5.2-SNAPSHOT</atricore.console.version>
 
         <josso1.version>1.8.14-SNAPSHOT</josso1.version>
-        <josso2.version>3.1.0-SNAPSHOT</josso2.version>
-        <iamtf.version>1.1.0-SNAPSHOT</iamtf.version>
+        <josso2.version>3.1.2-SNAPSHOT</josso2.version>
+        <iamtf.version>1.2.0-SNAPSHOT</iamtf.version>
 
         <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
         <compiler.fork>true</compiler.fork>
