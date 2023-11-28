@@ -2,27 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Error</title>
-</head>
-
 <body>
 <wicket:extend>
 
-    <div id="idbus-error">
+    <div class="card">
 
-        <div class="message error">
-            <div>
-                <ul>
-                    <li>
-                        <wicket:message key="error.title"/>
-                    </li>
-                </ul>
+        <header class="card-header">
+            <h1>
+                <img wicket:id="app-card-logo" class="logo logo-josso" alt="SSO" src="/IDBUS/processing-ui/josso25/img/josso-logo.svg"/>
+            </h1>
+        </header>
+
+        <div class="card-body">
+
+            <h2><wicket:message key="general.oops"/><em>&nbsp;<wicket:message key="general.somethingWrong"/></em></h2>
+            <div class="feedbackPanelERROR p-1">
+                <p><wicket:message key="error.title"/></p>
             </div>
+
         </div>
 
-    </div>
+    </div><!-- /card -->
+
 </wicket:extend>
 </body>
 </html>

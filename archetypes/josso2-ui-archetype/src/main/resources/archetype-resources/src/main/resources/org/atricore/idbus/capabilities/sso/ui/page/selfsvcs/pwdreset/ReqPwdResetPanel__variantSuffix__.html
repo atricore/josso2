@@ -5,35 +5,26 @@
 <body>
 <wicket:panel>
 
-    <!-- Add / Edit User Form -->
-    <!-- This form can be used to add/edit a user -->
-    <h2 class="gt-form-head"><wicket:message key="title"/></h2>
-    <div class="gt-form gt-content-box">
+    <h2><wicket:message key="title"/></h2>
 
-        <div wicket:id="feedbackBox">
-            <span wicket:id="feedback"/>
+    <div wicket:id="feedbackBox">
+        <div wicket:id="feedback"></div>
+    </div>
+
+    <form wicket:id="reqPwdResetForm">
+
+        <hr class="spacer"/>
+
+        <div class="form-input mb-0">
+            <label class="login-label" for="username"><wicket:message key="claims.label.username"/></label>
+            <input  wicket:id="username" type="text" class="form-text" path="username" tabindex="10" name="username" id="username" required="true">
         </div>
 
-        <form wicket:id="reqPwdResetForm">
-            <fieldset>
+        <hr class="spacer"/>
 
-                <div class="gt-form-row gt-width-33">
-                    <label for="username"><wicket:message key="claims.label.username"/></label>
-                    <input wicket:id="username" type="text" class="gt-form-text" path="username" />
-                </div>
+        <input type="submit" value="Continue" wicket:id="doReqPwdReset" class="btn btn--primary"/>
 
-                <!-- form row -->
-                <div class="gt-form-row">
-                    <input class="gt-btn-gray-medium" type="submit" value="Continue" wicket:id="doReqPwdReset" />
-                </div>
-                <!-- /form row -->
-
-
-
-            </fieldset>
-
-        </form>
-    </div>
+    </form>
 
 </wicket:panel>
 </body>

@@ -3,8 +3,12 @@
       xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
 
 <wicket:panel>
-<h4><span wicket:id="description">App Description</span></h4>
-<p>&nbsp;</p>
-<p class="gt-table-login"><a href="#" wicket:id="login"><wicket:message key="gotoApp">Go to ...</wicket:message></a></p>
+    <div class="flex-row flex-center">
+        <h3 class="mb-0 mr-2"><span wicket:id="description">App Description</span></h3>
+        <a href="#" class="btn btn--sm ml-auto" wicket:id="login"><wicket:message key="gotoApp">Go to ...</wicket:message></a>
+    </div>
+    <hr/>
+    <h4 class="mb-0"><span wicket:id="spId">App Description</span></h4>
+    <p class="mb-0"><span wicket:id="spType">App Description</span></p>
 </wicket:panel>
 </html>

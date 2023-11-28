@@ -10,6 +10,7 @@
         <feature version="${atricore.idbus.version}">atricore</feature>
         <feature version="${atricore.idbus.version}">atricore-management</feature>
         <feature version="${josso2.version}">josso-ce-console</feature>
+        <feature version="${version}">iamtf-extensions</feature>
     </feature>
 
 
@@ -44,6 +45,7 @@
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.activation/com.atricore.idbus.console.activation.command/${atricore.console.version}</bundle>
 
+        <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.support.graph/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.main/${atricore.console.version}</bundle>
         <bundle>mvn:com.atricore.idbus.console.lifecycle/com.atricore.idbus.console.lifecycle.command/${atricore.console.version}</bundle>
 

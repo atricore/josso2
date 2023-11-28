@@ -90,6 +90,15 @@
                     <includes name="**"/>
             </fileset>
             <!--file src="../Eula.txt" targetdir="$INSTALL_PATH"/-->
+            <executable targetfile="$INSTALL_PATH/bin/atricore">
+                <os family="unix" />
+            </executable>
+            <executable targetfile="$INSTALL_PATH/bin/start">
+                <os family="unix" />
+            </executable>
+            <executable targetfile="$INSTALL_PATH/bin/stop">
+                <os family="unix" />
+            </executable>
         </pack>
     </packs>
 

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Set the file to be searched
+file="/opt/atricore/iamtf/server/data/log/atricore.log"
+
+# Set the string to be searched for
+search_string=$1
+
+# Set the number of attempts
+attempts=0
+
+# Start the loop to continuously search the file
+while true; do
+  # Print the attempt number
+  echo "Waiting for server ... attempt: $((attempts+1))"
+
+  # Search the file using grep
+  grep "$search_string" $file
+
+  # Check the exit code of the previous command
+  # If the exit code is 0, it means the string was found
+  if [ $? -eq 0 ]; then
+    # Exit the loop
+    echo "Server started !"
+    break
+  fi
+
+  # Increase the number of attempts
+  attempts=$((attempts+1))
+
+  # If the number of attempts is greater than 10, exit with an error
+  if [ $attempts -gt 10 ]; then
+    echo "Error: maximum number of attempts reached"
+    exit 1
+  fi
+
+  # Sleep for 15 seconds before searching the file again
+  sleep 15
+done
+``

@@ -29,13 +29,13 @@
     <parent>
         <groupId>org.atricore.josso</groupId>
         <artifactId>brandings</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.1.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>org.atricore.iamtf.branding</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>IAM.TF :: Server branding</name>
+    <version>1.2.0-SNAPSHOT</version>
+    <name>IAM.tf :: Server branding</name>
 
     <dependencies>
         <dependency>

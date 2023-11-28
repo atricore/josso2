@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features  name="atricore-iamtf-extensions-${version}">
+
+    <!-- Add custom extensions here -->
+    <feature name="iamtf-extensions" version="${version}">
+
+    </feature>
+</features>

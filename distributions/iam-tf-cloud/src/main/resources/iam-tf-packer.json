@@ -56,6 +56,11 @@
     },
     {
       "type": "file",
+      "source": "./docker/dlog",
+      "destination": "{{user `target`}}/server/bin/dlog"
+    },
+    {
+      "type": "file",
       "source": "./cfg/etc/org.ops4j.pax.logging.cfg",
       "destination": "{{user `target`}}/server/etc/org.ops4j.pax.logging.cfg"
     },
@@ -71,8 +76,48 @@
       "inline": [
         "sudo ln -sf /dev/stdout {{user `target`}}/server/data/atricore.out"
       ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "{{user `target`}}/server/bin/start"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "echo \"Waiting for server to start ...\"",
+        "{{user `target`}}/server/bin/dlog \"Servlet transport factory already registered\"",
+        "echo \"Waiting for server to start ... DONE!\""
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "echo \"About to stop the server ... (20s)\"",
+        "sleep 20s"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "{{user `target`}}/server/bin/stop"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "echo \"Waiting for server to stop ...\"",
+        "{{user `target`}}/server/bin/dlog \"Disabling JULI Logger API support\"",
+        "echo \"Waiting for server to stop ... DONE!\""
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "echo '' > {{user `target`}}/server/etc/com.atricore.idbus.console.appliance.default.idau.cfg"
+      ]
     }
-
 
   ]
 }

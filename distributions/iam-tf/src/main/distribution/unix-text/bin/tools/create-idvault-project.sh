@@ -2,7 +2,7 @@
 
 PROGNAME=`basename $0`
 
-JOSSO2_VERSION=3.0.0-SNAPSHOT
+JOSSO2_VERSION=3.1.2-SNAPSHOT
 JOSSO2_REPO=http://repository.josso.org/m2-release-repository,http://repository.josso.org/m2-snapshot-repository
 
 warn() {
