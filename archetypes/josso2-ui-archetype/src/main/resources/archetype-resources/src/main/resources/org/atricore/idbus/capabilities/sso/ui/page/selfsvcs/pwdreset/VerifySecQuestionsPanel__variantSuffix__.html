@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:panel>
+
+    <h2><wicket:message key="title"/></h2>
+
+    <div wicket:id="feedbackBox">
+        <span wicket:id="feedback"/>
+    </div>
+
+    <form wicket:id="verifyPwdResetForm" class="form" method="post">
+
+        <hr class="spacer"/>
+
+        <label for="answer1"><b><span wicket:id="question1">Q1</span></b></label>
+        <div class="form-input mt-1">
+            <input wicket:id="answer1" type="text" class="form-text" path="answer1" tabindex="10" name="answer1" id="answer1" required>
+        </div>
+
+
+        <label for="answer2"><b><span wicket:id="question2">Q2</span></b></label>
+        <div class="form-input mt-1">
+            <input wicket:id="answer2" type="text" class="form-text" path="answer2" tabindex="20" name="answer2" id="answer2" required>
+        </div>
+
+        <label for="answer3"><b><span wicket:id="question3">Q3</span></b></label>
+        <div class="form-input mt-1">
+            <input wicket:id="answer3" type="text" class="form-text" path="answer3" tabindex="30" name="answer3" id="answer3" required>
+        </div>
+
+        <hr class="spacer">
+
+        <input type="submit" value="Continue" class="btn btn--primary mb-2" wicket:id="doVerifyPwdReset"/>
+
+
+    </form>
+
+
+</wicket:panel>
+</body>
+</html>

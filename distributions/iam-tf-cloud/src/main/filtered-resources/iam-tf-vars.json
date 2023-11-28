@@ -1,7 +1,7 @@
 {
   "iam-tf-project-version": "${iamtf.version}",
   "josso-version": "${josso2dist.version}",
-  "josso-cn-version": "2.0",
+  "josso-cn-version": "2.1",
   "josso-os-version": "1.0",
   "josso1-version" : "${josso1.version}",
   "iam-tf-version": "${iamtfdist.version}",

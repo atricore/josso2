@@ -174,7 +174,7 @@
         </file>
         <file>
             <source>${basedir}/target/classes/iamtf-extensions-features.xml</source>
-            <outputDirectory>/features/org/atricore/iamtf/iamtf-extensions/${version}</outputDirectory>
+            <outputDirectory>/extensions/org/atricore/iamtf/iamtf-extensions/${version}</outputDirectory>
             <destName>iamtf-extensions-${version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>

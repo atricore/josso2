@@ -128,6 +128,29 @@
                             </execution>
 
                             <execution>
+                                <id>josso-cn-deb-10</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <toolchain>paths</toolchain>
+                                    <executable>packer</executable>
+                                    <!-- optional -->
+                                    <workingDirectory>./target/classes</workingDirectory>
+                                    <arguments>
+                                        <argument>build</argument>
+                                        <argument>-only=docker</argument>
+                                        <argument>-var-file=./josso-vars.json</argument>
+                                        <argument>./josso-cn-deb-10-packer.json</argument>
+                                    </arguments>
+                                    <environmentVariables>
+                                        <LANG>en_US</LANG>
+                                    </environmentVariables>
+                                </configuration>
+                            </execution>
+
+                            <execution>
                                 <id>josso-ce</id>
                                 <phase>install</phase>
                                 <goals>

@@ -1,81 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
-
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd " lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><wicket:message key="title"/></title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <link rel="stylesheet" href="css/reset-fonts.css" type="text/css" media="screen, projection" />
-    <link rel="stylesheet" href="css/gt-styles.css" type="text/css" media="screen, projection" />
-    <link rel="stylesheet" href="css/custom.css" type="text/css" media="screen, projection" />
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/IDBUS/processing-ui/josso25/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#015077">
+    <link rel="apple-touch-icon" sizes="57x57" href="josso25/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="josso25/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="josso25/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="josso25/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="josso25/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="josso25/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="josso25/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="josso25/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="josso25/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="josso25/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="josso25/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="josso25/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="josso25/favicons/favicon-16x16.png" sizes="16x16">
+    <!-- <link rel="manifest" href="josso25/favicons/manifest.json"> -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="josso25/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="josso25/css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="josso25/css/styles.css" type="text/css">
+
 </head>
 
-<body class="gt-fixed">
+<!-- dyamic class attribute -->
+<body wicket:id="body">
+<div wicket:id="main-panel">
 
-<!-- head -->
-<div class="gt-hd clearfix">
-    <!-- leaf watermark -->
-    <div class="gt-leaf-watermark clearfix">
+    <wicket:child/>
 
-        <!-- head top -->
-        <div class="gt-hd-top clearfix">
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><wicket:message key="footer"/></p>
+    </footer>
 
-            <div class="gt-fixed-wrap clearfix">
-
-                <!-- logo -->
-                <div class="gt-logo">
-                    <img class="gt-leaf" src="images/atricore-tipito.png" alt="leaf-logo-icon" /> <wicket:message key="app.title"/>
-                </div>
-                <!-- / logo -->
-
-            </div>
-
-            <!-- utility box -->
-            <div class="gt-util-box" wicket:id="utilityBox">
-                <div class="gt-util-box-inner">
-                    <p><wicket:message key="app.welcome"/> <span wicket:id="username"></span> <span class="gt-util-separator">|</span> <a href="#"><wicket:message key="app.logout"/></a></p>
-                </div>
-            </div>
-            <!-- / utility box -->
-
-        </div><!-- /head top -->
-
-        <!-- navbar -->
-        <div wicket:id="navbar" class="gt-navbar clearfix">
-
-            <div class="gt-fixed-wrap clearfix">
-
-                <!-- navigation -->
-                <div class="gt-nav">
-                    <ul>
-                        <li><a wicket:id="dashboard"  href="#"><wicket:message key="app.dashboard.link"/></a></li>
-                        <li><a wicket:id="profile"  href="#"><wicket:message key="app.profile.link"/></a></li>
-                        <li><a wicket:id="pwdChange" href="#"><wicket:message key="app.pwdChange.link"/></a></li>
-                        <li><a wicket:id="logout" href="#"><wicket:message key="app.logout"/></a></li>
-                    </ul>
-                </div><!-- / navigation -->
-
-            </div>
-
-        </div><!-- /navbar -->
-
-    </div><!-- /leaf watermark -->
 </div>
-<!-- / head -->
-
-
-<wicket:child/>
-
-<!-- footer -->
-<div class="gt-footer"><div class="gt-footer-inner">
-    <p>Copyright &copy; 2013 Atricore, Inc. - <a href="http://www.atricore.com" target="_blank">www.atricore.com</a></p>
-</div></div>
-<!-- /footer -->
 
 </body>
 </html>
-
 

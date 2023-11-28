@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+<wicket:extend>
+
+    <div class="card">
+
+        <header class="card-header">
+            <h1>
+                <img wicket:id="app-card-logo" class="logo logo-josso" alt="SSO" src="/IDBUS/processing-ui/josso25/img/josso-logo.svg"/>
+            </h1>
+        </header>
+
+        <div class="card-body">
+
+            <h2><wicket:message key="general.oops"/><em>&nbsp;<wicket:message key="general.somethingWrong"/></em></h2>
+            <div class="feedbackPanelERROR p-1">
+                <p><wicket:message key="error.access.denied"/></p>
+            </div>
+
+        </div>
+
+    </div><!-- /card -->
+
+</wicket:extend>
+</body>
+</html>

@@ -5,61 +5,33 @@
 <body>
 <wicket:panel>
 
-    <div id="authentication">
+    <p><wicket:message key="claims.text.enterUsernamePwd"/></p>
 
-        <div class="message error">
-            <span wicket:id="feedback"/>
-        </div>
-
-        <div id="bysy_indicator">
-            <span><wicket:message key="general.text.processing"/></span>
-        </div>
-
-        <div id="subwrapper">
-
-            <div class="main">
-                <h2><wicket:message key="claims.title.userLogin"/></h2>
-
-                <p><wicket:message key="claims.text.userLogin"/></p>
-
-                <form wicket:id="signInForm">
-                    <fieldset>
-                        <div><label for="username"><wicket:message key="claims.label.username"/></label><input wicket:id="username" cssClass="text" path="username"
-                                                                                                               tabindex="10"/>
-                        </div>
-                        <div><label for="passcode"><wicket:message key="claims.label.passcode"/></label><input wicket:id="passcode" type="password" cssClass="text error" path="passcode"
-                                                                                                               tabindex="10"/>
-                        </div>
-                    </fieldset>
-                    <div>
-                        <input class="button indent" type="button" value="Login" onclick="saveForm(this);"/>
-                    </div>
-                    <br/>
-                    <br/>
-                </form>
-
-                <div class="highlight">
-                    <h3 class="help"><wicket:message key="claims.title.help"/></h3>
-
-                    <p><wicket:message key="claims.text.login.help"/></p>
-
-                    <div class="footer"></div>
-
-                </div>
-                <!-- /highlight -->
-
-            </div>
-            <!-- /main -->
-        </div>
-
+    <div wicket:id="feedbackBox">
+        <span wicket:id="feedback"/>
     </div>
-    <!-- /authentication -->
+
+    <form class="form" method="post" wicket:id="signInForm">
+
+        <hr class="spacer"/>
+
+        <div class="form-input">
+            <label for="username"><wicket:message key="claims.label.username"/></label>
+            <input  wicket:id="username" type="text" class="form-text" path="username" tabindex="10" name="username" id="username" required="true">
+        </div>
+
+        <div class="form-input">
+            <label for="password"><wicket:message key="claims.label.passcode"/></label>
+            <input  wicket:id="passcode" type="password" class="form-text" path="passcode" tabindex="20" value="" name="password" required="true" id="password">
+        </div>
+
+        <hr class="spacer"/>
+
+        <input type="submit" value="Login" class="btn btn--primary mb-2">
+
+    </form>
+
+
 </wicket:panel>
 </body>
 </html>
-
-
-
-
-
-
