@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
   ~ Atricore IDBus
   ~
   ~ Copyright 2009, Atricore Inc.
@@ -52,8 +52,8 @@
         <commons-logging.version>1.1.1</commons-logging.version>
 
         <!-- Atricore -->
-        <atricore.idbus.version>1.6.2-SNAPSHOT</atricore.idbus.version>
-        <atricore.console.version>1.5.2-SNAPSHOT</atricore.console.version>
+        <atricore.idbus.version>1.6.3-SNAPSHOT</atricore.idbus.version>
+        <atricore.console.version>1.5.3-SNAPSHOT</atricore.console.version>
 
         <josso1.version>1.8.14-SNAPSHOT</josso1.version>
 
