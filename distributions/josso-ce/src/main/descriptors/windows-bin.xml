@@ -38,7 +38,7 @@
             </excludes>
         </fileSet>
 
-        <fileSet>
+        <!--fileSet>
             <directory>target/dependency/zips/josso-${josso1.version}/dist/agents</directory>
             <outputDirectory>/josso/dist/agents</outputDirectory>
         </fileSet>
@@ -46,7 +46,7 @@
         <fileSet>
             <directory>target/dependency/zips/josso-${josso1.version}/dist/samples</directory>
             <outputDirectory>/josso/dist/samples</outputDirectory>
-        </fileSet>
+        </fileSet-->
 
         <fileSet>
             <directory>target/dependency/zips/josso-ce-repo-${version}/</directory>
